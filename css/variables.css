@@ -1,0 +1,39 @@
+:root{
+    /* grid */
+	--grid-count: 4;
+	--grid-column: calc(100vw / var(--grid-count));
+
+    /* common style */
+    --border-radius: 4px;
+
+    /* main colors */
+    --primary-color: rgb(76,172,219);
+    --secondary-color: rgb(223,95,90);
+    --hover-color: rgb(255,0,0);
+
+    /* font-colors */
+    --font-dark: rgb(51,51,51);
+    --font-light: rgb(102,102,102);
+
+    /* font-weight */
+    --font-thin: 100;
+    --font-regular: 300;
+    /* --font-normal: 400; not sure we need it */
+    --font-semibold: 600;
+    /* --font-bold: 700; not sure we need it */
+}
+
+
+/* Media Queries */
+
+@media (min-width: 600px){
+	:root{
+		--grid-count: 8;
+	}
+}
+
+@media (min-width:840px){
+	:root{
+		--grid-count: 12;
+	}
+}

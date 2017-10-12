@@ -1,0 +1,57 @@
+@font-face {
+    font-family: 'pf_bbok';
+    src: url('../fonts/pfbeausanspro-thin_35353-webfont.eot');
+    src: url('../fonts/pfbeausanspro-thin_35353-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/pfbeausanspro-thin_35353-webfont.woff2') format('woff2'),
+         url('../fonts/pfbeausanspro-thin_35353-webfont.woff') format('woff'),
+         url('../fonts/pfbeausanspro-thin_35353-webfont.ttf') format('truetype'),
+         url('../fonts/pfbeausanspro-thin_35353-webfont.svg#pf_beausans_prothin') format('svg');
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'pf_bbok';
+    src: url('../fonts/pfbeausanspro-regular_35350-webfont.eot');
+    src: url('../fonts/pfbeausanspro-regular_35350-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/pfbeausanspro-regular_35350-webfont.woff2') format('woff2'),
+         url('../fonts/pfbeausanspro-regular_35350-webfont.woff') format('woff'),
+         url('../fonts/pfbeausanspro-regular_35350-webfont.ttf') format('truetype'),
+         url('../fonts/pfbeausanspro-regular_35350-webfont.svg#pf_beausans_proregular') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+/* not sure we need it */
+/* @font-face {
+    font-family: 'pf_bbok';
+    src: url('../fonts/pfbeausanspro-bbook_35341-webfont.eot');
+    src: url('../fonts/pfbeausanspro-bbook_35341-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/pfbeausanspro-bbook_35341-webfont.woff2') format('woff2'),
+         url('../fonts/pfbeausanspro-bbook_35341-webfont.woff') format('woff'),
+         url('../fonts/pfbeausanspro-bbook_35341-webfont.ttf') format('truetype'),
+         url('../fonts/pfbeausanspro-bbook_35341-webfont.svg#pf_beausans_probbook') format('svg');
+    font-weight: 400;
+    font-style: normal;
+} */
+@font-face {
+    font-family: 'pf_bbok';
+    src: url('../fonts/pfbeausanspro-semibold_35351-webfont.eot');
+    src: url('../fonts/pfbeausanspro-semibold_35351-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/pfbeausanspro-semibold_35351-webfont.woff2') format('woff2'),
+         url('../fonts/pfbeausanspro-semibold_35351-webfont.woff') format('woff'),
+         url('../fonts/pfbeausanspro-semibold_35351-webfont.ttf') format('truetype'),
+         url('../fonts/pfbeausanspro-semibold_35351-webfont.svg#pf_beausans_prosemibold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+}
+/* not sure we need it */
+/* @font-face {
+    font-family: 'pf_bbok';
+    src: url('../fonts/pfbeausanspro-bold_35345-webfont.eot');
+    src: url('../fonts/pfbeausanspro-bold_35345-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/pfbeausanspro-bold_35345-webfont.woff2') format('woff2'),
+         url('../fonts/pfbeausanspro-bold_35345-webfont.woff') format('woff'),
+         url('../fonts/pfbeausanspro-bold_35345-webfont.ttf') format('truetype'),
+         url('../fonts/pfbeausanspro-bold_35345-webfont.svg#pf_beausans_probold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+} */
