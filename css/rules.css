@@ -7,13 +7,14 @@ html {
     font-family: 'pf_bbok', Helvetica, Arial, sans-serif;
     color: var(--font-dark);
 }
-body{
+html, body{
     margin: 0;
 }
 .wrapper{
     min-width: 320px;
     max-width: 1600px;
     margin: 0 auto;
+    padding: 0 calc(var(--grid-margin) / 2);
 }
 a{
     text-decoration: none;
@@ -22,9 +23,9 @@ a{
 a:hover{
     color: var(--primary-color);
 }
-/* a:visited, a:active{
-    ?
-} */
+a:visited, a:active{
+    color: var(--font-light);
+}
 
 @media (min-width:840px){
 	html{font-size: 16px}

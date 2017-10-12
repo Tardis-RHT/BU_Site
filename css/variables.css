@@ -1,7 +1,8 @@
 :root{
     /* grid */
 	--grid-count: 4;
-	--grid-column: calc(100vw / var(--grid-count));
+    --grid-column: calc(100vw / var(--grid-count));
+    --grid-margin: .5rem;
 
     /* common style */
     --border-radius: 4px;
@@ -28,7 +29,8 @@
 
 @media (min-width: 600px){
 	:root{
-		--grid-count: 8;
+        --grid-count: 8;
+        --grid-margin: 16px;
 	}
 }
 
