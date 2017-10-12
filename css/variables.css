@@ -1,8 +1,8 @@
 :root{
     /* grid */
 	--grid-count: 4;
-    --grid-column: calc(100vw / var(--grid-count) - var(--grid-count) * var(--grid-margin) );
-    --grid-margin: 8px;
+    --grid-column: calc(100vw / var(--grid-count) - 2 * var(--grid-margin) );
+    --grid-margin: .5rem;
 
     /* common style */
     --border-radius: 4px;
