@@ -1,0 +1,42 @@
+.debuger {position: relative;}
+.debuger-grid{
+	position: absolute;
+	display: none;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	min-height: 100vh;
+	z-index: 999;
+	pointer-events: none;
+	background-image: linear-gradient(180deg,rgba(233, 30, 99, .25) 1px,transparent 0);
+	background-size: 1px .5em;
+}
+
+.debuger .debuger-grid{
+	display: flex;
+}
+
+.debuger-grid div,
+.debuger-grid::before,
+.debuger-grid::after{
+	flex-grow: 1;
+	background-image: linear-gradient(to right, rgba(158, 158, 158, 0.4) .5rem,transparent 0),
+					  linear-gradient(to left, rgba(158, 158, 158, 0.4) .5rem,transparent 0);
+}
+
+.debuger__block{background-color: rgba(76, 175, 80, 0.2)}
+
+@media (min-width: 600px) {
+	.debuger-grid div{
+		background-size: 50%;
+	}
+}
+
+@media (min-width: 840px) {
+	.debuger-grid::before,
+	.debuger-grid::after{
+		background-size: 50%;
+		content: '';
+	}
+}

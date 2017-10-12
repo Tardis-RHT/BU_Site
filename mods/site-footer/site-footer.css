@@ -1,0 +1,13 @@
+.footer{
+	display: flex;
+	align-items: flex-start;
+	flex-flow: row wrap;
+}
+.footer__contacts,
+.footer__tel,
+.footer__social,
+.footer__sponsor{
+    width: var(--grid-column)*2 + 2*var(--grid-margin);
+	/* margin-right: .5rem; */
+	margin: 0 var(--grid-margin);
+}
