@@ -79,6 +79,9 @@ header{
         order: 3;
         line-height: 64px;
     }
+    .languages__is-current{
+        color: var(--font-light);
+    }
     .languages__is-current::after{
         content: '';
         display: block;
