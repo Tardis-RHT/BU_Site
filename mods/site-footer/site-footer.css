@@ -30,6 +30,10 @@
 }
 .footer__tel a{
 	display: block;
+	margin: var(--grid-margin) 0;
+}
+.footer__tel a:first-of-type{
+	margin: 0;
 }
 .footer__social{
 	display: flex;
@@ -61,15 +65,16 @@
 	margin-right: 0;
 }
 @media (min-width:600px){
+	.footer{
+		flex-flow: nowrap;
+	}
 	.footer__contacts,
 	.footer__tel,
 	.footer__social{
 		width: calc(var(--grid-column) * 2 - var(--grid-margin) * 2 );
-		margin: var(--grid-margin);
 	}
 	.footer__sponsor{
 		width: calc(var(--grid-column) * 2 - var(--grid-margin) * 2 );
-		margin: var(--grid-margin);
 		text-align: right;
 		justify-content: flex-end;
 	}
@@ -80,6 +85,5 @@
 	}
 	.footer__sponsor{
 		width: calc(var(--grid-column) * 5 - var(--grid-margin) * 2 );
-		margin: var(--grid-margin);
 	}
 }
