@@ -1,7 +1,7 @@
 :root{
     /* grid */
 	--grid-count: 4;
-    --grid-column: calc(100vw / var(--grid-count) - 2 * var(--grid-margin) );
+    --grid-column: calc(100vw / var(--grid-count));
     --grid-margin: .5rem;
 
     /* common style */

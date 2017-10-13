@@ -1,4 +1,4 @@
 @import 'variables.css';
-/* @import 'fonts.css'; */
+@import 'fonts.css';
 @import 'rules.css';
 @import '/mods/site-footer/site-footer.css';
