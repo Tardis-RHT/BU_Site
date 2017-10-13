@@ -11,7 +11,7 @@ html, body{
     margin: 0;
 }
 .wrapper{
-    min-width: 320px;
+    width: 100%;
     max-width: 1600px;
     margin: 0 auto;
     padding: 0 calc(var(--grid-margin) / 2);

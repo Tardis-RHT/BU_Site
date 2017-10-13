@@ -3,32 +3,90 @@ header{
     display:flex;
     justify-content: space-between;
     align-items: center;
-    height: 64px;
+    flex-wrap: wrap;
+    height: 104px;
+    position: relative;
 }
 .logo{
+    /* // width: calc(var(--grid-column) * 2);
+    // padding-right: calc(var(--grid-margin) * 3); */
     width: calc(var(--grid-column) * 2);
-    padding-right: calc(var(--grid-margin) * 3);
+    /* position: absolute;
+    top: var(--grid-margin); */
+    /* left: var(--grid-margin); */
 }
 .logo__img{
     height: 100%;
     width: 100%;
+    max-width: 160px;
 }
 .main-menu{
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    width: calc(var(--grid-column) * 9);
+    justify-content: center;
+    /* align-items: flex-start; */
+    flex-basis: 100%;
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+.main-menu::-webkit-scrollbar { 
+    width: 0;
 }
 .menu{
-    display: flex;   
+    width: 100%;
+    display: flex;
+    line-height: 2rem;
 }
-.menu > li{
-    margin-right: var(--grid-margin);
+.menu-item{
+    margin-right: calc(var(--grid-margin) * 2);
     white-space: nowrap;
 }
 .languages{
     display: flex;
 }
-.languages__item{
-    margin-right: calc(var(--grid-margin) / 2);
+/* .languages__item{
+    margin: 0 2px;
+} */
+.languages__item > a{
+    display: inline-block;
+    position: relative;
+    padding: 0 calc(var(--grid-margin) / 2);
+}
+@media(min-width:600px){
+    .logo{
+        width: calc(var(--grid-column) * 2);
+        top: 25%;
+    }
+    .main-menu{
+        /* margin-left: calc(var(--grid-column) * 2); */
+        /* flex-basis: calc(var(--grid-column) * 5); */
+    }
+    
+}
+@media(min-width:840px){
+    .header{
+        height: 64px;
+    }
+    .main-menu{
+        flex-basis: calc(var(--grid-column) * 6);
+        justify-content: flex-start;
+        overflow-x: auto;
+        white-space: normal;
+    }
+    .menu-item{
+        margin-right: var(--grid-margin);
+    }
+    .languages{
+        order: 3;
+        line-height: 64px;
+    }
+    .languages__is-current::after{
+        content: '';
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: var(--font-light);
+        left: 0;
+        bottom: 4px;
+        position: absolute;
+    }
 }
