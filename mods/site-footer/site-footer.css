@@ -28,7 +28,6 @@
 .footer__contacts-copyright{
 	font-size: 12px;
 }
-
 .footer__tel a{
 	display: block;
 }
@@ -36,14 +35,12 @@
 	display: flex;
 }
 .footer__social a{
-	margin: 0 var(--grid-margin);
+	margin: 0 8px;
 	border-radius: var(--border-radius);
 	background-color: var(--primary-color);
 	background-repeat: no-repeat;
 	background-size: 80%;
 	background-position: center;
-	fill: white;
-	color: white;
 	display: block;
 	width: 42px;
 	height: 42px;
