@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var cleanCSS = require('gulp-clean-css');
 var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
 var gcmq = require('gulp-group-css-media-queries');
 var browserSync = require('browser-sync');
 var connect = require('gulp-connect-php');
@@ -10,6 +11,7 @@ var cssnext = require('postcss-cssnext');
 var paths = {
     css:['css/*.css','mods/*/*.css'],
     php:['*.php', 'mods/*/*.php'],
+    // js:['js/*.js', 'mods/*/*.js'],
     dir:['./']
 };
 var plugins = [
@@ -56,8 +58,9 @@ gulp.task('css', function () {
 
         // -->> Most comments are here in case we will need some html work:
 // gulp.task('scripts', function() {  
-//     return gulp.src('js/*')
-//         .pipe(concat('scripts.js'))
+//     return gulp.src(paths.js)
+//         // .pipe(uglify())
+//         .pipe(concat('script.js'))
 //         .pipe(gulp.dest('js/'))
 //         .pipe(browserSync.stream());
 // });
@@ -79,7 +82,7 @@ gulp.task('watch', ['css', 'connect-sync'], function() {
 
     gulp.watch([paths.php]).on('change', browserSync.reload);
     gulp.watch([paths.css], ['css']);
-    // gulp.watch(["js/*"], ['js']);
+    // gulp.watch([paths.js], ['scripts']);
     // gulp.watch("*.html", ['html']).on('change', browserSync.reload);
 
 });

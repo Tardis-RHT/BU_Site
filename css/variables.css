@@ -30,7 +30,6 @@
 @media (min-width: 600px){
 	:root{
         --grid-count: 8;
-        /* --grid-margin: 16px; */
 	}
 }
 

@@ -4,11 +4,10 @@
 <body>
     <?php get_template_part('mods/site-header/site', 'header'); ?>
     <h1>Hello!</h1>
-	<a href="#">How are you?</a>
 	
 	<?php get_template_part('mods/site-footer/site', 'footer'); ?>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
     jQuery(document).ready(function($){
         // debuger begin
