@@ -5,16 +5,16 @@ header{
     align-items: center;
     flex-wrap: wrap;
     height: 104px;
+    background-color: white;
+    position: relative;
 }
 .logo{
-    width: calc(var(--grid-column) * 2);
-    /* width: calc(var(--grid-column) * 1.5 - var(--grid-margin)); */
+    width: calc(var(--grid-column) * 2 - var(--grid-margin) * 2);
     margin: 0 var(--grid-margin);
 }
 .logo__img{
     height: 100%;
-    width: 100%;
-    max-width: 160px;
+    width: 120px;
 }
 .main-menu{
     display: flex;
@@ -42,7 +42,9 @@ header{
 }
 .languages{
     display: flex;
+    justify-content: flex-end;
     margin: 0 var(--grid-margin);
+    width: calc(var(--grid-column) * 2 - var(--grid-margin) * 2);
 }
 .languages__item > a{
     display: inline-block;
@@ -52,13 +54,22 @@ header{
 .languages__is-current{
     color: var(--font-light);
 }
+
+/* for header scroll */
+.header--scroll{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top:0;
+}
 @media(min-width:840px){
     .header{
         height: 48px;
     }
     .main-menu{
-        flex-basis: calc(var(--grid-column) * 6 + var(--grid-margin) * 5);
+        width: calc(var(--grid-column) * 8 - var(--grid-margin) * 2);
         justify-content: flex-start;
+        flex-basis: auto;
         overflow-x: auto;
         white-space: normal;
         color: var(--primary-color);

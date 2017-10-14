@@ -1,4 +1,4 @@
-<header class="header wrapper">
+<header class="wrapper header">
     <a href="<?php get_home_url() ?>" class="logo">
         <img src="<?php echo get_template_directory_uri() ?>/img/logo.png" alt="Bionic University" class="logo__img">
     </a>
