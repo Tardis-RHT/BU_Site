@@ -14,7 +14,7 @@
 
     /* font-colors */
     --font-dark: rgb(51,51,51);
-    --font-light: rgb(102,102,102);
+    --font-light: rgb(189,189,189);
 
     /* font-weight */
     --font-thin: 100;
@@ -29,7 +29,8 @@
 
 @media (min-width: 600px){
 	:root{
-		--grid-count: 8;
+        --grid-count: 8;
+        /* --grid-margin: 16px; */
 	}
 }
 

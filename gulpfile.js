@@ -71,11 +71,11 @@ gulp.task('watch', ['css', 'connect-sync'], function() {
     //     port: 8888
     // }); 
 
-    connect.server({}, function() {
-        browserSync({
-            proxy: '127.0.0.1:8888'
-        });
-    });
+    // connect.server({}, function() {
+    //     browserSync({
+    //         proxy: '127.0.0.1:8888'
+    //     });
+    // });
 
     gulp.watch([paths.php]).on('change', browserSync.reload);
     gulp.watch([paths.css], ['css']);
