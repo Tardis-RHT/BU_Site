@@ -6,7 +6,7 @@
 }
 .footer__contacts,
 .footer__tel,
-.footer__social{
+.footer__soc{
 	/* width: calc(var(--grid-column) * 4 - var(--grid-margin) * 2 ); */
 	margin: var(--grid-margin);
 	display: flex;
@@ -42,10 +42,10 @@
 .footer__tel a:first-of-type{
 	margin: 0;
 }
-.footer__social{
+.footer__soc{
 	display: flex;
 }
-.footer__social a{
+.footer__soc a{
 	margin: 0 8px;
 	border-radius: var(--border-radius);
 	background-color: var(--primary-color);
@@ -55,20 +55,21 @@
 	display: block;
 	width: 40px;
 	height: 40px;
+	fill: white;
 }
-.footer__social-linkedin{
-	background-image: url("../../img/icons/linkedin.svg");
+.footer__soc-linkedin{
+	background-image: url("../../img/icons/001.svg");
 }
-.footer__social-instagram{
-	background-image: url("../../img/icons/instagram.svg");
+.footer__soc-instagram{
+	background-image: url("../../img/icons/002.svg");
 }
-.footer__social-facebook{
-	background-image: url("../../img/icons/facebook.svg");	
+.footer__soc-facebook{
+	background-image: url("../../img/icons/003.svg");	
 }
-.footer__social a:first-of-type{
+.footer__soc a:first-of-type{
 	margin-left: 0;
 }
-.footer__social a:last-of-type{
+.footer__soc a:last-of-type{
 	margin-right: 0;
 }
 .footer__copyright{
