@@ -11,13 +11,12 @@ var cssnext = require('postcss-cssnext');
 var paths = {
     css:['css/*.css','mods/*/*.css'],
     php:['*.php', 'mods/*/*.php'],
-    // js:['js/*.js', 'mods/*/*.js'],
+    js:['mods/*/*.js'],
     dir:['./']
 };
 var plugins = [
     cssnext({
         browserslist: [
-            // "> 1%",
             "Chrome >= 58",
             "Firefox >= 45",
             "Safari >= 9",
@@ -27,7 +26,7 @@ var plugins = [
           ]
     })
 ];
-
+        // -->> Most comments are here in case we will need some html work:
 // gulp.task ('html', function() {
 //     return gulp.src('*.html')
 //         .pipe(browserSync.stream());
@@ -56,17 +55,16 @@ gulp.task('css', function () {
         .pipe(browserSync.stream());
 });
 
-        // -->> Most comments are here in case we will need some html work:
-// gulp.task('scripts', function() {  
-//     return gulp.src(paths.js)
-//         // .pipe(uglify())
-//         .pipe(concat('script.js'))
-//         .pipe(gulp.dest('js/'))
-//         .pipe(browserSync.stream());
-// });
+gulp.task('js', function() {  
+    return gulp.src(paths.js)
+        .pipe(concat('script.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('js/'))
+        .pipe(browserSync.stream());
+});
 
 // gulp.task('watch', ['css', 'html'], function() {
-gulp.task('watch', ['css', 'connect-sync'], function() {
+gulp.task('watch', ['css', 'js', 'connect-sync'], function() {
     // browserSync({
     //     server: {
     //         baseDir: paths.dir
@@ -82,7 +80,7 @@ gulp.task('watch', ['css', 'connect-sync'], function() {
 
     gulp.watch([paths.php]).on('change', browserSync.reload);
     gulp.watch([paths.css], ['css']);
-    // gulp.watch([paths.js], ['scripts']);
+    gulp.watch([paths.js], ['js']);
     // gulp.watch("*.html", ['html']).on('change', browserSync.reload);
 
 });
