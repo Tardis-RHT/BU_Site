@@ -1,0 +1,1 @@
+$(function(){var e=0,r=$("header").outerHeight();$(".header").removeClass("header--scroll"),console.log(r),$(window).scroll(function(r){var l=$(window).scrollTop();l<e?($(".header").addClass("header--scroll"),0==l&&$("header").removeClass("header--scroll")):$("header").removeClass("header--scroll"),e=l})});

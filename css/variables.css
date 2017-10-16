@@ -6,6 +6,7 @@
 
     /* common style */
     --border-radius: 4px;
+    --transition: all .1s linear;
 
     /* main colors */
     --primary-color: rgb(76,172,219);
@@ -15,6 +16,7 @@
     /* font-colors */
     --font-dark: rgb(51,51,51);
     --font-light: rgb(189,189,189);
+    --font-white: rgb(255,255,255);
 
     /* font-weight */
     --font-thin: 100;
@@ -30,7 +32,6 @@
 @media (min-width: 600px){
 	:root{
         --grid-count: 8;
-        /* --grid-margin: 16px; */
 	}
 }
 

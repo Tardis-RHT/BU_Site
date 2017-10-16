@@ -3,12 +3,14 @@
     <?php get_header(); ?>  
 <body>
     <?php get_template_part('mods/site-header/site', 'header'); ?>
-    <h1>Hello!</h1>
-	<a href="#">How are you?</a>
-	
+    <br>
+    <a href="#" class="btn">Example button</a>
+    <a href="#" class="btn btn--action">Action button</a>
+    <h1 style="margin-bottom:1000px">Hello!</h1>
 	<?php get_template_part('mods/site-footer/site', 'footer'); ?>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/script.js"></script>
     <script>
     jQuery(document).ready(function($){
         // debuger begin
