@@ -9,8 +9,11 @@
 		<?php get_template_part('mods/site-header/site', 'header'); ?>
 		<article class="post">
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-				<h1 style="margin-bottom:100px">hi</h1>
-
+			<header class="wrapper curse-header">
+				<div class="curse-header_container" style="background-image: url('<?php echo the_post_thumbnail_url() ?>')">
+					<h1 class=""><?php echo get_the_title() ?></h1>
+				</div>				
+			</header>
 
 				<div class="curse-caption">
 					<div class="curse-caption--big curse-caption--color">

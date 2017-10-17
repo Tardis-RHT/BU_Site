@@ -1,3 +1,30 @@
+.post{
+    margin-bottom: 24px;
+}
+.curse-header{
+    position: relative;
+}
+.curse-header:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: 56.25%;
+  }
+.curse-header_container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--font-light);    
+}
+
 .curse-content{
     width: calc(var(--grid-column) * 4 - var(--grid-margin) * 2);
     margin: 0 auto;
@@ -8,10 +35,13 @@
     display: flex;
     flex-wrap: wrap;
     width: calc(var(--grid-column) * 4);
-    margin: 0 auto 48px;
+    margin: 0 auto;
     box-shadow: var(--box-shadow);
     padding: 24px 0 0;
     box-sizing: border-box;
+    position: relative;
+    transform: translateY(-50%);
+    background-color: var(--font-white);
 
 }
 .curse-caption--big{

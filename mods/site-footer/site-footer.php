@@ -22,5 +22,3 @@
             <p class="footer__copyright">&#169; 2012 - 2017</p>
         </footer>
         <!-- /footer -->
-    </body>
-</html>
