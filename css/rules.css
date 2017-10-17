@@ -40,6 +40,18 @@ a:hover{
 .btn--action{
     background-color: var(--secondary-color);
 }
+h1,h2,h3,h4,h5,h6,p, ul, ol, time{
+	margin-top: 1rem;
+	margin-bottom: 0;
+}
+
+h1,h2,h3,h4,h5,h6{font-weight: normal}
+
+h1 {
+	font-size: 3em; /* 42px */
+    line-height: 1.057; /* 40px */
+    color: var(--font-white);
+}
 @media (min-width:840px){
 	html{font-size: 16px;}
 }
