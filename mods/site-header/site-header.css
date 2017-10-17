@@ -5,8 +5,11 @@
     align-items: center;
     flex-wrap: wrap;
     height: 104px;
-    background-color: white;
-    position: relative;
+    background-color: rgba(255,255,255,.7);
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: 999;
 }
 .logo{
     width: calc(var(--grid-column) * 2 - var(--grid-margin) * 2);
@@ -31,6 +34,9 @@
     overflow-x: scroll;
     white-space: nowrap;
     padding-bottom: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 .menu::-webkit-scrollbar { 
     width: 0;
@@ -54,6 +60,9 @@
     justify-content: flex-end;
     margin: 0 var(--grid-margin);
     width: calc(var(--grid-column) * 2 - var(--grid-margin) * 2);
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 .languages__item > a{
     display: inline-block;

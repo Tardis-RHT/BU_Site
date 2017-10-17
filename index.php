@@ -7,6 +7,8 @@
     <a href="#" class="btn">Example button</a>
     <a href="#" class="btn btn--action">Action button</a>
     <h1 style="margin-bottom:1000px">Hello!</h1>
+
+    <?php get_template_part('mods/site-footer/site', 'curse'); ?>
 	<?php get_template_part('mods/site-footer/site', 'footer'); ?>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
