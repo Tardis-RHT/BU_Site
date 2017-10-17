@@ -2,8 +2,7 @@
         <footer class="wrapper footer">
             <div class="footer__contacts">
                 <a href="mailto:University@bionic-university.com">University@bionic-university.com</a>
-                <p>Киев, ул. Семьи Хохловых, 8</p>
-                <p class="footer__contacts-copyright">&#169; 2012 - 2017</p>      
+                <p>Киев, ул. Семьи Хохловых, 8</p>      
             </div>
             <div class="footer__tel">
                 <a href="tel:+380937285663">(093) 728-56-63</a>
@@ -20,6 +19,7 @@
                     <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/bionichill.png" alt="Bionic Hill"></a>
                 </div>
             </div>
+            <p class="footer__copyright">&#169; 2012 - 2017</p>
         </footer>
         <!-- /footer -->
     </body>

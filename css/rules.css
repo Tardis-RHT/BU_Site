@@ -20,12 +20,26 @@ a{
     color: var(--primary-color);
 }
 a:hover{
-    color: var(--primary-color);
+    color: var(--hover-color);
 }
-a:visited, a:active{
+/* a:visited, a:active{
     color: var(--font-light);
+} */
+.btn{
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--font-white);
+    padding: 8px 16px;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
 }
-
+.btn:hover{
+    background-color: var(--hover-color);
+    color: var(--font-white); 
+}
+.btn--action{
+    background-color: var(--secondary-color);
+}
 @media (min-width:840px){
-	html{font-size: 16px}
+	html{font-size: 16px;}
 }
