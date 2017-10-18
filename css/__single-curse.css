@@ -42,3 +42,8 @@
         width: calc(var(--grid-column) * 8 - var(--grid-margin) * 2);
     }
 }
+@media (min-width:1600px){
+    .curse-content{
+        width: calc(var(--grid-column) * 10 - var(--grid-margin) * 2);
+    }
+}

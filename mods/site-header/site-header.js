@@ -1,12 +1,28 @@
 $(document).ready(function() {
     
-    var header = $(".header");
+    var header = $(".header-container");
     var scrollPrev = 0
+
+    if (header.offset().top === 0){
+        header.css({
+            "background-color" : "rgba(255,255,255,.8)"
+        });
+    } else if (header.offset().top !== 0){
+        header.css({
+            "background-color" : "rgb(255,255,255)"
+        });
+    }
     
     $(window).scroll(function() {
         var scrolled = $(window).scrollTop();
         var firstScrollUp = false;
         var firstScrollDown = false;
+
+        if (header.offset().top === 0){
+            header.css({
+                "background-color" : "rgba(255,255,255,.8)"
+            });
+        }
         
         if ( scrolled > 0 ) {
             if ( scrolled > scrollPrev ) {
@@ -43,9 +59,14 @@ $(document).ready(function() {
                     });
                 } else {
                     header.removeAttr("style");
+                    if (header.offset().top !== 0){
+                        header.css({
+                            "background-color" : "rgb(255,255,255)"
+                        });
+                    }
                 }
             }
             scrollPrev = scrolled;
-        }   
+        }
     });         
 });

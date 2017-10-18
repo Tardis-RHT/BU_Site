@@ -10,7 +10,6 @@
     position: relative;
     transform: translateY(-50%);
     background-color: var(--font-white);
-
 }
 .info-wrap--lg{
     width: calc(var(--grid-column) * 2 - var(--grid-margin) * 2);
@@ -55,5 +54,10 @@
     .curse-info{
         width: calc(var(--grid-column) * 8 - var(--grid-margin) * 2);
         flex-wrap: nowrap;
+    }
+}
+@media (min-width:1600px){
+    .curse-info{
+        width: calc(var(--grid-column) * 10 - var(--grid-margin) * 2);
     }
 }

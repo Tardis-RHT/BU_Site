@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 html {
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 1.5;
     font-family: 'pf_bbok', Helvetica, Arial, sans-serif;
     color: var(--font-dark);
@@ -12,7 +12,7 @@ html, body{
 }
 .wrapper{
     margin: 0 auto;
-    min-width: 320px;
+    min-width: 304px;
     max-width: 1600px;
 }
 a{
@@ -61,10 +61,10 @@ h2 {
 h3 {
 	font-size: 1.375em; /* 22px */
     line-height: 2;
-    color: var(--font-title);
+    /* color: var(--font-title);
     font-weight: var(--font-thin);
     background-color: var(--bg-color);
-    text-transform: uppercase;
+    text-transform: uppercase; */
     text-align: left;
 }
 
@@ -98,7 +98,6 @@ tt, kbd, samp{
     }
 }
 @media (min-width:840px){
-    html{font-size: 16px}
     h3{
         line-height: 3;
     }

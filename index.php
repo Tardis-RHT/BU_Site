@@ -8,7 +8,6 @@
     <a href="#" class="btn btn--action">Action button</a>
     <a href="/java-pro/">visit single curse page</a>
 
-    <?php get_template_part('mods/site-footer/site', 'curse'); ?>
 	<?php get_template_part('mods/site-footer/site', 'footer'); ?>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
