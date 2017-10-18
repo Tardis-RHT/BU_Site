@@ -12,7 +12,7 @@ html, body{
 }
 .wrapper{
     margin: 0 auto;
-    min-width: 320px;
+    min-width: 304px;
     max-width: 1600px;
 }
 a{
@@ -39,4 +39,71 @@ a:hover{
 }
 .btn--action{
     background-color: var(--secondary-color);
+}
+h1,h2,h3,h4,h5,h6,p, ul, ol, time{
+	margin-top: 1rem;
+	margin-bottom: 0;
+}
+
+h1,h2,h3,h4,h5,h6{font-weight: normal}
+
+h1 {
+	font-size: 3em; /* 42px */
+    line-height: 1.057; /* 40px */
+    color: var(--font-white);
+}
+
+h2 {
+	font-size: 1.875em; /* 30px */
+	line-height: 1.075; /* 32px */
+}
+
+h3 {
+	font-size: 1.375em; /* 22px */
+    line-height: 2;
+    /* color: var(--font-title);
+    font-weight: var(--font-thin);
+    background-color: var(--bg-color);
+    text-transform: uppercase; */
+    text-align: left;
+}
+
+h4 {
+	font-size: 1em; /* 16px */
+	line-height: 1.5; /* 24px */
+}
+
+h5 {
+	font-size: 0.8750em; /* 14px */
+	line-height: 1.7143; /* 24px */
+}
+
+h6,time {
+	font-size: 0.7500em; /* 12px */
+	line-height: 1.34; /* 16px */ 
+}
+
+time+h1,p+ul, p+ol{margin-top: 0}
+p+h2,p+h3{margin-top: 1.5rem}
+h2+p{margin-top: .5rem}
+
+tt, kbd, samp{
+	font-size: .8em;
+	line-height: 1;
+}
+
+@media (min-width:720px){
+    h1{
+        font-size: 4em;
+    }
+}
+@media (min-width:840px){
+    h3{
+        line-height: 3;
+    }
+}
+@media (min-width:1440px){
+    h1{
+        font-size: 5em;
+    }
 }
