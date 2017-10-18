@@ -1,31 +1,51 @@
-$(function () {
-    var scrollPrev = 0;
-    var header_height = $('header').outerHeight();
-    $('.header').removeClass('header--scroll');
-    console.log(header_height);
-    $(window).scroll(function (event) {
-        var scrolled = $(window).scrollTop();
+$(document).ready(function() {
     
-        if (scrolled < scrollPrev) {
-            $('.header').addClass('header--scroll');
-            // $('.header--scroll').css('top', '-110px');
-            
-            // $('.header--scroll').animate({
-            //     top:'0px',
-            // });
-            if (scrolled == 0){
-                $('header').removeClass('header--scroll');
+    var header = $(".header");
+    var scrollPrev = 0
+    
+    $(window).scroll(function() {
+        var scrolled = $(window).scrollTop();
+        var firstScrollUp = false;
+        var firstScrollDown = false;
+        
+        if ( scrolled > 0 ) {
+            if ( scrolled > scrollPrev ) {
+                firstScrollUp = false;
+                if ( scrolled < header.outerHeight() + header.offset().top ) {
+                    if ( firstScrollDown === false ) {
+                        var topPosition = header.offset().top;
+                        header.css({
+                            "top": topPosition + "px"
+                        });
+                        firstScrollDown = true;
+                    }
+                    header.css({
+                        "position": "absolute"
+                    });
+                } else {
+                    header.css({
+                        "position": "fixed",
+                        "top": "-" + header.outerHeight() + "px"
+                    });
+                }
+            } else {
+                firstScrollDown = false;
+                if ( scrolled > header.offset().top ) {
+                    if ( firstScrollUp === false ) {
+                        var topPosition = header.offset().top;
+                        header.css({
+                            "top": topPosition + "px"
+                        });
+                        firstScrollUp = true;
+                    }
+                    header.css({
+                        "position": "absolute"
+                    });
+                } else {
+                    header.removeAttr("style");
+                }
             }
-        }
-        // else if (scrolled > scrollPrev){
-        //     $('.header--scroll').animate({
-        //         top:100,
-        //     });
-        //     console.log('else if');
-        // }
-        else {
-            $('header').removeClass('header--scroll');
-        }
-        scrollPrev = scrolled;
-    });
+            scrollPrev = scrolled;
+        }   
+    });         
 });
