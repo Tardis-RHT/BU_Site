@@ -92,9 +92,19 @@ tt, kbd, samp{
 	line-height: 1;
 }
 
+@media (min-width:720px){
+    h1{
+        font-size: 4em;
+    }
+}
 @media (min-width:840px){
     html{font-size: 16px}
     h3{
         line-height: 3;
+    }
+}
+@media (min-width:1440px){
+    h1{
+        font-size: 5em;
     }
 }
