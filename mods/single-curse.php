@@ -15,53 +15,11 @@
 				</div>				
 			</header>
 
-				<div class="curse-caption">
-					<div class="curse-caption--big curse-caption--color">
-						<span class="curse-caption__info">
-							30 october
-						</span>
-						<span class="curse-caption__add">
-							старт
-						</span>
-					</div>
-					<div class="curse-caption--big">
-						<span class="curse-caption__info">
-							30 october
-						</span>
-						<span class="curse-caption__add">
-							старт
-						</span>
-					</div>
-					<div class="curse-caption--sm">
-						<span class="curse-caption__info">
-							30
-						</span>
-						<span class="curse-caption__add">
-							старт
-						</span>
-					</div>
-					<div class="curse-caption--sm">
-						<span class="curse-caption__info">
-							30
-						</span>
-						<span class="curse-caption__add">
-							старт
-						</span>
-					</div>
-					<div class="curse-caption--big">
-						<span class="curse-caption__info">
-							30 october
-						</span>
-						<span class="curse-caption__add">
-							старт
-						</span>
-					</div>
-				</div>
-				<div class="curse-content">
-					<?php the_content(); ?>
-				</div>
-
-
+			<?php get_template_part('mods/curse-info/curse', 'info'); ?>
+				
+			<div class="curse-content">
+				<?php the_content(); ?>
+			</div>
 
 			<?php endwhile; endif; ?>
 		</article>

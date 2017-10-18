@@ -25,7 +25,7 @@ $(document).ready(function() {
                 } else {
                     header.css({
                         "position": "fixed",
-                        "top": "-" + header.outerHeight() + "px"
+                        "top": "-" + (header.outerHeight() + 4) + "px"
                     });
                 }
             } else {
@@ -34,7 +34,7 @@ $(document).ready(function() {
                     if ( firstScrollUp === false ) {
                         var topPosition = header.offset().top;
                         header.css({
-                            "top": topPosition + "px"
+                            "top": (topPosition + 4) + "px"
                         });
                         firstScrollUp = true;
                     }
