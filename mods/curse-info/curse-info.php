@@ -1,4 +1,4 @@
-<div class="curse-info">
+<div class="wrapper curse-info">
     <div class="info-wrap--lg">
         <p class="info__main info__main--color">
             30 октября

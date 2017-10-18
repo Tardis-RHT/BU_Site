@@ -17,7 +17,7 @@
 
 			<?php get_template_part('mods/curse-info/curse', 'info'); ?>
 				
-			<div class="curse-content">
+			<div class="wrapper curse-content">
 				<?php the_content(); ?>
 			</div>
 

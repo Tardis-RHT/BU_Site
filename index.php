@@ -3,10 +3,10 @@
     <?php get_header(); ?>  
 <body>
     <?php get_template_part('mods/site-header/site', 'header'); ?>
-    <br>
-    <a href="#" class="btn">Example button</a>
+    
+    <a href="#" class="btn" style="margin-top:150px">Example button</a>
     <a href="#" class="btn btn--action">Action button</a>
-    <h1 style="margin-bottom:1000px">Hello!</h1>
+    <a href="/java-pro/">visit single curse page</a>
 
     <?php get_template_part('mods/site-footer/site', 'curse'); ?>
 	<?php get_template_part('mods/site-footer/site', 'footer'); ?>
