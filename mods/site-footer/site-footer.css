@@ -12,12 +12,11 @@
 	margin: var(--grid-margin);
 	display: flex;
 }
-.footer__contacts,
-.footer__tel{
+.footer__block-sm{
 	flex-direction: column;
 	justify-content: space-between;
 }
-.footer__contacts p{
+.footer__address{
 	margin: 0;
 }
 .footer__sponsor-wrap{
@@ -32,7 +31,7 @@
 .footer__sponsor-wrap img{
 	height: 40px;
 }
-.footer__tel a{
+.footer__tel{
 	display: block;
 }
 .footer__tel a:first-of-type{

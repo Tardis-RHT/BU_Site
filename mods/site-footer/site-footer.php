@@ -1,14 +1,14 @@
     <!-- footer -->
     <footer class="wrapper footer">
-        <div class="footer__block footer__contacts">
+        <div class="footer__block footer__block-sm">
             <a href="mailto:University@bionic-university.com">University@bionic-university.com</a>
-            <p>Киев, ул. Семьи Хохловых, 8</p>      
+            <p class="footer__address">Киев, ул. Семьи Хохловых, 8</p>      
         </div>
-        <div class="footer__block footer__tel">
-            <a href="tel:+380937285663">(093) 728-56-63</a>
-            <a href="tel:+380987349808">(098) 734-98-08</a>
+        <div class="footer__block footer__block-sm">
+            <a class="footer_tel" href="tel:+380937285663">(093) 728-56-63</a>
+            <a class="footer_tel" href="tel:+380987349808">(098) 734-98-08</a>
         </div>
-        <div class="footer__soc" >
+        <div class="footer__soc">
             <a class="soc-link soc-linkedin" href="#">LinkedIn</a>
             <a class="soc-link soc-instagram" href="#">Instagram</a>
             <a class="soc-link soc-facebook" href="#">Facebook</a>
