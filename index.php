@@ -6,6 +6,8 @@
     <?php 
         if ( is_single() ) get_template_part('mods/single-curse');
         elseif ( is_404() ) get_template_part('mods/404');
+        elseif ( is_page( 'programs' ) ) get_template_part('mods/page-programs/programs');
+        elseif ( is_page( 'ui' ) ) get_template_part('mods/single-curse');
         else get_template_part('mods/homepage/home');
         
         wp_footer(); 

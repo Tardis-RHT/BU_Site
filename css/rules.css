@@ -48,24 +48,20 @@ h1,h2,h3,h4,h5,h6,p, ul, ol, time{
 h1,h2,h3,h4,h5,h6{font-weight: normal}
 
 h1 {
-	font-size: 3em; /* 42px */
-    line-height: 1.057; /* 40px */
-    color: var(--font-white);
+	font-size: 2.3750em; /* 38px */
+	line-height: 1.057; /* 40px */
+    text-align: left;
 }
 
 h2 {
 	font-size: 1.875em; /* 30px */
-	line-height: 1.075; /* 32px */
+    line-height: 1.075; /* 32px */
+    text-align: left;
 }
 
 h3 {
 	font-size: 1.375em; /* 22px */
-    line-height: 2;
-    /* color: var(--font-title);
-    font-weight: var(--font-thin);
-    background-color: var(--bg-color);
-    text-transform: uppercase; */
-    text-align: left;
+	line-height: 1.091; /* 24px */ 
 }
 
 h4 {
@@ -92,6 +88,50 @@ tt, kbd, samp{
 	line-height: 1;
 }
 
+.aligncenter, .alignleft, .alignright,.fl,.fr{
+	box-sizing: content-box;
+	display: block;
+}
+
+.alignleft, .fl{
+	float: left;
+	margin: .5rem .5rem 5rem 0;
+}
+.alignright, .fr{
+	float: right;
+	margin: .5rem 0 .5rem .5rem;
+}
+
+.aligncenter{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-smiley{vertical-align: middle}
+
+.wp-caption{
+	max-width: 100%;
+	margin-bottom: 1.5rem;
+}
+
+.wp-caption > img {
+	display: block;
+}
+
+.wp-caption-text{
+	margin-top: 0;
+	font-size: .75rem;
+	line-height: 1.33333;
+}
+
+@media (min-width: 600px){
+    .alignleft, .fl{
+        margin: 32px 32px 32px calc(var(--grid-column) * -1);
+    }
+    .alignright, .fr{
+        margin: 32px calc(var(--grid-column) * -1) 32px 32px;
+    }
+}
 @media (min-width:720px){
     h1{
         font-size: 4em;

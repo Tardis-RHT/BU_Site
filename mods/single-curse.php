@@ -7,7 +7,9 @@
                 </div>				
             </header>
 
-            <?php get_template_part('mods/curse-info/curse', 'info'); ?>
+            <?php 
+            if ( is_single() ) get_template_part('mods/curse-info/curse', 'info');
+            ?>
                 
             <div class="wrapper curse-content">
                 <?php the_content(); ?>
