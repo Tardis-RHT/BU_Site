@@ -2,14 +2,16 @@
 <html lang="en">
     <?php get_header(); ?>  
 <body>
-    <?php get_template_part('mods/site-header/site', 'header'); ?>
+
+    <?php 
+        if ( is_single() ) get_template_part('mods/single-curse');
+        elseif ( is_404() ) get_template_part('mods/404');
+        else get_template_part('mods/homepage/home');
+        
+        wp_footer(); 
+    ?>
     
-    <a href="#" class="btn" style="margin-top:150px">Example button</a>
-    <a href="#" class="btn btn--action">Action button</a>
-    <a href="/java-pro/">visit single curse page</a>
-
-	<?php get_template_part('mods/site-footer/site', 'footer'); ?>
-
+    <?php wp_footer(); ?>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/script.js"></script>
     <script>
