@@ -1,9 +1,15 @@
 <?php get_template_part('mods/site-header/site', 'header'); ?>
     <article class="post">
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-            <header class="wrapper curse-header">
-                <div class="curse-header_container" style="background-image: url('<?php echo the_post_thumbnail_url() ?>')">
-                    <h1 class=""><?php echo get_the_title() ?></h1>
+            <header class="curse-header">
+                <div class="curse-header_container">
+                    <img class="curse__post-img" alt="Post logo image"
+                        <?php $thumb_id = get_post_thumbnail_id();?>
+                        src="<?php wp_get_attachment_image_url( $thumb_id ) ?>"
+                        srcset="<?php echo wp_get_attachment_image_srcset( $thumb_id, 'full' ) ?>"
+                        sizes="<?php echo wp_get_attachment_image_sizes( $thumb_id, 'full' ) ?>"                    
+                    >
+                    <h1 class="curse__post-title"><?php echo get_the_title() ?></h1>
                 </div>				
             </header>
 

@@ -48,9 +48,8 @@ h1,h2,h3,h4,h5,h6,p, ul, ol, time{
 h1,h2,h3,h4,h5,h6{font-weight: normal}
 
 h1 {
-	font-size: 2.3750em; /* 38px */
-	line-height: 1.057; /* 40px */
-    text-align: left;
+	font-size: 3em; /* 42px */
+    line-height: 1.057; /* 40px */
 }
 
 h2 {
