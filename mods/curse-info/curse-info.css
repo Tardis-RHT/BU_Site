@@ -1,11 +1,11 @@
 .curse-info{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     width: calc(var(--grid-column) * 4 - var(--grid-margin) * 2);
     margin: 0 auto;
     box-shadow: var(--box-shadow);
-    padding: 0 0 24px;
+    padding: 16px 8px;
     box-sizing: border-box;
     position: relative;
     transform: translateY(-50%);
@@ -29,7 +29,7 @@
     line-height: 1.375em;
     text-align: left;
     display: inline-block;
-    margin-top: 24px;
+    margin: 0 8px;
 }
 .info__main--center{
     text-align: center;
@@ -47,13 +47,23 @@
 @media (min-width: 600px){
     .curse-info{
         width: calc(var(--grid-column) * 6 - var(--grid-margin) * 2);
+        padding: 16px;
     }
 }
 
 @media (min-width:840px){
     .curse-info{
         width: calc(var(--grid-column) * 8 - var(--grid-margin) * 2);
-        flex-wrap: nowrap;
+        flex-wrap: nowrap;    
+        padding: 16px 24px;
+    }
+    .info__main{
+        margin: 0 4px;
+    }
+}
+@media (min-width:863px){
+    .info__main{
+        margin: 0;
     }
 }
 @media (min-width:1600px){
