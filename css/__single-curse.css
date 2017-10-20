@@ -30,7 +30,6 @@
 }
 .curse__post-img{
     position: absolute;
-    width: 100%;
     height: 100%;
 }
 .curse__post-title{
@@ -57,6 +56,11 @@
 @media (min-width:840px){
 	.curse-content{
         width: calc(var(--grid-column) * 8 - var(--grid-margin) * 2);
+    }
+}
+@media (min-width:1024px){
+    .curse__post-img{
+        width: 100%;
     }
 }
 @media (min-width:1600px){
