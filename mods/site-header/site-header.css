@@ -18,6 +18,7 @@
 .logo{
     width: calc(var(--grid-column) * 2 - var(--grid-margin) * 2);
     margin: 0 var(--grid-margin);
+    font-family: sans-serif;
 }
 .logo__img{
     height: 100%;
