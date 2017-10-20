@@ -86,3 +86,19 @@ gulp.task('watch', ['css', 'js', 'connect-sync'], function() {
 });
 
 gulp.task('default', ['watch']);
+
+var svgSprite = require('gulp-svg-sprite');
+ 
+gulp.task('svg', function () {
+    return gulp.src('img/icons/svg/*.svg')
+        .pipe(svgSprite( 
+            config = {
+                mode: {
+                    symbol: true,		// Activate the «symbol» mode 
+                    stack: true,
+                    defs: true
+                }
+            }
+         ))
+        .pipe(gulp.dest('img/icons/svg/sprite'));
+});

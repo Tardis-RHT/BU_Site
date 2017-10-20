@@ -9,8 +9,8 @@
             <a class="footer_tel" href="tel:+380987349808">(098) 734-98-08</a>
         </div>
         <div class="footer__soc">
-            <a class="soc-link soc-linkedin" href="#">LinkedIn</a>
-            <a class="soc-link soc-instagram" href="#">Instagram</a>
+            <a class="soc-link soc-linkedin" href="#"></a>
+            <a class="soc-link soc-instagram" href="#"><use xlink:href="#instagram"></use></a>
             <a class="soc-link soc-facebook" href="#">Facebook</a>
         </div>
         <div class="footer__block footer__sponsor">

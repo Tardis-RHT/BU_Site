@@ -60,13 +60,13 @@
 	color: transparent;
 }
 .soc-linkedin{
-	background-image: url("../../img/icons/001.svg");
+	background-image: url("../../img/icons/linkedin.svg");
 }
 .soc-instagram{
-	background-image: url("../../img/icons/002.svg");
+	background-image: url("../../img/icons/instagram.svg");
 }
 .soc-facebook{
-	background-image: url("../../img/icons/003.svg");	
+	background-image: url("../../img/icons/facebook.svg");	
 }
 .footer__copyright{
 	flex-basis: 100%;
@@ -79,3 +79,5 @@
 		font-size: 16px;
 	}
 }
+:root>svg {display:none}
+:root>svg:target {display:block}
