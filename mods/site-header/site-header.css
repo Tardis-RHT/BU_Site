@@ -21,8 +21,7 @@
     font-family: sans-serif;
 }
 .logo__img{
-    height: 100%;
-    width: 120px;
+    max-width: 160px;
 }
 .main-menu{
     flex-basis: 100%;
