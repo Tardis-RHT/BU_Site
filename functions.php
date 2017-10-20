@@ -108,12 +108,24 @@ function buTheme_custom_logo() {
         $output = get_custom_logo();
 
     // Nothing in the output: Custom Logo is not supported, or there is no selected logo
-    // In both cases we display the site's name
-    if (empty($output))
-        $output = '<a class="logo" href="' . esc_url(home_url('/')) . '">' . get_bloginfo('name') . '</a>';
+	// In both cases we display svg icon logo and if there is no svg logo - the site's name
+	if (empty($output))
+	$output = '<a class="logo" href="' . esc_url(home_url('/')) . '"><img class="logo__img" src="' . get_template_directory_uri() . '/img/icons/svg_logo.svg" alt="' . get_bloginfo('name') . '"></a>';
 
     echo $output;
 }
+
+// SrcSet Images
+function buTheme_src_set() {
+	$thumb_id = get_post_thumbnail_id();
+	$output = '';
+	
+	$output = 'alt="' . get_bloginfo('name') . '" src="' . wp_get_attachment_image_url( $thumb_id ) . '" srcset="' . wp_get_attachment_image_srcset( $thumb_id, 'full' ) . '" sizes="' . wp_get_attachment_image_sizes( $thumb_id, 'full' ) . '"';
+	
+	echo $output;
+}
+
+
 
 
 /*------------------------------------*\
@@ -126,7 +138,7 @@ add_action('after_setup_theme', 'buTheme_setup'); //Adding custom logo in Theme 
 	Filters
 \*------------------------------------*/
 add_filter('wp_nav_menu_args', 'my_wp_nav_menu_args'); // Remove surrounding <div> from WP Navigation
-add_filter( 'get_custom_logo', 'change_logo_class' );
+add_filter( 'get_custom_logo', 'change_logo_class' ); // Changing "custom-logo-link" class to "logo" class in Site Logo
 	function change_logo_class( $html ) {
 		// $html = str_replace( 'custom-logo', 'your-custom-class', $html );
 		$html = str_replace( 'custom-logo-link', 'logo', $html );
