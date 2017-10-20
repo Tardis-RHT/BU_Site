@@ -23,10 +23,13 @@
 
 ::-webkit-input-placeholder{
     color:var(--font-light);
+    font-weight: var(--font-thin);
+    letter-spacing: 1px;
     transition: var(--transition);
 }
 :-ms-input-placeholder{
     color:var(--font-light);
+    font-weight: var(--font-thin);
     transition: var(--transition);
 }
 .form__input:focus::-webkit-input-placeholder{
