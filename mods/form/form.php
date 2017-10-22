@@ -1,4 +1,4 @@
-<div class="curse-header">
+<div class="curse-header form-img">
     <div class="curse-header_container">
         <img class="curse__post-img" alt="Post logo image"
             <?php $thumb_id = get_post_thumbnail_id();?>

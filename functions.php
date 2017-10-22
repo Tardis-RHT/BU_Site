@@ -140,10 +140,8 @@ add_action('after_setup_theme', 'buTheme_setup'); //Adding custom logo in Theme 
 add_filter('wp_nav_menu_args', 'my_wp_nav_menu_args'); // Remove surrounding <div> from WP Navigation
 add_filter( 'get_custom_logo', 'change_logo_class' ); // Changing "custom-logo-link" class to "logo" class in Site Logo
 	function change_logo_class( $html ) {
-		// $html = str_replace( 'custom-logo', 'your-custom-class', $html );
+		$html = str_replace( 'custom-logo', 'your-custom-class', $html );
 		$html = str_replace( 'custom-logo-link', 'logo', $html );
 		return $html;
 	}
-
-
 ?>
