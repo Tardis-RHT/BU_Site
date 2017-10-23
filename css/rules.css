@@ -15,6 +15,9 @@ html, body{
     min-width: 304px;
     max-width: 1600px;
 }
+.padding-top{
+    padding-top:104px;
+}
 a{
     text-decoration: none;
     color: var(--primary-color);
@@ -139,6 +142,11 @@ tt, kbd, samp{
 @media (min-width:720px){
     h1{
         font-size: 4em;
+    }
+}
+@media (min-width:840px){
+    .padding-top{
+        padding-top:56px;
     }
 }
 @media (min-width:1440px){
