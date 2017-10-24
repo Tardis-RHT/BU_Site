@@ -120,7 +120,7 @@ function buTheme_src_set() {
 	$thumb_id = get_post_thumbnail_id();
 	$output = '';
 	
-	$output = 'alt="' . get_bloginfo('name') . '" src="' . wp_get_attachment_image_url( $thumb_id ) . '" srcset="' . wp_get_attachment_image_srcset( $thumb_id, 'full' ) . '" sizes="' . wp_get_attachment_image_sizes( $thumb_id, 'full' ) . '"';
+	$output = 'alt="' . get_the_title($thumb_id ) . '" src="' . wp_get_attachment_image_url( $thumb_id ) . '" srcset="' . wp_get_attachment_image_srcset( $thumb_id, 'full' ) . '" sizes="' . wp_get_attachment_image_sizes( $thumb_id, 'full' ) . '"';
 	
 	echo $output;
 }
