@@ -23,12 +23,8 @@
 
 $(document).ready(function($){
   if($("#tel").length>0){
-		$("#tel").mask("+380 (99) 999 - 99 - 99");
+		$("#tel").mask("+38 (999) 999 - 99 - 99");
 }
-  $('.close-btn').click(function(event){
-    event.preventDefault();
-    $(".form-thankyou").hide(250,'swing');
-  })
   $('#mainForm').submit(function(){
       var str = $(this).serialize();
       console.log(str);
@@ -42,7 +38,6 @@ $(document).ready(function($){
           success: function(data, textStatus, jqXHR){
           if (jqXHR.status == 200){
             $("#mainForm").trigger('reset');
-            $(".form-thankyou").show(250,'swing');
           }
               
               // if (console && console.log) {

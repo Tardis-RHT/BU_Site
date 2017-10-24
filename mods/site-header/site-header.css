@@ -113,7 +113,7 @@
         height: 2px;
         background-color: var(--hover-color);
         left: 0;
-        bottom: 1px;
+        bottom: 0;
         position: absolute;
     }
 
@@ -129,7 +129,7 @@
         height: 2px;
         background-color: var(--font-light);
         left: 0;
-        bottom: 1px;
+        bottom: 0;
         position: absolute;
     }
 }
