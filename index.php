@@ -2,12 +2,13 @@
 <html lang="en">
     <?php get_header(); ?>  
 <body>
-
+<?php get_template_part('mods/icons_svg'); ?>
     <?php 
         if ( is_single() ) get_template_part('mods/single-curse');
         elseif ( is_404() ) get_template_part('mods/404');
         elseif ( is_page( 'programs' ) ) get_template_part('mods/page-programs/programs');
         elseif ( is_page( 'ui' ) ) get_template_part('mods/single-curse');
+        elseif ( is_page( 'about_bionic_school' ) ) get_template_part('mods/page-about_us/page-about_us');
         else get_template_part('mods/homepage/home');
         
         wp_footer(); 
@@ -38,5 +39,6 @@
         //debuger end
     });
 </script>
+
 </body>
 </html>
