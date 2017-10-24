@@ -117,12 +117,15 @@ function buTheme_custom_logo() {
 
 // SrcSet Images
 function buTheme_src_set() {
-	$thumb_id = get_post_thumbnail_id();
-	$output = '';
-	
-	$output = 'alt="' . get_bloginfo('name') . '" src="' . wp_get_attachment_image_url( $thumb_id ) . '" srcset="' . wp_get_attachment_image_srcset( $thumb_id, 'full' ) . '" sizes="' . wp_get_attachment_image_sizes( $thumb_id, 'full' ) . '"';
-	
-	echo $output;
+	if( has_post_thumbnail() ) {
+		$thumb_id = get_post_thumbnail_id();
+		$thumb_alt = get_the_title( $thumb_id );
+		$output = '';
+		
+		$output = 'alt="' . $thumb_alt . '" src="' . wp_get_attachment_image_url( $thumb_id ) . '" srcset="' . wp_get_attachment_image_srcset( $thumb_id, 'full' ) . '" sizes="' . wp_get_attachment_image_sizes( $thumb_id, 'full' ) . '"';
+		
+		echo $output;
+	}
 }
 
 
