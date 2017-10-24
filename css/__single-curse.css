@@ -41,7 +41,6 @@
 .curse-content{
     width: calc(var(--grid-column) * 4 - var(--grid-margin) * 2);
     margin: 0 auto;
-    text-align: justify;
 }
 
 @media (min-width: 600px){
