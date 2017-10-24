@@ -4,7 +4,7 @@
 .curse-header{
     position: relative;
     /* max-height: 60vh; */
-    height: 60vh;
+    min-height: 60vh;
 }
 .curse-header:before {
     display: block;
