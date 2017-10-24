@@ -2,7 +2,7 @@
 <html lang="en">
     <?php get_header(); ?>  
 <body>
-
+<?php get_template_part('mods/icons_svg'); ?>
     <?php 
         if ( is_single() ) get_template_part('mods/single-curse');
         elseif ( is_404() ) get_template_part('mods/404');
@@ -39,5 +39,6 @@
         //debuger end
     });
 </script>
+
 </body>
 </html>
