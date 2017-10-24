@@ -38,6 +38,7 @@ $(document).ready(function($){
           success: function(data, textStatus, jqXHR){
           if (jqXHR.status == 200){
             $("#mainForm").trigger('reset');
+            window.location.href='/thankyou';
           }
               
               // if (console && console.log) {
