@@ -4,7 +4,7 @@
 	align-items: flex-start;
 	flex-direction: column;
 	flex-flow: row wrap;
-	padding: 2rem 0;
+	padding: 2rem var(--grid-margin);
 	font-size: 20px;
 }
 .footer__block{
