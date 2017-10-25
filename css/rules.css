@@ -126,6 +126,15 @@ tt, kbd, samp{
 	font-size: .75rem;
 	line-height: 1.33333;
 }
+.tile{
+    width: calc(var(--grid-column) * 4 - var(--grid-margin) * 2);
+    color: var(--font-white);
+    box-shadow: 0 1px 7px rgba(0,0,0,.05);
+    padding: 20%;
+}
+.tile:hover{
+    box-shadow: 0 23px 40px rgba(0,0,0,0.2);
+}
 @media (min-width: 480px){
     h1{
         font-size: 3em;
@@ -137,6 +146,9 @@ tt, kbd, samp{
     }
     .alignright, .fr{
         margin: 32px calc(var(--grid-column) * -1) 32px 32px;
+    }
+    .tile{
+        width: calc(var(--grid-column) * 3 - var(--grid-margin) * 2);
     }
 }
 @media (min-width:720px){
