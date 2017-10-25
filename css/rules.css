@@ -129,9 +129,12 @@ tt, kbd, samp{
 }
 .tile{
     width: calc(var(--grid-column) * 4 - var(--grid-margin) * 2);
+    margin: calc(var(--grid-margin)*1.5)  var(--grid-margin);
     color: var(--font-white);
     box-shadow: 0 1px 7px rgba(0,0,0,.05);
-    margin: calc(var(--grid-margin) * 1.5) var(--grid-margin);
+    border: none;
+    border-radius: var(--border-radius); 
+    transition: var(--transition);
 }
 .tile:hover{
     box-shadow: 0 23px 40px rgba(0,0,0,0.2);
