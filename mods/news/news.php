@@ -14,7 +14,7 @@
             <div class="news__content">
                 <span class="news__date"><?php echo get_the_date('d.m.Y') ?></span>
                 <h3 class="news__title"><?php echo get_the_title() ?></h3>
-                <p class="news__caption">Як верстальнику-початківцю не потонути в морі технологій, і чому варто допомагати менш досвідченим колегам.</p>
+                <p class="news__caption"><?php echo get_field('news_caption') ?></p>
             </div>
         </a>
         <?php
