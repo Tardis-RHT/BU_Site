@@ -21,6 +21,7 @@ html, body{
 a{
     text-decoration: none;
     color: var(--primary-color);
+    transition: var(--transition);
 }
 a:hover{
     color: var(--hover-color);
@@ -130,7 +131,7 @@ tt, kbd, samp{
     width: calc(var(--grid-column) * 4 - var(--grid-margin) * 2);
     color: var(--font-white);
     box-shadow: 0 1px 7px rgba(0,0,0,.05);
-    padding: 20%;
+    margin: calc(var(--grid-margin) * 1.5) var(--grid-margin);
 }
 .tile:hover{
     box-shadow: 0 23px 40px rgba(0,0,0,0.2);

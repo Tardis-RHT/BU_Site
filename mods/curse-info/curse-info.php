@@ -2,7 +2,8 @@
     <div class="info-row info-row--first">
         <div class="info-wrap--lg">
             <p class="info__main info__main--color">
-                30 октября
+            <?php echo get_post_meta( $post->ID, 'start', true ); ?>
+                <!-- 30 октября -->
                 <span class="info__sub">
                     старт
                 </span>
@@ -10,9 +11,11 @@
         </div>
         <div class="info-wrap--lg">
             <p class="info__main">
-                19:00-21:00
+            <?php echo get_post_meta( $post->ID, 'time', true ); ?>
+                <!-- 19:00-21:00 -->
                 <span class="info__sub">
-                    пн, ср, пт
+                <?php echo get_post_meta( $post->ID, 'days', true ); ?>
+                    <!-- пн, ср, пт -->
                 </span>
             </p>
         </div>
@@ -20,7 +23,8 @@
     <div class="info-row">
         <div class="info-wrap--lg">
             <p class="info__main info__main--center">
-                46
+            <?php echo get_post_meta( $post->ID, 'hours', true ); ?>
+                <!-- 46 -->
                 <span class="info__sub">
                     часов
                 </span>
@@ -28,7 +32,8 @@
         <!-- </div>
         <div class="info-wrap--sm"> -->
             <p class="info__main info__main--center">
-                1.5
+            <?php echo get_post_meta( $post->ID, 'month', true ); ?>
+                <!-- 1.5 -->
                 <span class="info__sub">
                     месяца
                 </span>
@@ -36,7 +41,8 @@
         </div>
         <div class="info-wrap--lg">
             <p class="info__main">
-                6 200 грн
+            <?php echo get_post_meta( $post->ID, 'price', true ); ?>
+                <!-- 6 200 грн -->
                 <span class="info__sub">
                     стоимость курса
                 </span>
