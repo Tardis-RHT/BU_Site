@@ -127,6 +127,46 @@ function buTheme_src_set() {
 		echo $output;
 	}
 }
+//Adding Advanced Custom Field for News Caption (ACF Plugin Needed)
+if(function_exists("register_field_group"))
+{
+	register_field_group(array (
+		'id' => 'acf_%d0%bd%d0%be%d0%b2%d0%be%d1%81%d1%82%d0%b8',
+		'title' => 'Новости',
+		'fields' => array (
+			array (
+				'key' => 'field_59f0d93c2b417',
+				'label' => 'Краткое содержание новости',
+				'name' => 'news_caption',
+				'type' => 'textarea',
+				'required' => 1,
+				'default_value' => '',
+				'placeholder' => 'Введите краткое содержимое новости',
+				'maxlength' => '',
+				'rows' => '',
+				'formatting' => 'br',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_category',
+					'operator' => '==',
+					'value' => '4',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'no_box',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
+}
 
 
 

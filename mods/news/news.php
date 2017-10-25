@@ -8,7 +8,7 @@
             $myposts = get_posts( $args );
             foreach( $myposts as $post ){ setup_postdata($post);
         ?>                    
-        <a class="tile tile__news" href="#">
+        <a class="tile tile__news" href="<?php echo get_permalink() ?>">
             <div class="news__cover-container" style="background-image: url('<?php echo get_the_post_thumbnail_url() ?>');">
             </div>
             <div class="news__content">
