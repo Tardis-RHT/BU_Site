@@ -10,6 +10,7 @@
 }
 .tile__news{
     background-color: var(--font-white);
+    overflow: hidden;
 }
 .tile__news:hover {
     color: var(--font-dark);
