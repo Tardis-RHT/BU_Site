@@ -155,7 +155,7 @@ tt, kbd, samp{
         margin: 32px calc(var(--grid-column) * -1) 32px 32px;
     }
     .tile{
-        width: calc(var(--grid-column) * 3 - var(--grid-margin) * 2);
+        width: calc(var(--grid-column) * 4 - var(--grid-margin) * 2);
     }
 }
 @media (min-width:720px){
@@ -168,7 +168,7 @@ tt, kbd, samp{
         padding-top:80px;
     }
     .tile{
-        width: calc(var(--grid-column) * 4 - var(--grid-margin) * 2);
+        width: calc(var(--grid-column) * 3 - var(--grid-margin) * 2);
     }
 }
 @media (min-width:1440px){
