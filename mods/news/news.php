@@ -16,7 +16,7 @@
                 <div class="news__content">
                     <span class="news__date"><?php echo get_the_date('d.m.Y') ?></span>
                     <h3 class="news__title"><?php echo get_the_title() ?></h3>
-                    <p class="news__caption"><?php echo get_field('news_caption') ?></p>
+                    <p class="news__caption"><?php echo the_excerpt() ?></p>
                 </div>
             </a>
             <?php

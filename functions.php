@@ -139,45 +139,6 @@ function buTheme_slugid($slugid){
 if(function_exists("register_field_group"))
 {
 	register_field_group(array (
-		'id' => 'acf_news',
-		'title' => '[:ru]News[:ua]Новости[:en]Новости[:]',
-		'fields' => array (
-			array (
-				'key' => 'field_59f0d93c2b417',
-				'label' => 'Краткое содержание новости',
-				'name' => 'news_caption',
-				'type' => 'textarea',
-				'required' => 1,
-				'default_value' => '',
-				'placeholder' => 'Введите краткое содержимое новости',
-				'maxlength' => '',
-				'rows' => '',
-				'formatting' => 'br',
-			),
-		),
-		'location' => array (
-			array (
-				array (
-					'param' => 'post_category',
-					'operator' => '==',
-					'value' => buTheme_slugid('news'),
-					'order_no' => 0,
-					'group_no' => 0,
-				),
-			),
-		),
-		'options' => array (
-			'position' => 'side',
-			'layout' => 'no_box',
-			'hide_on_screen' => array (
-			),
-		),
-		'menu_order' => 0,
-	));
-}
-if(function_exists("register_field_group"))
-{
-	register_field_group(array (
 		'id' => 'acf_programs-info',
 		'title' => 'programs-info',
 		'fields' => array (
