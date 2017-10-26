@@ -127,11 +127,17 @@ function buTheme_src_set() {
 		echo $output;
 	}
 }
+
+// Get the slug ID
+function buTheme_slugid($slugid){
+	$category = get_category_by_slug( $slugid );
+	$catid = $category->term_id;
+	return $catid;
+}
+
 //Adding Advanced Custom Field for News Caption (ACF Plugin Needed)
 if(function_exists("register_field_group"))
 {
-	$category = get_category_by_slug( 'news' );
-	$catid = $category->term_id;
 	register_field_group(array (
 		'id' => 'acf_news',
 		'title' => '[:ru]News[:ua]Новости[:en]Новости[:]',
@@ -154,7 +160,7 @@ if(function_exists("register_field_group"))
 				array (
 					'param' => 'post_category',
 					'operator' => '==',
-					'value' => $catid,
+					'value' => buTheme_slugid('news'),
 					'order_no' => 0,
 					'group_no' => 0,
 				),
@@ -171,8 +177,6 @@ if(function_exists("register_field_group"))
 }
 if(function_exists("register_field_group"))
 {
-	$category = get_category_by_slug( 'programs' );
-	$catid = $category->term_id;
 	register_field_group(array (
 		'id' => 'acf_programs-info',
 		'title' => 'programs-info',
@@ -263,7 +267,7 @@ if(function_exists("register_field_group"))
 				array (
 					'param' => 'post_category',
 					'operator' => '==',
-					'value' => $catid,
+					'value' => buTheme_slugid('programs'),
 					'order_no' => 0,
 					'group_no' => 0,
 				),

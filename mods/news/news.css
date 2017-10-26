@@ -10,7 +10,7 @@
 }
 .tile__news{
     background-color: var(--font-white);
-    overflow: hidden;
+    font-size: 14px;
 }
 .tile__news:hover {
     color: var(--font-dark);
@@ -36,7 +36,9 @@
     color: var(--font-dark);    
 }
 .news__date{
+    display: block;
     color: var(--font-light);
+    margin-bottom: 8px;
 }
 .news__title{
     color: var(--primary-color);

@@ -2,9 +2,7 @@
     <div class="wrapper news-container">
         <?php
             global $post;
-            $category = get_category_by_slug( 'news' );
-            $newsid = $category->term_id;
-            $args = array('posts_per_page' => 3,'category' => $newsid, 'order' => 'ASC' );
+            $args = array('posts_per_page' => 3,'category' => buTheme_slugid('news'), 'order' => 'ASC' );
             $myposts = get_posts( $args );
             foreach( $myposts as $post ){ setup_postdata($post);
         ?>                    
