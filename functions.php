@@ -130,9 +130,11 @@ function buTheme_src_set() {
 //Adding Advanced Custom Field for News Caption (ACF Plugin Needed)
 if(function_exists("register_field_group"))
 {
+	$category = get_category_by_slug( 'news' );
+	$catid = $category->term_id;
 	register_field_group(array (
-		'id' => 'acf_%d0%bd%d0%be%d0%b2%d0%be%d1%81%d1%82%d0%b8',
-		'title' => 'Новости',
+		'id' => 'acf_news',
+		'title' => '[:ru]News[:ua]Новости[:en]Новости[:]',
 		'fields' => array (
 			array (
 				'key' => 'field_59f0d93c2b417',
@@ -152,20 +154,25 @@ if(function_exists("register_field_group"))
 				array (
 					'param' => 'post_category',
 					'operator' => '==',
-					'value' => '4',
+					'value' => $catid,
 					'order_no' => 0,
 					'group_no' => 0,
 				),
 			),
 		),
 		'options' => array (
-			'position' => 'normal',
+			'position' => 'side',
 			'layout' => 'no_box',
 			'hide_on_screen' => array (
 			),
 		),
 		'menu_order' => 0,
 	));
+}
+if(function_exists("register_field_group"))
+{
+	$category = get_category_by_slug( 'programs' );
+	$catid = $category->term_id;
 	register_field_group(array (
 		'id' => 'acf_programs-info',
 		'title' => 'programs-info',
@@ -256,7 +263,7 @@ if(function_exists("register_field_group"))
 				array (
 					'param' => 'post_category',
 					'operator' => '==',
-					'value' => '4',
+					'value' => $catid,
 					'order_no' => 0,
 					'group_no' => 0,
 				),
@@ -271,7 +278,6 @@ if(function_exists("register_field_group"))
 		'menu_order' => 0,
 	));	
 }
-
 
 
 
@@ -291,4 +297,9 @@ add_filter( 'get_custom_logo', 'change_logo_class' ); // Changing "custom-logo-l
 		$html = str_replace( 'custom-logo-link', 'logo', $html );
 		return $html;
 	}
+	
+
+
+
+
 ?>
