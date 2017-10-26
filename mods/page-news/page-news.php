@@ -1,5 +1,5 @@
 <?php get_template_part('mods/site-header/site', 'header'); ?>
-    <article class="post padding-top page-news">
+    <article class="post padding-top news-container">
         <?php if (have_posts()) : 
             query_posts('cat=4');
             while (have_posts()) : the_post(); ?>
