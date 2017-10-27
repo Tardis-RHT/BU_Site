@@ -3,7 +3,10 @@
         <div class="news-container">
             <?php
                 global $post;
-                $args = array('posts_per_page' => 3,'category' => buTheme_slugid('news'), 'order' => 'ASC' );
+                $args = array(
+                    'posts_per_page' => 3,
+                    'category_name' => 'news',
+                    'order' => 'ASC' );
                 $myposts = get_posts( $args );
                 foreach( $myposts as $post ){ setup_postdata($post);
             ?>                    
