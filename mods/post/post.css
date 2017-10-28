@@ -15,7 +15,6 @@
     justify-content: space-between;
     cursor: pointer;
     min-height: calc(var(--grid-column) * 4 - var(--grid-margin) * 2);
-    text-shadow: var(--box-shadow);
 }
 .post-single:hover .post__btn{
     background-color: var(--hover-color);
@@ -41,7 +40,9 @@
     visibility: hidden;
     background-color: transparent;
 }
-
+.post__title{
+    text-shadow: var(--box-shadow);
+}
 
 
 @media (min-width: 600px){
