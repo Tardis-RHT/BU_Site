@@ -2,12 +2,7 @@
     <div class="info-row info-row--first">
         <div class="info-wrap--lg">
             <p class="info__main info__main--color">
-            <?php 
-            
-            $date = strtotime(get_post_meta('start' ));
-            echo date_i18n('d F', $date );
-
-            ?>
+            <?php echo get_post_meta( $post->ID, 'start', true ); ?>
                 <!-- 30 октября -->
                 <span class="info__sub">
                     старт
