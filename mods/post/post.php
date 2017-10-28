@@ -2,10 +2,10 @@
     <div class="post-container">
         <?php
             if ( is_page( 'programs' ) ) {
-                $args = array('posts_per_page' => 0, 'category_name' => 'programs', 'order' => 'ASC' );
+                $args = array('posts_per_page' => 0, 'category_name' => 'programs', 'order' => 'DESC' );
             }
             else {
-                $args = array('posts_per_page' => 7, 'category_name' => 'programs, events', 'order' => 'ASC' );                
+                $args = array('posts_per_page' => 7, 'category_name' => 'programs, events', 'order' => 'DESC' );                
             }
             global $post;
             $posts = get_posts( $args );
