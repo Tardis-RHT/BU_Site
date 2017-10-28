@@ -247,6 +247,54 @@ if(function_exists("register_field_group"))
 	));	
 }
 
+if(function_exists("register_field_group"))
+{
+	register_field_group(array (
+		'id' => 'acf_events-info',
+		'title' => 'events-info',
+		'fields' => array (
+			array (
+				'key' => 'field_59f4ccaaa2948',
+				'label' => 'date',
+				'name' => 'start',
+				'type' => 'date_picker',
+				'date_format' => 'dd MM',
+				'display_format' => 'dd MM',
+				'first_day' => 1,
+			),
+			array (
+				'key' => 'field_59f4cd3ba7bd7',
+				'label' => 'time',
+				'name' => 'time',
+				'type' => 'text',
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_category',
+					'operator' => '==',
+					'value' => buTheme_slugid('events'),
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'no_box',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
+}
 
 
 /*------------------------------------*\
