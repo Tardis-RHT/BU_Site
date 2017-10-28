@@ -9,8 +9,3 @@
 .acf_postbox.no_box > .inside > .field{
 	margin: 8px;
 }
-
-.acf_postbox .field {
-	position: relative;
-	color: #ff0000;
-}
