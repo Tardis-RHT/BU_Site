@@ -5,7 +5,7 @@
                 $args = array('posts_per_page' => 0, 'category_name' => 'programs', 'order' => 'ASC' );
             }
             else {
-                $args = array('posts_per_page' => 7, 'post_type' => 'post', 'order' => 'ASC' );                
+                $args = array('posts_per_page' => 7, 'category_name' => 'programs', 'events', 'order' => 'ASC' );                
             }
             global $post;
             $posts = get_posts( $args );

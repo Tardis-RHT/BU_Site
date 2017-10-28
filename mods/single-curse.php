@@ -1,5 +1,5 @@
 <?php get_template_part('mods/site-header/site', 'header'); ?>
-<article class="post">
+<div class="post">
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
         <header class="curse-header">
             <div class="curse-header_container">
@@ -14,7 +14,7 @@
             <?php the_content(); ?>
         </div>
     <?php endwhile; endif; ?>
-</article>
+</div>
 <?php 
 if ( in_category( 'programs' ) ) get_template_part('mods/form/form');?>
 <?php get_template_part('mods/site-footer/site', 'footer'); ?>
