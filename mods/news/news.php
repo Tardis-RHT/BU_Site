@@ -3,10 +3,10 @@
         <div class="news-container">
             <?php
                 if ( is_page( 'news' ) ) {
-                    $args = array('posts_per_page' => 0, 'category_name' => 'news', 'order' => 'ASC' );
+                    $args = array('posts_per_page' => 0, 'category_name' => 'news', 'order' => 'DESC' );
                 }
                 else {
-                    $args = array('posts_per_page' => 3, 'category_name' => 'news', 'order' => 'ASC' );                
+                    $args = array('posts_per_page' => 3, 'category_name' => 'news', 'order' => 'DESC' );                
                 }
                 global $post;
                 $myposts = get_posts( $args );
