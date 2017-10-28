@@ -134,8 +134,14 @@ function buTheme_slugid($slugid){
 	$catid = $category->term_id;
 	return $catid;
 }
+// "Advanced Custom Fields" stylesheet override
+function my_head_input()
+{
+	wp_register_style('buTheme_css', get_template_directory_uri() . '/css/acf_custom.css', array(), '1.0', 'all');
+	wp_enqueue_style('buTheme_css'); // Enqueue it!
+}
 
-//Adding Advanced Custom Field for News Caption (ACF Plugin Needed)
+// Adding "Advanced Custom Field" fields (ACF Plugin MUST be installed)
 if(function_exists("register_field_group"))
 {
 	register_field_group(array (
@@ -144,16 +150,13 @@ if(function_exists("register_field_group"))
 		'fields' => array (
 			array (
 				'key' => 'field_59f0c90f30e1f',
-				'label' => 'Старт',
+				'label' => 'Старт курса',
 				'name' => 'start',
-				'type' => 'text',
+				'type' => 'date_picker',
+				'date_format' => 'dd MM',
+				'display_format' => 'dd MM',
+				'first_day' => 1,
 				'required' => 1,
-				'default_value' => '',
-				'placeholder' => '',
-				'prepend' => '',
-				'append' => '',
-				'formatting' => 'html',
-				'maxlength' => '',
 			),
 			array (
 				'key' => 'field_59f0cab030e20',
@@ -251,6 +254,7 @@ if(function_exists("register_field_group"))
 \*------------------------------------*/
 add_action('init', 'register_buTheme_menu'); // Add buTheme Blank Menu
 add_action('after_setup_theme', 'buTheme_setup'); //Adding custom logo in Theme Customizer
+add_action('acf/input/admin_head', 'my_head_input'); // "Advanced Custom Fields" stylesheet override
 
 /*------------------------------------*\
 	Filters
