@@ -8,12 +8,13 @@
             </div>				
         </header>
         <?php 
-        if ( is_single() ) get_template_part('mods/curse-info/curse', 'info');
+        if ( in_category('programs') ) get_template_part('mods/curse-info/curse', 'info');
         ?>
         <div class="wrapper curse-content">
             <?php the_content(); ?>
         </div>
     <?php endwhile; endif; ?>
 </article>
-<?php get_template_part('mods/form/form');?>
+<?php 
+if ( in_category( 'programs' ) ) get_template_part('mods/form/form');?>
 <?php get_template_part('mods/site-footer/site', 'footer'); ?>

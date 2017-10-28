@@ -1,7 +1,9 @@
 .post-container{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-bottom: 40px;
+    margin: 0 8px;
 }
 .post-single{
     background-size: cover;
@@ -16,7 +18,10 @@
 }
 .post-single:hover .post__btn{
     background-color: var(--hover-color);
-    color: var(--font-white); 
+    color: transparent; 
+}
+.post-single:hover .post__btn--add{
+    visibility: visible;
 }
 .post__btn{
     min-width: 100%;
@@ -24,10 +29,39 @@
     color: var(--font-dark);
     text-align: center;
     transition: var(--transition);
+    position: relative;
 }
+.post__btn--add{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    visibility: hidden;
+    background-color: transparent;
+}
+
+
 
 @media (min-width: 600px){
     .post-single{
         min-height: calc(var(--grid-column) * 3 - var(--grid-margin) * 2);
+    }
+    .post-single:first-of-type{
+        width: calc(var(--grid-column) * 8 - var(--grid-margin) * 2);
+    }
+    .post-single:first-of-type > .post__btn{
+        min-width: calc(50% - 56px);
+    }
+}
+@media (min-width:840px){
+    .post-single{
+        padding: 32px;
+    }
+    .post-single:first-of-type{
+        width: calc(var(--grid-column) * 6 - var(--grid-margin) * 2);
+    }
+    .post-single:first-of-type > .post__btn{
+        min-width: calc(50% - 40px);
     }
 }

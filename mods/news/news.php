@@ -2,11 +2,13 @@
     <div class="wrapper container">
         <div class="news-container">
             <?php
+                if ( is_page( 'news' ) ) {
+                    $args = array('posts_per_page' => 0, 'category_name' => 'news', 'order' => 'ASC' );
+                }
+                else {
+                    $args = array('posts_per_page' => 3, 'category_name' => 'news', 'order' => 'ASC' );                
+                }
                 global $post;
-                $args = array(
-                    'posts_per_page' => 3,
-                    'category_name' => 'news',
-                    'order' => 'ASC' );
                 $myposts = get_posts( $args );
                 foreach( $myposts as $post ){ setup_postdata($post);
             ?>                    
