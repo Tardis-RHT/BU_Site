@@ -127,24 +127,100 @@ function buTheme_src_set() {
 		echo $output;
 	}
 }
+
+// Get the slug ID
+function buTheme_slugid($slugid){
+	$category = get_category_by_slug( $slugid );
+	$catid = $category->term_id;
+	return $catid;
+}
+
 //Adding Advanced Custom Field for News Caption (ACF Plugin Needed)
 if(function_exists("register_field_group"))
 {
 	register_field_group(array (
-		'id' => 'acf_%d0%bd%d0%be%d0%b2%d0%be%d1%81%d1%82%d0%b8',
-		'title' => 'Новости',
+		'id' => 'acf_programs-info',
+		'title' => 'programs-info',
 		'fields' => array (
 			array (
-				'key' => 'field_59f0d93c2b417',
-				'label' => 'Краткое содержание новости',
-				'name' => 'news_caption',
-				'type' => 'textarea',
+				'key' => 'field_59f0c90f30e1f',
+				'label' => 'Старт',
+				'name' => 'start',
+				'type' => 'text',
 				'required' => 1,
 				'default_value' => '',
-				'placeholder' => 'Введите краткое содержимое новости',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
 				'maxlength' => '',
-				'rows' => '',
-				'formatting' => 'br',
+			),
+			array (
+				'key' => 'field_59f0cab030e20',
+				'label' => 'Время',
+				'name' => 'time',
+				'type' => 'text',
+				'required' => 1,
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+			array (
+				'key' => 'field_59f0cb2a30e21',
+				'label' => 'Месяцев',
+				'name' => 'month',
+				'type' => 'number',
+				'required' => 1,
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'min' => '',
+				'max' => '',
+				'step' => '',
+			),
+			array (
+				'key' => 'field_59f0cb5130e22',
+				'label' => 'Часов',
+				'name' => 'hours',
+				'type' => 'number',
+				'required' => 1,
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'min' => '',
+				'max' => '',
+				'step' => '',
+			),
+			array (
+				'key' => 'field_59f0cb9b30e23',
+				'label' => 'Стоимость',
+				'name' => 'price',
+				'type' => 'text',
+				'required' => 1,
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+			array (
+				'key' => 'field_59f0cddbf4cd3',
+				'label' => 'Дни',
+				'name' => 'days',
+				'type' => 'text',
+				'required' => 1,
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
 			),
 		),
 		'location' => array (
@@ -152,7 +228,7 @@ if(function_exists("register_field_group"))
 				array (
 					'param' => 'post_category',
 					'operator' => '==',
-					'value' => '4',
+					'value' => buTheme_slugid('programs'),
 					'order_no' => 0,
 					'group_no' => 0,
 				),
@@ -165,9 +241,8 @@ if(function_exists("register_field_group"))
 			),
 		),
 		'menu_order' => 0,
-	));
+	));	
 }
-
 
 
 
@@ -187,4 +262,9 @@ add_filter( 'get_custom_logo', 'change_logo_class' ); // Changing "custom-logo-l
 		$html = str_replace( 'custom-logo-link', 'logo', $html );
 		return $html;
 	}
+	
+
+
+
+
 ?>

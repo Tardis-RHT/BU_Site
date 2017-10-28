@@ -46,8 +46,8 @@ a:hover{
     padding: 8px 24px;
 }
 h1,h2,h3,h4,h5,h6,p, ul, ol, time{
-	margin-top: 1rem;
-	margin-bottom: 0;
+	margin-top: 0;
+	margin-bottom: 1rem;
 }
 
 h1,h2,h3,h4,h5,h6{font-weight: normal}
@@ -135,9 +135,16 @@ tt, kbd, samp{
     border: none;
     border-radius: var(--border-radius); 
     transition: var(--transition);
+    overflow: hidden;
 }
 .tile:hover{
+    cursor: pointer;
     box-shadow: 0 23px 40px rgba(0,0,0,0.2);
+    transform: translateY(2px);
+}
+.nostyle{
+	display: block;
+	text-indent: -9999px;	
 }
 @media (min-width: 480px){
     h1{
@@ -152,7 +159,7 @@ tt, kbd, samp{
         margin: 32px calc(var(--grid-column) * -1) 32px 32px;
     }
     .tile{
-        width: calc(var(--grid-column) * 3 - var(--grid-margin) * 2);
+        width: calc(var(--grid-column) * 4 - var(--grid-margin) * 2);
     }
 }
 @media (min-width:720px){
@@ -162,7 +169,10 @@ tt, kbd, samp{
 }
 @media (min-width:840px){
     .padding-top{
-        padding-top:56px;
+        padding-top:80px;
+    }
+    .tile{
+        width: calc(var(--grid-column) * 3 - var(--grid-margin) * 2);
     }
 }
 @media (min-width:1440px){
