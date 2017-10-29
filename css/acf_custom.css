@@ -4,8 +4,10 @@
 	flex-wrap: wrap;
 	padding: 4px;
 	background-color: #ffffff;
-	border: 1px solid #e5e5e5;
 }
 .acf_postbox.no_box > .inside > .field{
 	margin: 8px;
+}
+.acf_postbox > .inside > .field{
+	border-top: none;
 }

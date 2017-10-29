@@ -1,13 +1,8 @@
 <section class="centered wrapper padding-top">
     <div class="post-container">
         <?php
-            if ( is_page( 'programs' ) ) {
-                $args = array('posts_per_page' => 0, 'category_name' => 'programs', 'meta_key'	=> 'start', 'orderby'	=> 'meta_value_num', 'order' => 'DESC' );
-            }
-            else {
-                $args = array('posts_per_page' => 7, 'category_name' => 'programs, events', 'meta_key'	=> 'start', 'orderby'	=> 'meta_value_num', 'order' => 'DESC' );                
-            }
             global $post;
+            $args = array('posts_per_page' => 7, 'category_name' => 'programs, events', 'meta_key'	=> 'start', 'orderby'	=> 'meta_value_num', 'order' => 'DESC' );
             $posts = get_posts( $args );
             foreach($posts as $post){ setup_postdata($post);
         ?>
@@ -25,17 +20,21 @@
             </h2>
             <span class="post__btn btn">
             <?php
+                // $dateformatstring = "j F";
+                // $unixtimestamp = strtotime(get_field('start'));
+                // $gmt = true;
             if ( in_category('programs') ) 
+                // echo 'старт ' . date_i18n($dateformatstring, $unixtimestamp, $gmt) . '';
                 echo 'старт ' . get_post_meta( $post->ID, "start", true ) . '';
             else {
+                // echo date_i18n($dateformatstring, $unixtimestamp, $gmt);
                 echo get_post_meta( $post->ID, "start", true );
-                echo ' в ';
+                echo ' в&nbsp;';
                 echo get_post_meta( $post->ID, "time", true );
             }
             ?>
             <span class="post__btn--add btn">Подробнее</span></span>        
         </a>
-        
 
     <?php
         }

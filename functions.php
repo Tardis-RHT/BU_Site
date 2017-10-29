@@ -146,7 +146,7 @@ if(function_exists("register_field_group"))
 {
 	register_field_group(array (
 		'id' => 'acf_programs-info',
-		'title' => 'programs-info',
+		'title' => 'Информация о курсе',
 		'fields' => array (
 			array (
 				'key' => 'field_59f0c90f30e1f',
@@ -213,17 +213,21 @@ if(function_exists("register_field_group"))
 				'maxlength' => '',
 			),
 			array (
-				'key' => 'field_59f0cddbf4cd3',
-				'label' => 'Дни',
-				'name' => 'days',
-				'type' => 'text',
-				'required' => 1,
+				'key' => 'field_59f5de861bfb1',
+				'label' => 'days',
+				'name' => 'week',
+				'type' => 'checkbox',
+				'choices' => array (
+					'пн' => 'пн',
+					'вт' => 'вт',
+					'ср' => 'ср',
+					'чт' => 'чт',
+					'пт' => 'пт',
+					'сб' => 'сб',
+					'вс' => 'вс',
+				),
 				'default_value' => '',
-				'placeholder' => '',
-				'prepend' => '',
-				'append' => '',
-				'formatting' => 'html',
-				'maxlength' => '',
+				'layout' => 'horizontal',
 			),
 		),
 		'location' => array (
@@ -239,7 +243,7 @@ if(function_exists("register_field_group"))
 		),
 		'options' => array (
 			'position' => 'normal',
-			'layout' => 'no_box',
+			'layout' => 'default',
 			'hide_on_screen' => array (
 			),
 		),
