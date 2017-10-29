@@ -2,7 +2,14 @@
     <div class="info-row info-row--first">
         <div class="info-wrap--lg">
             <p class="info__main info__main--color">
-            <?php echo get_post_meta( $post->ID, 'start', true ); ?>
+
+            <?php 
+                // $dateformatstring = "j F";
+                // $unixtimestamp = strtotime(get_field('start'));
+                // $gmt = true;
+                // echo date_i18n($dateformatstring, $unixtimestamp, $gmt);
+                the_field('start');
+            ?>
                 <!-- 30 октября -->
                 <span class="info__sub">
                     старт
@@ -14,7 +21,7 @@
             <?php echo get_post_meta( $post->ID, 'time', true ); ?>
                 <!-- 19:00-21:00 -->
                 <span class="info__sub">
-                <?php echo get_post_meta( $post->ID, 'days', true ); ?>
+                <?php the_field('week'); ?>
                     <!-- пн, ср, пт -->
                 </span>
             </p>
