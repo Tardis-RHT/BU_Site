@@ -23,7 +23,10 @@ if (!isset($content_width))
 if (function_exists('add_theme_support'))
 {
     // Add Menu Support
-    add_theme_support('menus');
+	add_theme_support('menus');
+	
+	//Add custom logo support
+	add_theme_support('custom-logo');
 
     // Add Thumbnail Theme Support
     add_theme_support('post-thumbnails');
@@ -97,14 +100,223 @@ function remove_category_rel_from_category_list($thelist)
     return str_replace('rel="category tag"', 'rel="tag"', $thelist);
 }
 
+//Adding custom logo in Theme Customizer
+function buTheme_custom_logo() {
+    // Try to retrieve the Custom Logo
+    $output = '';
+    if (function_exists('get_custom_logo'))
+        $output = get_custom_logo();
+
+    // Nothing in the output: Custom Logo is not supported, or there is no selected logo
+	// In both cases we display svg icon logo and if there is no svg logo - the site's name
+	if (empty($output))
+	$output = '<a class="logo" href="' . esc_url(home_url('/')) . '"><img class="logo__img" src="' . get_template_directory_uri() . '/img/icons/svg_logo.svg" alt="' . get_bloginfo('name') . '"></a>';
+
+    echo $output;
+}
+
+// SrcSet Images
+function buTheme_src_set() {
+	if( has_post_thumbnail() ) {
+		$thumb_id = get_post_thumbnail_id();
+		$thumb_alt = get_the_title( $thumb_id );
+		$output = '';
+		
+		$output = 'alt="' . $thumb_alt . '" src="' . wp_get_attachment_image_url( $thumb_id ) . '" srcset="' . wp_get_attachment_image_srcset( $thumb_id, 'full' ) . '" sizes="' . wp_get_attachment_image_sizes( $thumb_id, 'full' ) . '"';
+		
+		echo $output;
+	}
+}
+
+// Get the slug ID
+function buTheme_slugid($slugid){
+	$category = get_category_by_slug( $slugid );
+	$catid = $category->term_id;
+	return $catid;
+}
+// "Advanced Custom Fields" stylesheet override
+function my_head_input()
+{
+	wp_register_style('buTheme_css', get_template_directory_uri() . '/css/acf_custom.css', array(), '1.0', 'all');
+	wp_enqueue_style('buTheme_css'); // Enqueue it!
+}
+
+// Adding "Advanced Custom Field" fields (ACF Plugin MUST be installed)
+if(function_exists("register_field_group"))
+{
+	register_field_group(array (
+		'id' => 'acf_programs-info',
+		'title' => 'programs-info',
+		'fields' => array (
+			array (
+				'key' => 'field_59f0c90f30e1f',
+				'label' => 'Старт курса',
+				'name' => 'start',
+				'type' => 'date_picker',
+				'date_format' => 'dd MM',
+				'display_format' => 'dd MM',
+				'first_day' => 1,
+				'required' => 1,
+			),
+			array (
+				'key' => 'field_59f0cab030e20',
+				'label' => 'Время',
+				'name' => 'time',
+				'type' => 'text',
+				'required' => 1,
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+			array (
+				'key' => 'field_59f0cb2a30e21',
+				'label' => 'Месяцев',
+				'name' => 'month',
+				'type' => 'number',
+				'required' => 1,
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'min' => '',
+				'max' => '',
+				'step' => '',
+			),
+			array (
+				'key' => 'field_59f0cb5130e22',
+				'label' => 'Часов',
+				'name' => 'hours',
+				'type' => 'number',
+				'required' => 1,
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'min' => '',
+				'max' => '',
+				'step' => '',
+			),
+			array (
+				'key' => 'field_59f0cb9b30e23',
+				'label' => 'Стоимость',
+				'name' => 'price',
+				'type' => 'text',
+				'required' => 1,
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+			array (
+				'key' => 'field_59f0cddbf4cd3',
+				'label' => 'Дни',
+				'name' => 'days',
+				'type' => 'text',
+				'required' => 1,
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_category',
+					'operator' => '==',
+					'value' => buTheme_slugid('programs'),
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'no_box',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));	
+}
+
+if(function_exists("register_field_group"))
+{
+	register_field_group(array (
+		'id' => 'acf_events-info',
+		'title' => 'events-info',
+		'fields' => array (
+			array (
+				'key' => 'field_59f4ccaaa2948',
+				'label' => 'date',
+				'name' => 'start',
+				'type' => 'date_picker',
+				'date_format' => 'dd MM',
+				'display_format' => 'dd MM',
+				'first_day' => 1,
+			),
+			array (
+				'key' => 'field_59f4cd3ba7bd7',
+				'label' => 'time',
+				'name' => 'time',
+				'type' => 'text',
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_category',
+					'operator' => '==',
+					'value' => buTheme_slugid('events'),
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'no_box',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
+}
+
+
 /*------------------------------------*\
 	Actions
 \*------------------------------------*/
 add_action('init', 'register_buTheme_menu'); // Add buTheme Blank Menu
-
+add_action('after_setup_theme', 'buTheme_setup'); //Adding custom logo in Theme Customizer
+add_action('acf/input/admin_head', 'my_head_input'); // "Advanced Custom Fields" stylesheet override
 
 /*------------------------------------*\
 	Filters
 \*------------------------------------*/
 add_filter('wp_nav_menu_args', 'my_wp_nav_menu_args'); // Remove surrounding <div> from WP Navigation
+add_filter( 'get_custom_logo', 'change_logo_class' ); // Changing "custom-logo-link" class to "logo" class in Site Logo
+	function change_logo_class( $html ) {
+		$html = str_replace( 'custom-logo', 'your-custom-class', $html );
+		$html = str_replace( 'custom-logo-link', 'logo', $html );
+		return $html;
+	}
+	
+
+
+
+
 ?>

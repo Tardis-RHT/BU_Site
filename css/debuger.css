@@ -11,6 +11,10 @@
 	pointer-events: none;
 	background-image: linear-gradient(180deg,rgba(233, 30, 99, .25) 1px,transparent 0);
 	background-size: 1px .5em;
+	max-width: 1600px;
+	margin: 0 auto;
+	border-left: 8px solid rgba(158, 158, 158, 0.4);
+	border-right: 8px solid rgba(158, 158, 158, 0.4);
 }
 
 .debuger .debuger-grid{

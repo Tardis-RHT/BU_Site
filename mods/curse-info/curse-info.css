@@ -1,0 +1,90 @@
+.curse-info{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: calc(var(--grid-column) * 4 - var(--grid-margin) * 2);
+    box-shadow: var(--box-shadow);
+    padding: 16px 8px;
+    transform: translateY(-50%);
+    background-color: var(--font-white);
+}
+.info-row{
+    display: flex;
+    justify-content: center;
+}
+.info-row--first{
+    margin-bottom: var(--grid-margin);
+}
+.info-wrap--lg{
+    width: calc(var(--grid-column) * 2 - var(--grid-margin) * 2);
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+.info-wrap--sm{
+    width: calc(var(--grid-column) - var(--grid-margin) * 2);
+    text-align: center;
+}
+.row{
+    min-width: calc(100% - 16px);
+    display: flex;
+    justify-content: space-evenly;
+}
+.info__main{
+    font-size: 1.375em;
+    font-weight: var(--font-regular);
+    font-family: sans-serif;
+    line-height: 1.375em;
+    text-align: left;
+    display: inline-block;
+    margin: 0;
+}
+.info__main--center{
+    text-align: center;
+    min-width: calc(var(--grid-column) - var(--grid-margin) * 2 - 16px);
+}
+.info__main--color{
+    color: var(--font-title);
+}
+.info__main--lg{
+    min-width: calc(var(--grid-column) * 2 - var(--grid-margin) * 2 - 16px);
+}
+.info__sub{
+    display: block;
+    color: var(--font-light);
+    font-size: 1rem;
+    line-height: 1;
+}
+
+@media (min-width: 600px){
+    .info-row{
+        width: calc(100% - 16px);
+        justify-content: space-evenly;
+    }
+    .curse-info{
+        width: calc(var(--grid-column) * 6 - var(--grid-margin) * 2);
+        padding: 16px;
+    }
+    .info-wrap--lg{
+        text-align: left;
+    }
+}
+
+@media (min-width:840px){
+    .curse-info{
+        width: calc(var(--grid-column) * 8 - var(--grid-margin) * 2);
+        flex-wrap: nowrap;    
+        padding: 16px 24px;
+    }
+    .info-row--first{
+        margin-bottom: 0;
+    }
+}
+@media (min-width:1600px){
+    .curse-info{
+        width: calc(var(--grid-column) * 10 - var(--grid-margin) * 2);
+    }
+    .info__main--center{
+        min-width: calc(var(--grid-column) * 1.5 - var(--grid-margin) * 2 - 16px);
+    }
+}
