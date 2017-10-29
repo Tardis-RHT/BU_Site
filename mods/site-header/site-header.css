@@ -57,7 +57,7 @@
     color:  var(--hover-color);
 }
 
-.languages{
+.language-chooser{
     display: flex;
     justify-content: flex-end;
     margin: 0 var(--grid-margin);
@@ -65,12 +65,13 @@
     list-style: none;
     padding: 0;
 }
-.languages__item > a{
+.qtranxs_text
+{
     display: inline-block;
     position: relative;
     padding: 0 var(--grid-margin);
 }
-.languages__is-current{
+.active > a{
     color: var(--font-light);
 }
 
@@ -118,12 +119,12 @@
         position: absolute;
     }
 
-    .languages{
+    .language-chooser{
         order: 3;
         line-height: 56px;
         /* justify-content: center; */
     }
-    .languages__is-current::after{
+    .active > a::after{
         content: '';
         display: block;
         width: 100%;
