@@ -69,6 +69,7 @@ $(document).ready(function() {
             scrollPrev = scrolled;
         }
     });
+
     if (window.location.href.indexOf("programs") > -1) { 
         $('.menu-item-23').addClass('current-menu-item');
     }       
