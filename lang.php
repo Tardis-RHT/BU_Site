@@ -1,8 +1,50 @@
 <?php
     class LangDicts {
-        public static $rus = array('Event' => 'Мероприятие', 'Start' => 'Старт', 'More' => 'Подробнее', 'at' => 'в', 'Initiator' => 'Инициатор');
-        public static $ukr = array('Event' => 'Подія', 'Start' => 'Старт', 'More' => 'Детальніше', 'at' => 'о', 'Initiator' => 'Ініціатор');
-        public static $eng = array('Event' => 'Event', 'Start' => 'Start', 'More' => 'More', 'at' => 'at', 'Initiator' => 'Initiator');
+        public static $rus = array('Event' => 'Мероприятие', 
+                                    'Start' => 'Старт', 
+                                    'More' => 'Подробнее', 
+                                    'at' => 'в', 
+                                    'Initiator' => 'Инициатор',
+                                    'Hour' => 'час',
+                                    'Hour(n)' => 'час',
+                                    'Hour(g)' => 'часа',
+                                    'Hour(a)' => 'часов',
+                                    'Month' => 'месяц',
+                                    'Month(n)' => 'месяц',
+                                    'Month(g)' => 'месяца',
+                                    'Month(a)' => 'месяцев',
+                                    'Program price' => 'стоимость курса',
+                                    'Curency' => ' грн');
+        public static $ukr = array('Event' => 'Подія', 
+                                    'Start' => 'Старт', 
+                                    'More' => 'Детальніше', 
+                                    'at' => 'о', 
+                                    'Initiator' => 'Ініціатор',
+                                    'Hour' => 'година',
+                                    'Hour(n)' => 'година',
+                                    'Hour(g)' => 'години',
+                                    'Hour(a)' => 'годин',
+                                    'Month' => 'місяць',
+                                    'Month(n)' => 'місяць',
+                                    'Month(g)' => 'місяці',
+                                    'Month(a)' => 'місяців',
+                                    'Program price' => 'вартість курсу',
+                                    'Curency' => ' грн');
+        public static $eng = array('Event' => 'Event', 
+                                    'Start' => 'Start', 
+                                    'More' => 'More', 
+                                    'at' => 'at', 
+                                    'Initiator' => 'Initiator',
+                                    'Hour' => 'hour',
+                                    'Hour(n)' => 'hours',
+                                    'Hour(g)' => 'hours',
+                                    'Hour(a)' => 'hours',
+                                    'Month' => 'month',
+                                    'Month(n)' => 'months',
+                                    'Month(g)' => 'months',
+                                    'Month(a)' => 'months',
+                                    'Program price' => 'program price',
+                                    'Curency' => ' $');
         public static $dict; // текущий словарь
     }
 ?>

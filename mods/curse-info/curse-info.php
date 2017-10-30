@@ -1,40 +1,24 @@
 <div class="wrapper curse-info">
     <div class="info-row info-row--first">
         <div class="info-wrap--lg">
-            <p class="info__main info__main--color">
-            
-    <!-- getimagesize($_SERVER['DOCUMENT_ROOT'].'/photo/img1.jpg'); -->
-            <?php 
-    if(get_locale() == 'ru_RU') include(dirname(__FILE__).'./languages/ru.php');
-    elseif(get_locale() == 'en_US') include(dirname(__FILE__).'./languages/eng.php');
-    elseif(get_locale() == 'uk') include(dirname(__FILE__).'./languages/ukr.php');
-    ?>      
-            <?php 
-            include './mods/ru.php';
-            // include_once(dirname(__FILE__).'/../../languages/ukr.php');
-                // $dateformatstring = "j F";
-                // $unixtimestamp = strtotime(get_field('start'));
-                // $gmt = true;
-                // echo date_i18n($dateformatstring, $unixtimestamp, $gmt);
-                the_field('start');
-            ?>
-                <!-- 30 октября -->
-                <span class="info__sub">
+            <p class="info__main info__main--color">    
                 <?php
-                // include_once(dirname(__FILE__).'/../filename.php');
-                
-                echo LangDicts::$dict['Contacts'];
-                 echo $start ?>
+                    // $dateformatstring = "j F";
+                    // $unixtimestamp = strtotime(get_field('start'));
+                    // $gmt = true;
+                    // echo date_i18n($dateformatstring, $unixtimestamp, $gmt);
+                    the_field('start');
+                ?>
+                <span class="info__sub">
+                    <?php echo LangDicts::$dict['Start'];?>
                 </span>
             </p>
         </div>
         <div class="info-wrap--lg">
             <p class="info__main">
             <?php echo get_post_meta( $post->ID, 'time', true ); ?>
-                <!-- 19:00-21:00 -->
                 <span class="info__sub">
-                <?php the_field('week'); ?>
-                    <!-- пн, ср, пт -->
+                    <?php the_field('week'); ?>
                 </span>
             </p>
         </div>
@@ -42,28 +26,44 @@
     <div class="info-row">
         <div class="info-wrap--lg">
             <p class="info__main info__main--center">
-            <?php echo get_post_meta( $post->ID, 'hours', true ); ?>
-                <!-- 46 -->
+                <?php echo get_post_meta( $post->ID, 'hours', true );?>
                 <span class="info__sub">
-                    часов
+                    <?php
+                        $hour = get_post_meta( $post->ID, 'hours', true );
+                        if ($hour == 1) echo LangDicts::$dict['Hour'];
+                        elseif ($hour >= 5 && $hour <= 20) echo LangDicts::$dict['Hour(a)'];
+                        elseif ($hour%10 == 1) echo LangDicts::$dict['Hour(n)'];
+                        elseif ($hour%10 >= 2 && $hour%10 <= 4) echo LangDicts::$dict['Hour(g)'];
+                        elseif ($hour%10 >= 5) echo LangDicts::$dict['Hour(a)'];
+                    ?>
                 </span>
             </p>
         <!-- </div>
         <div class="info-wrap--sm"> -->
             <p class="info__main info__main--center">
             <?php echo get_post_meta( $post->ID, 'month', true ); ?>
-                <!-- 1.5 -->
                 <span class="info__sub">
-                    месяца
+                    <?php
+                        $month = get_post_meta( $post->ID, 'month', true );
+                        if ($month == 1) echo LangDicts::$dict['Month'];
+                        elseif ($month >= 5 && $month <= 20) echo LangDicts::$dict['Month(a)'];
+                        elseif ($month%10 == 1) echo LangDicts::$dict['Month(n)'];
+                        elseif ($month%10 >= 2 && $month%10 <= 4) echo LangDicts::$dict['Month(g)'];
+                        elseif ($month%10 >= 5) echo LangDicts::$dict['Month(a)'];
+                    ?>
                 </span>
             </p>
         </div>
         <div class="info-wrap--lg">
             <p class="info__main">
-            <?php echo get_post_meta( $post->ID, 'price', true ); ?>
-                <!-- 6 200 грн -->
+                <?php 
+                    $price = get_post_meta( $post->ID, 'price', true ); 
+                    $price_fin = number_format($price, 0, ',', ' ');;
+                    echo $price_fin;
+                    echo LangDicts::$dict['Curency'];
+                ?>
                 <span class="info__sub">
-                    стоимость курса
+                    <?php echo LangDicts::$dict['Program price']; ?>
                 </span>
             </p>
         </div>
