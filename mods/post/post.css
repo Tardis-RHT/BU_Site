@@ -33,6 +33,7 @@
     text-align: center;
     transition: var(--transition);
     position: relative;
+    padding: 8px;
 }
 .post__btn--add{
     position: absolute;

@@ -3,11 +3,11 @@
         <div class="info-wrap--lg">
             <p class="info__main info__main--color">    
                 <?php
-                    // $dateformatstring = "j F";
-                    // $unixtimestamp = strtotime(get_field('start'));
-                    // $gmt = true;
-                    // echo date_i18n($dateformatstring, $unixtimestamp, $gmt);
-                    the_field('start');
+                    $dateformatstring = "j F";
+                    $unixtimestamp = strtotime(get_field('start'));
+                    $gmt = true;
+                    echo date_i18n($dateformatstring, $unixtimestamp, $gmt);
+                    // the_field('start');
                 ?>
                 <span class="info__sub">
                     <?php echo LangDicts::$dict['Start'];?>
@@ -18,7 +18,7 @@
             <p class="info__main">
             <?php echo get_post_meta( $post->ID, 'time', true ); ?>
                 <span class="info__sub">
-                    <?php the_field('week'); ?>
+                    <?php the_field('week');?>
                 </span>
             </p>
         </div>

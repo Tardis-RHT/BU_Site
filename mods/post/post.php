@@ -2,7 +2,13 @@
     <div class="post-container">
         <?php
             global $post;
-            $args = array('posts_per_page' => 7, 'category_name' => 'programs, events', 'meta_key'	=> 'start', 'orderby'	=> 'meta_value_num', 'order' => 'DESC' );
+            $args = array(
+                'posts_per_page' => 7, 
+                'category_name' => 'programs, events', 
+                'meta_key'	=> 'start', 
+                'meta_type' => 'DATETIME', 
+                'orderby' => 'meta_value_num', 
+                'order' => 'DESC' );
             $posts = get_posts( $args );
             foreach($posts as $post){ setup_postdata($post);
         ?>
@@ -22,17 +28,18 @@
             </h2>
             <span class="post__btn btn">
                 <?php
-                    // $dateformatstring = "j F";
-                    // $unixtimestamp = strtotime(get_field('start'));
-                    // $gmt = true;
+                    $dateformatstring = "j F";
+                    $unixtimestamp = strtotime(get_field('start'));
+                    $gmt = true;
                 if ( in_category('programs') ) {
                     // echo 'старт ' . date_i18n($dateformatstring, $unixtimestamp, $gmt) . '';
                     echo LangDicts::$dict['Start'];
-                    echo ' ' . get_post_meta( $post->ID, "start", true ) . '';
+                    // echo ' ' . get_post_meta( $post->ID, "start", true ) . '';
+                    echo ' ' . date_i18n($dateformatstring, $unixtimestamp, $gmt) . '';
                 }
                 else {
-                    // echo date_i18n($dateformatstring, $unixtimestamp, $gmt);
-                    echo get_post_meta( $post->ID, "start", true );
+                    echo date_i18n($dateformatstring, $unixtimestamp, $gmt);
+                    // echo get_post_meta( $post->ID, "start", true );
                     echo ' ' . LangDicts::$dict['at'] . '&nbsp;';
                     echo get_post_meta( $post->ID, "time", true );
                 }
