@@ -26,10 +26,11 @@ $html .= '<div class="centered wrapper padding-top">';
             $html .= "<span class='post__btn--add btn'>Подробнее</span>";
             $html .= "</span></a>";
         }
-        $html .= '</div></div>';
+        $html .= '</div>';
 
         wp_reset_postdata();
     }
+    $html .= '</div>';
     echo $html; 
 ?>  
 <?php get_template_part('mods/site-footer/site', 'footer'); ?>
