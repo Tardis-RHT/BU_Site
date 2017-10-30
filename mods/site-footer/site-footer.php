@@ -15,7 +15,9 @@
         </div>
         <div class="footer__block footer__sponsor">
             <div class="footer__sponsor-wrap" >
-                <p>Инициатор</p>
+                <p>
+                    <?php echo LangDicts::$dict['Initiator']; ?>
+                </p>
                 <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/bionichill.png" alt="Bionic Hill"></a>
             </div>
         </div>

@@ -3,6 +3,16 @@
     <?php get_header(); ?>  
 <body>
     <?php 
+    require 'lang.php';
+    LangDicts::$dict = LangDicts::$rus;
+
+    if(get_locale() == 'ru_RU') LangDicts::$dict = LangDicts::$rus;
+    elseif(get_locale() == 'uk') LangDicts::$dict = LangDicts::$ukr;
+    elseif(get_locale() == 'en_US') LangDicts::$dict = LangDicts::$eng;
+    ?>
+    
+
+    <?php 
         if ( is_single() ) get_template_part('mods/single-curse');
         elseif ( is_404() ) get_template_part('mods/404');
         elseif ( is_page( 'programs' ) ) get_template_part('mods/page-programs/programs');

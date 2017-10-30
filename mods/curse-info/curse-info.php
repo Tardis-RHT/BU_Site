@@ -2,8 +2,16 @@
     <div class="info-row info-row--first">
         <div class="info-wrap--lg">
             <p class="info__main info__main--color">
-
+            
+    <!-- getimagesize($_SERVER['DOCUMENT_ROOT'].'/photo/img1.jpg'); -->
             <?php 
+    if(get_locale() == 'ru_RU') include(dirname(__FILE__).'./languages/ru.php');
+    elseif(get_locale() == 'en_US') include(dirname(__FILE__).'./languages/eng.php');
+    elseif(get_locale() == 'uk') include(dirname(__FILE__).'./languages/ukr.php');
+    ?>      
+            <?php 
+            include './mods/ru.php';
+            // include_once(dirname(__FILE__).'/../../languages/ukr.php');
                 // $dateformatstring = "j F";
                 // $unixtimestamp = strtotime(get_field('start'));
                 // $gmt = true;
@@ -12,7 +20,11 @@
             ?>
                 <!-- 30 октября -->
                 <span class="info__sub">
-                    старт
+                <?php
+                // include_once(dirname(__FILE__).'/../filename.php');
+                
+                echo LangDicts::$dict['Contacts'];
+                 echo $start ?>
                 </span>
             </p>
         </div>
