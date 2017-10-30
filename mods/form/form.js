@@ -1,29 +1,10 @@
-// (function( $ ){
-	
-//   var $body;
-
-//   $(document).ready(function(){
-//     $body = $('body');
-
-//     $body
-//       .find('#tel').each(function(){
-//           $(this).mask("+38 (999) 999-99-99", {autoсlear: true});
-//       });
-
-//     $body.on('keyup','#tel',function(){
-//       var phone = $(this),
-//           phoneVal = phone.val(),
-//           form = $(this).parents('form');
-
-//     });
-
-//   });
-
-// })( jQuery );
-
 $(document).ready(function($){
   if($("#tel").length>0){
-		$("#tel").mask("+38 (999) 999 - 99 - 99");
+		$("#tel").mask("+38 (999) 999 - 99 - 99", {
+      completed:function(){
+      telValidity();
+    }
+  });
 }
   $('#mainForm').submit(function(){
       var str = $(this).serialize();
@@ -93,14 +74,54 @@ function replaceValidationUI(form) {
       // invalidFields.forEach(function(){
       // invalidFields.style.background = "red";
       // });
-      console.log(invalidFields);
+      // console.log(invalidFields);
       invalidFields[0].focus();
     }
+
   });
+  
 }
 
 // Replace the validation UI for all forms
 var forms = document.querySelectorAll("form");
 for (var i = 0; i < forms.length; i++) {
   replaceValidationUI(forms[i]);
+}
+
+
+var input = document.getElementsByClassName('form__input');
+var error_msg = document.getElementsByClassName('error-message');
+
+  for (var i = 0; i < input.length; i++){
+  input[i].oninput = function validity() {
+    this.checkValidity();
+    var parent = this.parentNode;
+    if(this.checkValidity() == true && parent.getElementsByClassName('error-message').length > 0){
+      parent.removeChild(parent.lastChild);  
+      this.style.borderColor = "var(--primary-color)";
+      this.onblur = function(){
+        this.style.borderColor = "var(--font-light)";
+      }
+      this.onfocus = function(){
+        this.style.borderColor = "var(--primary-color)";
+      }              
+    }
+  }
+}
+
+
+function telValidity(){
+  var tel = document.getElementById('tel');
+  var parent = tel.parentNode;
+  console.log(parent);
+  if(parent.getElementsByClassName('error-message').length > 0){
+    parent.removeChild(parent.lastChild);  
+    tel.style.borderColor = "var(--primary-color)";
+    tel.onblur = function(){
+      tel.style.borderColor = "var(--font-light)";
+    }
+    tel.onfocus = function(){
+      tel.style.borderColor = "var(--primary-color)";
+    }                
+  }
 }
