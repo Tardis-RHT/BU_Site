@@ -214,7 +214,7 @@ if(function_exists("register_field_group"))
 			),
 			array (
 				'key' => 'field_59f5de861bfb1',
-				'label' => 'days',
+				'label' => 'Дни недели',
 				'name' => 'week',
 				'type' => 'checkbox',
 				'choices' => array (
