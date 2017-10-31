@@ -255,11 +255,11 @@ if(function_exists("register_field_group"))
 {
 	register_field_group(array (
 		'id' => 'acf_events-info',
-		'title' => 'events-info',
+		'title' => 'Информация о мероприятии',
 		'fields' => array (
 			array (
 				'key' => 'field_59f4ccaaa2948',
-				'label' => 'date',
+				'label' => 'Дата мероприятия',
 				'name' => 'start',
 				'type' => 'date_picker',
 				'display_format' => 'dd MM yy',
@@ -267,7 +267,7 @@ if(function_exists("register_field_group"))
 			),
 			array (
 				'key' => 'field_59f4cd3ba7bd7',
-				'label' => 'time',
+				'label' => 'Время мероприятия',
 				'name' => 'time',
 				'type' => 'text',
 				'default_value' => '',
@@ -291,7 +291,7 @@ if(function_exists("register_field_group"))
 		),
 		'options' => array (
 			'position' => 'normal',
-			'layout' => 'no_box',
+			'layout' => 'default',
 			'hide_on_screen' => array (
 			),
 		),
