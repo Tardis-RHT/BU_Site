@@ -43,3 +43,8 @@
 		--grid-count: 12;
 	}
 }
+@media (min-width:1600px){
+	:root{
+		--grid-column: calc(1600px / var(--grid-count));
+	}
+}

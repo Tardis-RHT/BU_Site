@@ -3,12 +3,15 @@
 }
 .curse-header{
     position: relative;
+    /* max-height: 60vh; */
+    height: 60vh;
 }
 .curse-header:before {
     display: block;
     content: "";
     width: 100%;
-    padding-top: 56.25%;
+    /* padding-top: 56.25%; size 16x9*/
+    /* padding-bottom: 177.77%; size 9x16*/
   }
 .curse-header_container{
     position: absolute;
@@ -22,68 +25,46 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    background-color: var(--font-light);    
+    background-color: var(--font-light);
+    overflow: hidden;   
 }
-
+.curse__post-img{
+    position: absolute;
+    height: 100%;
+}
+.curse__post-title{
+    font-family: sans-serif;
+	color: var(--font-white);
+	text-shadow: var(--box-shadow);
+    z-index: 2;
+}
 .curse-content{
     width: calc(var(--grid-column) * 4 - var(--grid-margin) * 2);
     margin: 0 auto;
     text-align: justify;
 }
 
-.curse-caption{
-    display: flex;
-    flex-wrap: wrap;
-    width: calc(var(--grid-column) * 4);
-    margin: 0 auto;
-    box-shadow: var(--box-shadow);
-    padding: 24px 0 0;
-    box-sizing: border-box;
-    position: relative;
-    transform: translateY(-50%);
-    background-color: var(--font-white);
-
-}
-.curse-caption--big{
-    width: calc(var(--grid-column) * 2 - var(--grid-margin) * 2);
-    margin: 0 var(--grid-margin);
-    text-align: center;
-}
-.curse-caption--sm{
-    width: calc(var(--grid-column) - var(--grid-margin) * 2);
-    margin: 0 var(--grid-margin);
-    text-align: center;
-}
-.curse-caption--color{
-    color: var(--font-title);
-}
-
-.curse-caption__info{
-    font-size: 1.375em;
-    font-weight: var(--font-thin);
-    line-height: 1;
-}
-.curse-caption__add{
-    display: block;
-    color: var(--font-light);
-    line-height: 1;
-    margin-bottom: 24px;
-}
-
 @media (min-width: 600px){
 	.curse-content{
         width: calc(var(--grid-column) * 6 - var(--grid-margin) * 2);
     }
-    .curse-caption{
-        width: calc(var(--grid-column) * 6);
-    }
+    .curse-header:before {
+        padding-top: 56.25%;
+      }
 }
 
 @media (min-width:840px){
-	.curse-content, .curse-caption{
+	.curse-content{
         width: calc(var(--grid-column) * 8 - var(--grid-margin) * 2);
     }
-    .curse-caption{
-        width: calc(var(--grid-column) * 8);
+}
+@media (min-width:1024px){
+    .curse__post-img{
+        width: 100%;
+    }
+}
+@media (min-width:1600px){
+    .curse-content{
+        width: calc(var(--grid-column) * 10 - var(--grid-margin) * 2);
     }
 }

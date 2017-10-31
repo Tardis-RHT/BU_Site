@@ -4,3 +4,5 @@
 @import '/mods/site-footer/site-footer.css';
 @import '../mods/site-header/site-header.css';
 @import '__single-curse.css';
+@import '../mods/curse-info/curse-info.css';
+@import '../mods/form/form.css';
