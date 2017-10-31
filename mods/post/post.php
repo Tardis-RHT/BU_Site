@@ -7,7 +7,7 @@
                 'category_name' => 'programs, events', 
                 'meta_key'	=> 'start', 
                 'meta_type' => 'DATETIME', 
-                'orderby' => 'meta_value_num', 
+                'orderby' => 'meta_value', 
                 'order' => 'DESC' );
             $posts = get_posts( $args );
             foreach($posts as $post){ setup_postdata($post);
