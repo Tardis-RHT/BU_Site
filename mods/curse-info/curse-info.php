@@ -34,7 +34,7 @@
                         elseif ($hour >= 5 && $hour <= 20) echo LangDicts::$dict['Hour(a)'];
                         elseif ($hour%10 == 1) echo LangDicts::$dict['Hour(n)'];
                         elseif ($hour%10 >= 2 && $hour%10 <= 4) echo LangDicts::$dict['Hour(g)'];
-                        elseif ($hour%10 >= 5) echo LangDicts::$dict['Hour(a)'];
+                        elseif ($hour%10 >= 5 || $hour%10 == 0) echo LangDicts::$dict['Hour(a)'];
                     ?>
                 </span>
             </p>
@@ -46,10 +46,12 @@
                     <?php
                         $month = get_post_meta( $post->ID, 'month', true );
                         if ($month == 1) echo LangDicts::$dict['Month'];
+                        elseif (substr($month, -2) == ".5" || substr($month, -2) == ",5") echo LangDicts::$dict['Month(g)'];
                         elseif ($month >= 5 && $month <= 20) echo LangDicts::$dict['Month(a)'];
                         elseif ($month%10 == 1) echo LangDicts::$dict['Month(n)'];
                         elseif ($month%10 >= 2 && $month%10 <= 4) echo LangDicts::$dict['Month(g)'];
                         elseif ($month%10 >= 5) echo LangDicts::$dict['Month(a)'];
+                        
                     ?>
                 </span>
             </p>
@@ -58,7 +60,7 @@
             <p class="info__main">
                 <?php 
                     $price = get_post_meta( $post->ID, 'price', true ); 
-                    $price_fin = number_format($price, 0, ',', ' ');;
+                    $price_fin = number_format($price, 0, ',', ' ');
                     echo $price_fin;
                     echo LangDicts::$dict['Curency'];
                 ?>
