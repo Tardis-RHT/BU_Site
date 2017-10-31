@@ -2,7 +2,9 @@
     <footer class="wrapper footer">
         <div class="footer__block footer__block-sm">
             <a href="mailto:University@bionic-university.com">University@bionic-university.com</a>
-            <p class="footer__address">Киев, ул. Семьи Хохловых, 8</p>      
+            <p class="footer__address">
+                <?php echo LangDicts::$dict['address_text']; ?>
+            </p>      
         </div>
         <div class="footer__block footer__block-sm">
             <a class="footer_tel" href="tel:+380937285663">(093) 728-56-63</a>

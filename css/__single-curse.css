@@ -15,6 +15,7 @@
   }
 .curse-header_container{
     position: absolute;
+    z-index: 0;
     top: 0;
     left: 0;
     right: 0;
@@ -30,6 +31,7 @@
 }
 .curse__post-img{
     position: absolute;
+    z-index: -1;
     top: 0;
     left: 0;
     right: 0;

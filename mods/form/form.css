@@ -2,7 +2,7 @@
     min-height: 536px;
 }
 .form{
-    position: absolute;
+    /* position: absolute; */
     z-index: 2;
     display: flex;
     flex-direction: column;

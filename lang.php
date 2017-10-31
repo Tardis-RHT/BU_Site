@@ -27,7 +27,9 @@
                                     'thu' => 'чт',
                                     'fri' => 'пт',
                                     'sat' => 'сб',
-                                    'sun' => 'вс',);
+                                    'sun' => 'вс',
+                                    'error_text' => 'Пожалуйста, заполните это поле',
+                                    'address_text' => 'Киев, ул. Семьи Хохловых, 8');
         public static $ukr = array('Event' => 'Подія', 
                                     'Start' => 'старт', 
                                     'More' => 'Детальніше', 
@@ -55,7 +57,9 @@
                                     'thu' => 'чт',
                                     'fri' => 'пт',
                                     'sat' => 'сб',
-                                    'sun' => 'нд',);
+                                    'sun' => 'нд',
+                                    'error_text' => 'Будь ласка, заповніть це поле',
+                                    'address_text' => "Київ, вул. Сім'ї Хохлових, 8");
         public static $eng = array('Event' => 'Event', 
                                     'Start' => 'start', 
                                     'More' => 'More', 
@@ -83,7 +87,9 @@
                                     'thu' => 'thu',
                                     'fri' => 'fri',
                                     'sat' => 'sat',
-                                    'sun' => 'sun',);
+                                    'sun' => 'sun',
+                                    'error_text' => 'Please fill out this field',
+                                    'address_text' => " 8 Sim'i Khokhlovykh St, Kyiv");
         public static $dict; // текущий словарь
     }
 ?>

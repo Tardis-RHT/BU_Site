@@ -62,7 +62,8 @@ function replaceValidationUI(form) {
     for (var i = 0; i < invalidFields.length; i++) {
       parent = invalidFields[i].parentNode;
       parent.insertAdjacentHTML("beforeend", "<div class='error-message'>" +
-        invalidFields[i].validationMessage +
+        // invalidFields[i].validationMessage +
+        error_text +
         "</div>");
     }
 

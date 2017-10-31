@@ -30,12 +30,12 @@
                 <?php
                     $dateformatstring = "j F";
                     $unixtimestamp = strtotime(get_field('start'));
-                    $gmt = true;
+                    // $gmt = true;
                 if ( in_category('programs') ) {
                     // echo 'старт ' . date_i18n($dateformatstring, $unixtimestamp, $gmt) . '';
                     echo LangDicts::$dict['Start'];
                     // echo ' ' . get_post_meta( $post->ID, "start", true ) . '';
-                    echo ' ' . date_i18n($dateformatstring, $unixtimestamp, $gmt) . '';
+                    echo ' ' . date_i18n($dateformatstring, $unixtimestamp) . '';
                 }
                 else {
                     echo date_i18n($dateformatstring, $unixtimestamp, $gmt);

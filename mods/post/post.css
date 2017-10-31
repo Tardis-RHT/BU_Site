@@ -52,7 +52,7 @@
 }
 .post__tag{
     position: absolute;
-    top: 8px;
+    top: 16px;
 }
 .post__title--sm{
     font-size: 1.6rem;

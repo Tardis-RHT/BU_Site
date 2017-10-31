@@ -33,3 +33,7 @@
         </form>
     </div>				
 </div>
+
+<script>
+    var error_text = '<?php echo LangDicts::$dict['error_text'];?>';
+</script>
