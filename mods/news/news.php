@@ -1,4 +1,4 @@
-<section class="news">
+<section class="news flex-content">
     <div class="wrapper container">
         <div class="news-container">
             <?php

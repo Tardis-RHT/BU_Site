@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <?php get_header(); ?>  
-<body>
+<body class="flex-wrapper">
     <?php 
     require 'lang.php';
     LangDicts::$dict = LangDicts::$rus;
@@ -10,7 +10,6 @@
     elseif(get_locale() == 'uk') LangDicts::$dict = LangDicts::$ukr;
     elseif(get_locale() == 'en_US') LangDicts::$dict = LangDicts::$eng;
     ?>
-    
 
     <?php 
         if ( is_single() ) get_template_part('mods/single-curse');
@@ -22,9 +21,10 @@
         elseif ( is_page( 'thankyou' ) ) get_template_part('mods/page-about_us/page-about_us');
         else get_template_part('mods/homepage/home');
     ?>
-    
+
     <?php get_template_part('mods/icons_svg'); ?>
     <?php wp_footer(); ?>
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/script.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/maskedinput.js"></script>

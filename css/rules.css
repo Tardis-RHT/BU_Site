@@ -9,6 +9,7 @@ html {
 }
 html, body{
     margin: 0;
+    height: 100vh;
 }
 .wrapper{
     margin: 0 auto;
@@ -146,6 +147,21 @@ tt, kbd, samp{
 	display: block;
 	text-indent: -9999px;	
 }
+
+/* for footer to be on bootom */
+
+.flex-wrapper{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+.flex-content{
+    flex: 1 0 auto;
+}
+.footer{
+    flex: 0 0 auto;
+}
+
 @media (min-width: 480px){
     h1{
         font-size: 3em;
