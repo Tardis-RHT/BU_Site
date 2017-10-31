@@ -115,6 +115,11 @@ function buTheme_custom_logo() {
     echo $output;
 }
 
+// Changing the length of the post excerpt
+function custom_excerpt_length( $length ) {
+	return 12;
+}
+
 // SrcSet Images
 function buTheme_src_set() {
 	if( has_post_thumbnail() ) {
@@ -255,11 +260,11 @@ if(function_exists("register_field_group"))
 {
 	register_field_group(array (
 		'id' => 'acf_events-info',
-		'title' => 'events-info',
+		'title' => 'Информация о мероприятии',
 		'fields' => array (
 			array (
 				'key' => 'field_59f4ccaaa2948',
-				'label' => 'date',
+				'label' => 'Дата мероприятия',
 				'name' => 'start',
 				'type' => 'date_picker',
 				'display_format' => 'dd MM yy',
@@ -267,7 +272,7 @@ if(function_exists("register_field_group"))
 			),
 			array (
 				'key' => 'field_59f4cd3ba7bd7',
-				'label' => 'time',
+				'label' => 'Время мероприятия',
 				'name' => 'time',
 				'type' => 'text',
 				'default_value' => '',
@@ -291,7 +296,7 @@ if(function_exists("register_field_group"))
 		),
 		'options' => array (
 			'position' => 'normal',
-			'layout' => 'no_box',
+			'layout' => 'default',
 			'hide_on_screen' => array (
 			),
 		),
@@ -317,6 +322,7 @@ add_filter( 'get_custom_logo', 'change_logo_class' ); // Changing "custom-logo-l
 		$html = str_replace( 'custom-logo-link', 'logo', $html );
 		return $html;
 	}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 ); // Changing the length of the post excerpt (number of words set in the function)
 
 
 ?>

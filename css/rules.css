@@ -54,7 +54,7 @@ h1,h2,h3,h4,h5,h6,p, ul, ol, time{
 h1,h2,h3,h4,h5,h6{font-weight: normal}
 
 h1 {
-	font-size: 2em; /* 42px */
+	font-size: 2.375em; /* 38px */
     line-height: 1.057; /* 40px */
 }
 
@@ -141,7 +141,7 @@ tt, kbd, samp{
 .tile:hover{
     cursor: pointer;
     box-shadow: 0 23px 40px rgba(0,0,0,0.2);
-    transform: translateY(2px);
+    transform: translateY(-2px);
 }
 .nostyle{
 	display: block;
@@ -162,11 +162,6 @@ tt, kbd, samp{
     flex: 0 0 auto;
 }
 
-@media (min-width: 480px){
-    h1{
-        font-size: 3em;
-    }
-}
 @media (min-width: 600px){
     .alignleft, .fl{
         margin: 32px 32px 32px calc(var(--grid-column) * -1);
@@ -178,21 +173,11 @@ tt, kbd, samp{
         width: calc(var(--grid-column) * 4 - var(--grid-margin) * 2);
     }
 }
-@media (min-width:720px){
-    h1{
-        font-size: 4em;
-    }
-}
 @media (min-width:840px){
     .padding-top{
         padding-top:80px;
     }
     .tile{
         width: calc(var(--grid-column) * 3 - var(--grid-margin) * 2);
-    }
-}
-@media (min-width:1440px){
-    h1{
-        font-size: 5em;
     }
 }
