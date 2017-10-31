@@ -115,6 +115,11 @@ function buTheme_custom_logo() {
     echo $output;
 }
 
+// Changing the length of the post excerpt
+function custom_excerpt_length( $length ) {
+	return 12;
+}
+
 // SrcSet Images
 function buTheme_src_set() {
 	if( has_post_thumbnail() ) {
@@ -317,6 +322,7 @@ add_filter( 'get_custom_logo', 'change_logo_class' ); // Changing "custom-logo-l
 		$html = str_replace( 'custom-logo-link', 'logo', $html );
 		return $html;
 	}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 ); // Changing the length of the post excerpt (number of words set in the function)
 
 
 ?>
