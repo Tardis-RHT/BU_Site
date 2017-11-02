@@ -76,7 +76,7 @@
         min-width: calc(50% - 56px);
     }
 }
-@media (min-width:840px){
+@media (min-width:1024px){
     /* .post-single{
         padding: 32px;
     } */
@@ -85,5 +85,8 @@
     }
     .post-single:first-of-type > .post__btn{
         min-width: calc(50% - 40px);
+    }
+    .post-single{
+        min-height: calc(var(--grid-column) * 4 - var(--grid-margin) * 2);
     }
 }
