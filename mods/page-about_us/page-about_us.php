@@ -6,4 +6,5 @@
         </div>
     <?php endwhile; endif; ?>
 </div>
+<?php get_template_part('mods/map/map'); ?>
 <?php get_template_part('mods/site-footer/site', 'footer'); ?>
