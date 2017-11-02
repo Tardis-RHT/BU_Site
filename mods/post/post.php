@@ -1,14 +1,22 @@
 <section class="centered wrapper padding-top">
     <div class="post-container">
-        <?php
+        <?php        
             global $post;
+            $today = date('Ymd');
             $args = array(
                 'posts_per_page' => 7, 
                 'category_name' => 'programs, events', 
+                // 'meta_query' => array(
+                //     'key'		=> 'start',
+                //     'compare'	=> '<=',
+                //     'value'		=> $today,
+                // ),
                 'meta_key'	=> 'start', 
-                'meta_type' => 'DATETIME', 
+                'meta_type' => 'DATETIME',
+                'meta_compare' => '>=',
+                'meta_value' => $today,
                 'orderby' => 'meta_value', 
-                'order' => 'DESC' );
+                'order' => 'ASC' );
             $posts = get_posts( $args );
             foreach($posts as $post){ setup_postdata($post);
         ?>
@@ -32,16 +40,20 @@
                     $unixtimestamp = strtotime(get_field('start'));
                     // $gmt = true;
                 if ( in_category('programs') ) {
-                    // echo 'старт ' . date_i18n($dateformatstring, $unixtimestamp, $gmt) . '';
-                    echo LangDicts::$dict['Start'];
-                    // echo ' ' . get_post_meta( $post->ID, "start", true ) . '';
-                    echo ' ' . date_i18n($dateformatstring, $unixtimestamp) . '';
+                    $year = date('Y');
+                    $start_year = date_i18n('Y', $unixtimestamp);
+                    if ($start_year === $year){ 
+                        echo LangDicts::$dict['Start'];
+                        echo ' ' . date_i18n($dateformatstring, $unixtimestamp) . '';
+                    }
+                    else{
+                        echo date_i18n('j F Y', $unixtimestamp);
+                    }
                 }
                 else {
                     echo date_i18n($dateformatstring, $unixtimestamp, $gmt);
-                    // echo get_post_meta( $post->ID, "start", true );
-                    echo ' ' . LangDicts::$dict['at'] . '&nbsp;';
-                    echo get_post_meta( $post->ID, "time", true );
+                    // echo ' ' . LangDicts::$dict['at'] . '&nbsp;';
+                    // echo get_post_meta( $post->ID, "time", true );
                 }
                 ?>
                 <span class="post__btn--add btn">

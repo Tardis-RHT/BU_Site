@@ -31,7 +31,7 @@
                                     'error_text' => 'Пожалуйста, заполните это поле',
                                     'address_text' => 'Киев, ул. Семьи Хохловых, 8');
         public static $ukr = array('Event' => 'Подія', 
-                                    'Start' => 'старт', 
+                                    'Start' => 'Старт', 
                                     'More' => 'Детальніше', 
                                     'at' => 'о', 
                                     'Initiator' => 'Ініціатор',
@@ -61,7 +61,7 @@
                                     'error_text' => 'Будь ласка, заповніть це поле',
                                     'address_text' => "Київ, вул. Сім'ї Хохлових, 8");
         public static $eng = array('Event' => 'Event', 
-                                    'Start' => 'start', 
+                                    'Start' => 'Start', 
                                     'More' => 'More', 
                                     'at' => 'at', 
                                     'Initiator' => 'Initiator',

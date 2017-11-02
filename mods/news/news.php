@@ -14,9 +14,7 @@
             ?>                    
             <a class="tile tile__news" href="<?php echo get_permalink() ?>">
                 <div class="news__cover-container">
-                    <div class="news__cover">
-                        <img class="news__img" src="<?php echo get_the_post_thumbnail_url() ?>">
-                    </div>
+                    <img class="news__img" src="<?php echo buTheme_src_set() ?>">
                 </div>
                 <div class="news__content">
                     <span class="news__date"><?php echo get_the_date('d.m.Y') ?></span>
