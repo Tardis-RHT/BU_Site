@@ -177,6 +177,9 @@ tt, kbd, samp{
     .padding-top{
         padding-top:80px;
     }
+
+}
+@media (min-width:1024px){
     .tile{
         width: calc(var(--grid-column) * 3 - var(--grid-margin) * 2);
     }

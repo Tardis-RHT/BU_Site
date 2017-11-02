@@ -19,12 +19,9 @@
 .logo{
     width: calc(var(--grid-column) * 2 + 8px);
     font-family: sans-serif;
-    display: flex;
-    height: 100%;
 }
 .logo__img{
     max-width: 144px;
-    /* display: block; */
     padding: 0 8px 0 16px
 }
 .main-menu{
@@ -91,6 +88,10 @@
     .header{
         height: 56px;
         flex-wrap: nowrap;
+    }
+    .logo{
+        display: flex;
+        height: 100%;
     }
     .main-menu{
         width: calc(var(--grid-column) * 8 - var(--grid-margin) * 2);
