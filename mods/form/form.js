@@ -19,6 +19,7 @@ $(document).ready(function($){
           success: function(data, textStatus, jqXHR){
           if (jqXHR.status == 200){
             $("#mainForm").trigger('reset');
+            // window.location.href='/thankyou' + current_url;
             window.location.href='/thankyou';
           }
               
@@ -114,7 +115,6 @@ var error_msg = document.getElementsByClassName('error-message');
 function telValidity(){
   var tel = document.getElementById('tel');
   var parent = tel.parentNode;
-  console.log(parent);
   if(parent.getElementsByClassName('error-message').length > 0){
     parent.removeChild(parent.lastChild);  
     tel.style.borderColor = "var(--primary-color)";

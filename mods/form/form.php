@@ -36,4 +36,8 @@
 
 <script>
     var error_text = '<?php echo LangDicts::$dict['error_text'];?>';
+    var current_url = '&<?php 
+        $url = get_the_title();
+        $current_url=str_replace(" ","",$url);
+        echo $current_url;?>';
 </script>

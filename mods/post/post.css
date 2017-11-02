@@ -53,6 +53,7 @@
 .post__tag{
     position: absolute;
     top: 16px;
+    opacity: .87;
 }
 .post__title--sm{
     font-size: 1.6rem;

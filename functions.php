@@ -5,6 +5,7 @@
  *  Custom functions, support, custom post types and more.
  */
 
+
 /*------------------------------------*\
 	External Modules/Files
 \*------------------------------------*/
@@ -145,7 +146,6 @@ function my_head_input()
 	wp_register_style('buTheme_css', get_template_directory_uri() . '/css/acf_custom.css', array(), '1.0', 'all');
 	wp_enqueue_style('buTheme_css'); // Enqueue it!
 }
-
 // Adding "Advanced Custom Field" fields (ACF Plugin MUST be installed)
 if(function_exists("register_field_group"))
 {
@@ -203,20 +203,20 @@ if(function_exists("register_field_group"))
 				'max' => '',
 				'step' => '',
 			),
-			array (
-				'key' => 'field_59f0cb9b30e23',
-				'label' => 'Стоимость',
-				'name' => 'price',
-				'type' => 'number',
-				'required' => 1,
-				'default_value' => '',
-				'placeholder' => '',
-				'prepend' => '',
-				'append' => 'грн',
-				'min' => '',
-				'max' => '',
-				'step' => '',
-			),
+			// array (
+			// 	'key' => 'field_59f0cb9b30e23',
+			// 	'label' => 'Стоимость',
+			// 	'name' => 'price',
+			// 	'type' => 'number',
+			// 	'required' => 1,
+			// 	'default_value' => '',
+			// 	'placeholder' => '',
+			// 	'prepend' => '',
+			// 	'append' => 'грн',
+			// 	'min' => '',
+			// 	'max' => '',
+			// 	'step' => '',
+			// ),
 			array (
 				'key' => 'field_59f5de861bfb1',
 				'label' => 'Дни недели',
@@ -252,9 +252,112 @@ if(function_exists("register_field_group"))
 			'hide_on_screen' => array (
 			),
 		),
-		'menu_order' => 0,
+		'menu_order' => 1,
 	));	
 }
+// if(function_exists("register_field_group"))
+{
+	register_field_group(array (
+		'id' => 'acf_programs-price',
+		'title' => 'Стоимость курса',
+		'fields' => array (
+			array (
+				'key' => 'field_59fb563822517',
+				'label' => 'Стоимость',
+				'name' => 'price',
+				'type' => 'select',
+				'required' => 1,
+				'choices' => array (
+					'весь курс' => 'весь курс',
+					'за месяц' => 'за месяц',
+				),
+				'default_value' => '',
+				'allow_null' => 0,
+				'multiple' => 0,
+			),
+			array (
+				'key' => 'field_59fb56ac9edff',
+				'label' => 'Стоимость в месяц',
+				'name' => 'month_price',
+				'type' => 'number',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_59fb563822517',
+							'operator' => '==',
+							'value' => 'за месяц',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'min' => '',
+				'max' => '',
+				'step' => '',
+			),
+			array (
+				'key' => 'field_59fb56c79ee00',
+				'label' => 'Стоимость всего курса',
+				'name' => 'price_all',
+				'type' => 'number',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_59fb563822517',
+							'operator' => '==',
+							'value' => 'весь курс',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'min' => '',
+				'max' => '',
+				'step' => '',
+			),
+			array (
+				'key' => 'field_59fb57156f0df',
+				'label' => 'Валюта',
+				'name' => 'currency',
+				'type' => 'select',
+				'choices' => array (
+					'UAH' => 'UAH',
+					'USD' => 'USD',
+				),
+				'default_value' => '',
+				'allow_null' => 0,
+				'multiple' => 0,
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_category',
+					'operator' => '==',
+					'value' => buTheme_slugid('programs'),
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
+}
+
 
 if(function_exists("register_field_group"))
 {
