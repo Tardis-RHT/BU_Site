@@ -24,7 +24,7 @@
                     <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/bionichill.png" alt="Bionic Hill"></a>
                 </div>
             </div>
-            <p class="footer__copyright">&#169; 2012 - 2017</p>
+            <p class="footer__copyright">&#169; 2012 - <?php echo date('Y'); ?></p>
         </div>
     </footer>
     <!-- /footer -->
