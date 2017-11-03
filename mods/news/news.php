@@ -1,4 +1,4 @@
-<section class="news flex-content padding-top">
+<section class="news-block flex-content">
     <div class="wrapper container">
         <div class="news-container">
             <?php

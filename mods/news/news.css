@@ -1,6 +1,7 @@
-.news{
+.news-block{
     width: 100%;
     background-color: var(--bg-color);
+    padding: 104px 0;
 }
 .container{
     display: flex;
