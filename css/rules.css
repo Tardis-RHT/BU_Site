@@ -160,7 +160,7 @@ tt, kbd, samp{
 .flex-footer{
     flex: 0 0 auto;
 }
-p iframe{
+iframe{
     max-width: 100%;
 }
 .four-block{
