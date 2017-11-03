@@ -1,16 +1,23 @@
 <section class="centered wrapper padding-top">
     <div class="post-container">
+    <?php if (in_category('news')) echo '<h2 class="tag">Идет набор на курсы</h2>'; ?>
         <?php        
             global $post;
             $today = date('Ymd');
-            $args = array(
+            if(in_category('news') ){
+                $args = array(
+                    'posts_per_page' => 4, 
+                    'category_name' => 'programs',
+                    'meta_key'	=> 'start', 
+                    'meta_type' => 'DATETIME',
+                    'meta_compare' => '>=',
+                    'meta_value' => $today,
+                    'orderby' => 'meta_value', 
+                    'order' => 'ASC' );
+            }
+            else $args = array(
                 'posts_per_page' => 7, 
-                'category_name' => 'programs, events', 
-                // 'meta_query' => array(
-                //     'key'		=> 'start',
-                //     'compare'	=> '<=',
-                //     'value'		=> $today,
-                // ),
+                'category_name' => 'programs, events',
                 'meta_key'	=> 'start', 
                 'meta_type' => 'DATETIME',
                 'meta_compare' => '>=',
@@ -20,8 +27,7 @@
             $posts = get_posts( $args );
             foreach($posts as $post){ setup_postdata($post);
         ?>
-
-        <a class="tile post-single" style="background-image: url(<?php echo get_the_post_thumbnail_url() ?>);" href="<?php echo get_permalink(); ?>">
+        <a class="tile post-single <?php if (is_front_page()) echo 'post-single__big'; ?>" style="background-image: url(<?php echo get_the_post_thumbnail_url() ?>);" href="<?php echo get_permalink(); ?>">
            <?php
             if ( in_category('events') ) {
                 echo '<span class="post__tag">';
