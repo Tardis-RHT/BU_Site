@@ -1,4 +1,4 @@
-<section class="news flex-content padding-top">
+<section class="news-block flex-content">
     <div class="wrapper container">
         <div class="news-container">
             <?php
@@ -6,7 +6,7 @@
                     $args = array('posts_per_page' => 0, 'category_name' => 'news', 'order' => 'DESC' );
                 }
                 else {
-                    $args = array('posts_per_page' => 3, 'category_name' => 'news', 'order' => 'DESC' );                
+                    $args = array('posts_per_page' => 3, 'post__not_in' => array( $post->ID ), 'category_name' => 'news', 'order' => 'DESC' );                
                 }
                 global $post;
                 $myposts = get_posts( $args );
