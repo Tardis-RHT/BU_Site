@@ -148,8 +148,7 @@ tt, kbd, samp{
 	text-indent: -9999px;	
 }
 
-/* for footer to be on bootom */
-
+/* for footer to be fixed to bottom */
 .flex-wrapper{
     display: flex;
     flex-direction: column;
@@ -161,7 +160,17 @@ tt, kbd, samp{
 .flex-footer{
     flex: 0 0 auto;
 }
-
+iframe{
+    max-width: 100%;
+}
+.four-block{
+    color: #ffffff;
+    background-color: #008ba9;
+    margin-bottom: -80px;
+}
+.four-container{
+    padding: 108px 24px 0 24px;
+}
 @media (min-width: 600px){
     .alignleft, .fl{
         margin: 32px 32px 32px calc(var(--grid-column) * -1);
@@ -177,7 +186,9 @@ tt, kbd, samp{
     .padding-top{
         padding-top:80px;
     }
-
+    .four-block{
+        margin-bottom: -40px;
+    }
 }
 @media (min-width:1024px){
     .tile{

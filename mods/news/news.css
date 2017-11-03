@@ -1,6 +1,7 @@
-.news{
+.news-block{
     width: 100%;
     background-color: var(--bg-color);
+    padding: 40px 0;
 }
 .container{
     display: flex;
@@ -73,9 +74,18 @@
 .news__caption{
     line-height: 1.4em;
 }
-
+.news-page{
+    width: 100%;
+    background-color: var(--bg-color);
+    padding-top: 80px;
+}
 @media (min-width:840px){
-    .tile__news{
+    .news-page{
+        padding-top: 40px;
+    }
+}
+@media (min-width:840px) and (max-width:1399px){
+    .news-container .tile__news{
         width: calc(var(--grid-column) * 4 - var(--grid-margin) * 2);
     }
 }
