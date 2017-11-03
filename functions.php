@@ -147,6 +147,7 @@ function my_head_input()
 	wp_enqueue_style('buTheme_css'); // Enqueue it!
 }
 // Adding "Advanced Custom Field" fields (ACF Plugin MUST be installed)
+
 if(function_exists("register_field_group"))
 {
 	register_field_group(array (
@@ -268,8 +269,8 @@ if(function_exists("register_field_group"))
 				'type' => 'select',
 				'required' => 1,
 				'choices' => array (
-					'весь курс' => 'весь курс',
-					'за месяц' => 'за месяц',
+					'price_all' => 'весь курс',
+					'month_price' => 'за месяц',
 				),
 				'default_value' => '',
 				'allow_null' => 0,
@@ -286,7 +287,7 @@ if(function_exists("register_field_group"))
 						array (
 							'field' => 'field_59fb563822517',
 							'operator' => '==',
-							'value' => 'за месяц',
+							'value' => 'month_price',
 						),
 					),
 					'allorany' => 'all',
@@ -310,7 +311,7 @@ if(function_exists("register_field_group"))
 						array (
 							'field' => 'field_59fb563822517',
 							'operator' => '==',
-							'value' => 'весь курс',
+							'value' => 'price_all',
 						),
 					),
 					'allorany' => 'all',

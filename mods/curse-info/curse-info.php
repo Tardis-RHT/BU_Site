@@ -18,7 +18,15 @@
             <p class="info__main">
             <?php echo get_post_meta( $post->ID, 'time', true ); ?>
                 <span class="info__sub">
-                    <?php the_field('week');?>
+                    <?php 
+                        $field = get_field_object('week');
+                        $week = $field['value'];
+                       
+                    the_field('week');
+                    // foreach( $week as $days ):
+                    //     echo $week['чт'];
+                    // endforeach;
+                    ?>
                 </span>
             </p>
         </div>
@@ -59,13 +67,37 @@
         <div class="info-wrap--lg">
             <p class="info__main">
                 <?php 
-                    $price = get_post_meta( $post->ID, 'price', true ); 
-                    $price_fin = number_format($price, 0, ',', ' ');
-                    echo $price_fin;
-                    echo LangDicts::$dict['Curency'];
+                    // $price = get_post_meta( $post->ID, 'price', true ); 
+                    // $price_fin = number_format($price, 0, ',', ' ');
+                    // echo $price_fin;
+                    // echo LangDicts::$dict['Curency'];
+
+                    $field = get_field_object('price');
+                    $value = $field['value'];
+
+                    if( $value === 'month_price' ){
+                        $price = get_post_meta( $post->ID, 'month_price', true ); 
+                        $price_fin = number_format($price, 0, ',', ' ');
+
+                        echo $price_fin;
+                        echo ' ';                    
+                        the_field('currency');
+                    }     
+                    else{
+                        $price = get_post_meta( $post->ID, 'price_all', true ); 
+                        $price_fin = number_format($price, 0, ',', ' ');
+
+                        echo $price_fin;
+                        echo ' ';                    
+                        the_field('currency');
+                    }
+                    
                 ?>
                 <span class="info__sub">
-                    <?php echo LangDicts::$dict['Program price']; ?>
+                    <?php 
+                        if( $value === 'month_price' ) echo LangDicts::$dict['ProgramMonthlyPrice_text'];
+                        else echo LangDicts::$dict['ProgramPrice_text'];
+                    ?>
                 </span>
             </p>
         </div>
