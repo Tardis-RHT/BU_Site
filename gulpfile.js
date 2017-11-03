@@ -7,7 +7,6 @@ var browserSync = require('browser-sync');
 var connect = require('gulp-connect-php');
 var postcss = require('gulp-postcss');
 var cssnext = require('postcss-cssnext');
-// var gulpcss = require('gulp-cssnext');
 
 var paths = {
     css:['css/*.css','mods/*/*.css'],
@@ -46,11 +45,8 @@ gulp.task('connect-sync', function() {
 });
 
 gulp.task('css', function () {
-    return gulp.src(paths.css)
+    return gulp.src('css/style.css')
         .pipe(postcss(plugins))
-        // .pipe(gulpcss({
-        //     compress: true
-        // }))
         .pipe(cleanCSS()) 
         .pipe(concat('stylemin.css'))
         .pipe(gcmq())
