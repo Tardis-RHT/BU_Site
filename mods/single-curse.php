@@ -17,5 +17,8 @@
 </div>
 <?php 
 if ( in_category( 'programs' ) ) get_template_part('mods/map/map');
-if ( in_category( 'programs' ) ) get_template_part('mods/form/form');?>
+if ( in_category( 'programs' ) ) get_template_part('mods/form/form');
+if ( in_category( 'news' ) ) get_template_part('mods/news/news');
+
+?>
 <?php get_template_part('mods/site-footer/site', 'footer'); ?>
