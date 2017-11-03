@@ -1,7 +1,7 @@
 .news-block{
     width: 100%;
     background-color: var(--bg-color);
-    padding: 104px 0;
+    padding: 40px 0;
 }
 .container{
     display: flex;
@@ -75,7 +75,10 @@
     line-height: 1.4em;
 }
 
-@media (min-width:840px){
+@media (min-width:840px) and (max-width:1399px){
+    .news-block{
+        padding: 104px 0;
+    }
     .tile__news{
         width: calc(var(--grid-column) * 4 - var(--grid-margin) * 2);
     }

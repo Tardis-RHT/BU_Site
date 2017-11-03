@@ -148,8 +148,7 @@ tt, kbd, samp{
 	text-indent: -9999px;	
 }
 
-/* for footer to be on bootom */
-
+/* for footer to be fixed to bottom */
 .flex-wrapper{
     display: flex;
     flex-direction: column;
