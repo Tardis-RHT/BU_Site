@@ -17,6 +17,30 @@
                     'orderby' => 'meta_value', 
                     'order' => 'ASC' );
             }
+            elseif(in_category('programs') ){
+                $args = array(
+                    'posts_per_page' => 4, 
+                    'category_name' => 'programs, events',
+                    'post__not_in' => array( $post->ID ),
+                    'meta_key'	=> 'start',
+                    'meta_type' => 'DATETIME',
+                    'meta_compare' => '>=',
+                    'meta_value' => $today,
+                    'orderby' => 'meta_value', 
+                    'order' => 'ASC' );
+            }
+            elseif(in_category('events') ){
+                $args = array(
+                    'posts_per_page' => 4, 
+                    'category_name' => 'programs, events',
+                    'post__not_in' => array( $post->ID ),
+                    'meta_key'	=> 'start',
+                    'meta_type' => 'DATETIME',
+                    'meta_compare' => '>=',
+                    'meta_value' => $today,
+                    'orderby' => 'meta_value', 
+                    'order' => 'ASC' );
+            }
             else $args = array(
                 'posts_per_page' => 7, 
                 'category_name' => 'programs, events',
