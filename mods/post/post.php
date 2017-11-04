@@ -1,14 +1,16 @@
 <section class="centered wrapper padding-top">
     <div class="post-container">
-    <?php if (in_category('news')) echo '<h2 class="tag">Идет набор на курсы</h2>'; ?>
+    <?php if (in_category('news')) echo '<h2 class="tag">' . LangDicts::$dict['curse_nabor_text'] . '</h2>'; ?>
         <?php        
             global $post;
             $today = date('Ymd');
+            $tag_ids = wp_get_post_tags( $post->ID, array( 'fields' => 'ids' ) );
             if(in_category('news') ){
                 $args = array(
                     'posts_per_page' => 4, 
                     'category_name' => 'programs',
-                    'meta_key'	=> 'start', 
+                    'tag__in' => $tag_ids,
+                    'meta_key'	=> 'start',
                     'meta_type' => 'DATETIME',
                     'meta_compare' => '>=',
                     'meta_value' => $today,
@@ -30,9 +32,7 @@
         <a class="tile post-single <?php if (is_front_page()) echo 'post-single__big'; ?>" style="background-image: url(<?php echo get_the_post_thumbnail_url() ?>);" href="<?php echo get_permalink(); ?>">
            <?php
             if ( in_category('events') ) {
-                echo '<span class="post__tag">';
-                echo LangDicts::$dict['Event'];
-                echo '</span><h2 class="post__title post__title--sm">';
+                echo '<span class="post__tag">' . LangDicts::$dict['Event'] . '</span><h2 class="post__title post__title--sm">';
             }
             else
                 echo

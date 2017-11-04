@@ -30,7 +30,8 @@
                                     'sat' => 'сб',
                                     'sun' => 'вс',
                                     'error_text' => 'Пожалуйста, заполните это поле',
-                                    'address_text' => 'Киев, ул. Семьи Хохловых, 8');
+                                    'address_text' => 'Киев, ул. Семьи Хохловых, 8',
+                                    'curse_nabor_text' => 'Идет набор на курсы');
         public static $ukr = array('Event' => 'Подія', 
                                     'Start' => 'Старт', 
                                     'More' => 'Детальніше', 
@@ -61,7 +62,8 @@
                                     'sat' => 'сб',
                                     'sun' => 'нд',
                                     'error_text' => 'Будь ласка, заповніть це поле',
-                                    'address_text' => "Київ, вул. Сім'ї Хохлових, 8");
+                                    'address_text' => "Київ, вул. Сім'ї Хохлових, 8",
+                                    'curse_nabor_text' => 'Йде набiр на курси');
         public static $eng = array('Event' => 'Event', 
                                     'Start' => 'Start', 
                                     'More' => 'More', 
@@ -92,7 +94,8 @@
                                     'sat' => 'sat',
                                     'sun' => 'sun',
                                     'error_text' => 'Please fill out this field',
-                                    'address_text' => " 8 Sim'i Khokhlovykh St, Kyiv");
+                                    'address_text' => " 8 Sim'i Khokhlovykh St, Kyiv",
+                                    'curse_nabor_text' => 'Courses in process');
         public static $dict; // текущий словарь
     }
 ?>
