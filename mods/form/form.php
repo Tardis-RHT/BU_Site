@@ -20,11 +20,12 @@
             <label for="tel" class="form__label">
                 <?php echo LangDicts::$dict['Phone'];?>
             </label>
-            <input type="tel" class="form__input" id="tel" placeholder="+38(050)123-45-67" 
+            <input type="tel" class="form__input" id="tel" placeholder="+38(___)___-__-__" 
                 pattern="\D[0-9]{2}\s\D[0-9]{3}\D\s[0-9]{3}\s\D\s[0-9]{2}\s\D\s[0-9]{2}" required>
         </div>
         <div>
-            <label for="email" class="form__label">E-mail 
+            <label for="email" class="form__label">
+            <?php echo LangDicts::$dict['Email'];?>
             </label>
             <input type="email" class="form__input" id="email" placeholder="your@email.com" required>
         </div>

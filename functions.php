@@ -386,6 +386,18 @@ if(function_exists("register_field_group"))
 				'formatting' => 'html',
 				'maxlength' => '',
 			),
+			array (
+				'key' => 'field_59fe612bbac11',
+				'label' => 'Ссылка на регистрацию',
+				'name' => 'btn_url',
+				'type' => 'text',
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
 		),
 		'location' => array (
 			array (
@@ -413,7 +425,7 @@ if(function_exists("register_field_group"))
 	Actions
 \*------------------------------------*/
 add_action('init', 'register_buTheme_menu'); // Add buTheme Blank Menu
-add_action('after_setup_theme', 'buTheme_setup'); //Adding custom logo in Theme Customizer
+// add_action('after_setup_theme', 'buTheme_setup'); //Adding custom logo in Theme Customizer
 add_action('acf/input/admin_head', 'my_head_input'); // "Advanced Custom Fields" stylesheet override
 
 /*------------------------------------*\

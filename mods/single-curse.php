@@ -9,6 +9,7 @@
         </header>
         <?php 
         if ( in_category('programs') ) get_template_part('mods/curse-info/curse', 'info');
+        elseif ( in_category('events') ) get_template_part('mods/event-info/event', 'info');
         ?>
         <div class="wrapper curse-content">
             <?php the_content(); ?>

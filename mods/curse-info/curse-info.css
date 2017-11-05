@@ -7,6 +7,7 @@
     padding: 16px 8px;
     transform: translateY(-50%);
     background-color: var(--font-white);
+    border-radius: 2px;
 }
 .info-row{
     display: flex;

@@ -53,10 +53,10 @@
             $posts = get_posts( $args );
             foreach($posts as $post){ setup_postdata($post);
         ?>
-        <a class="tile post-single <?php if (is_front_page()) echo 'post-single__big'; ?>" style="background-image: url(<?php echo get_the_post_thumbnail_url() ?>);" href="<?php echo get_permalink(); ?>">
+        <a class="tile post-single <?php if (is_front_page()) echo 'post-single--big'; ?>" style="background-image: url(<?php echo get_the_post_thumbnail_url() ?>);" href="<?php echo get_permalink(); ?>">
            <?php
             if ( in_category('events') ) {
-                echo '<span class="post__tag">' . LangDicts::$dict['Event'] . '</span><h2 class="post__title post__title--sm">';
+                echo '<span class="post__tag">' . LangDicts::$dict['Event'] . '</span><h2 class="post__title post__title--event">';
             }
             else
                 echo
@@ -68,10 +68,10 @@
                 <?php
                     $dateformatstring = "j F";
                     $unixtimestamp = strtotime(get_field('start'));
-                    // $gmt = true;
-                if ( in_category('programs') ) {
                     $year = date('Y');
                     $start_year = date_i18n('Y', $unixtimestamp);
+                if ( in_category('programs') ) {
+                   
                     if ($start_year === $year){ 
                         echo LangDicts::$dict['Start'];
                         echo ' ' . date_i18n($dateformatstring, $unixtimestamp) . '';
@@ -81,7 +81,12 @@
                     }
                 }
                 else {
-                    echo date_i18n($dateformatstring, $unixtimestamp, $gmt);
+                    if ($start_year === $year){ 
+                        echo date_i18n($dateformatstring, $unixtimestamp);
+                    }
+                    else{
+                        echo date_i18n('j F Y', $unixtimestamp);
+                    }
                     // echo ' ' . LangDicts::$dict['at'] . '&nbsp;';
                     // echo get_post_meta( $post->ID, "time", true );
                 }

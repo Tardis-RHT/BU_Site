@@ -1,7 +1,7 @@
 <?php get_template_part('mods/site-header/site', 'header'); ?>
  
 <?php $tags = get_tags();
-$html .= '<div class="centered wrapper padding-top">';
+$html .= '<div class="wrapper tags-container padding-top">';
     foreach ($tags as $tag){
         global $post;
         $slug = $tag->slug;
