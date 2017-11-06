@@ -67,7 +67,7 @@
     list-style: none;
     padding: 0;
 }
-.language-chooser  a {
+.language-chooser a {
     color: var(--logo-color);
 }
 .qtranxs_text
@@ -79,7 +79,7 @@
 .qtranxs_widget_end{
     display: none;
 }
-.active > a{
+.language-chooser .active > a{
     color: var(--font-light);
 }
 

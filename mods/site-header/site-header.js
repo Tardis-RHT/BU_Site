@@ -71,6 +71,7 @@ $(document).ready(function() {
     });
 
     if (window.location.href.indexOf("programs") > -1) { 
+        $('.menu-item-14').addClass('current-menu-item');
         $('.menu-item-23').addClass('current-menu-item');
     }       
 });
