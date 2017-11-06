@@ -7,6 +7,7 @@ var browserSync = require('browser-sync');
 var connect = require('gulp-connect-php');
 var postcss = require('gulp-postcss');
 var cssnext = require('postcss-cssnext');
+var autoprefixer = require('gulp-autoprefixer');
 
 var paths = {
     css:['css/*.css','mods/*/*.css'],
@@ -47,9 +48,13 @@ gulp.task('connect-sync', function() {
 gulp.task('css', function () {
     return gulp.src('css/style.css')
         .pipe(postcss(plugins))
-        .pipe(cleanCSS()) 
+        .pipe(cleanCSS())
         .pipe(concat('stylemin.css'))
         .pipe(gcmq())
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        })) 
         .pipe(cleanCSS()) 
         .pipe(gulp.dest('css/'))
         .pipe(browserSync.stream());

@@ -19,6 +19,7 @@
                                     'Name' => 'Имя',
                                     'Surname' => 'Фамилия',
                                     'Phone' => 'Телефон',
+                                    'Email' => 'Эл. адрес',
                                     'exp_name' => 'Тарас',
                                     'exp_surname' => 'Шевченко',
                                     'Apply' => 'Записаться',
@@ -30,7 +31,10 @@
                                     'sat' => 'сб',
                                     'sun' => 'вс',
                                     'error_text' => 'Пожалуйста, заполните это поле',
-                                    'address_text' => 'Киев, ул. Семьи Хохловых, 8');
+                                    'address_text' => 'Киев, ул. Семьи Хохловых, 8',
+                                    'curse_nabor_text' => 'Идет набор на курсы', 
+                                    '404_text' => 'Такой страницы нет',
+                                    '404_more_text' => 'Возможно вас заинтересует:');
         public static $ukr = array('Event' => 'Подія', 
                                     'Start' => 'Старт', 
                                     'More' => 'Детальніше', 
@@ -50,6 +54,7 @@
                                     'Name' => "Ім'я",
                                     'Surname' => 'Прізвище',
                                     'Phone' => 'Телефон',
+                                    'Email' => 'Ел. адреса',
                                     'exp_name' => 'Тарас',
                                     'exp_surname' => 'Шевченко',
                                     'Apply' => 'Записатися',
@@ -61,7 +66,10 @@
                                     'sat' => 'сб',
                                     'sun' => 'нд',
                                     'error_text' => 'Будь ласка, заповніть це поле',
-                                    'address_text' => "Київ, вул. Сім'ї Хохлових, 8");
+                                    'address_text' => "Київ, вул. Сім'ї Хохлових, 8",
+                                    'curse_nabor_text' => 'Йде набiр на курси',
+                                    '404_text' => 'Такої сторінки немає',
+                                    '404_more_text' => 'Можливо вас зацікавить:');
         public static $eng = array('Event' => 'Event', 
                                     'Start' => 'Start', 
                                     'More' => 'More', 
@@ -81,6 +89,7 @@
                                     'Name' => 'Name',
                                     'Surname' => 'Surname',
                                     'Phone' => 'Phone',
+                                    'Email' => 'Email',
                                     'exp_name' => 'Taras',
                                     'exp_surname' => 'Shevchenko',
                                     'Apply' => 'Apply',
@@ -92,7 +101,10 @@
                                     'sat' => 'sat',
                                     'sun' => 'sun',
                                     'error_text' => 'Please fill out this field',
-                                    'address_text' => " 8 Sim'i Khokhlovykh St, Kyiv");
+                                    'address_text' => " 8 Sim'i Khokhlovykh St, Kyiv",
+                                    'curse_nabor_text' => 'Courses in process',
+                                    '404_text' => 'No such page',
+                                    '404_more_text' => 'Maybe you will be interested:');
         public static $dict; // текущий словарь
     }
 ?>

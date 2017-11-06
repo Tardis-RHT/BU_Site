@@ -1,4 +1,6 @@
-<?php get_template_part('mods/site-header/site', 'header'); ?>
-<?php get_template_part('mods/post/post'); ?>
-<?php get_template_part('mods/news/news'); ?>
-<?php get_template_part('mods/site-footer/site', 'footer'); ?>
+<?php 
+    get_template_part('mods/site-header/site', 'header'); 
+    get_template_part('mods/post/post');
+    get_template_part('mods/news/news');
+    get_template_part('mods/site-footer/site', 'footer'); 
+?>

@@ -1,5 +1,5 @@
 .header-container{
-    box-shadow: var(--box-shadow);
+    box-shadow: 0 4px 8px 3px rgba(17,17,17,.06);
     background-color: rgba(255,255,255,.8);
     transition: background-color .1s cubic-bezier(0.4, 0.0, 0.6, 1);
     position: fixed;
@@ -22,7 +22,8 @@
 }
 .logo__img{
     max-width: 144px;
-    padding: 0 8px 0 16px
+    padding: 0 8px 0 16px;
+    height: auto;
 }
 .main-menu{
     flex-basis: 100%;
@@ -65,6 +66,9 @@
     width: calc(var(--grid-column) * 2 - var(--grid-margin) * 2);
     list-style: none;
     padding: 0;
+}
+.language-chooser  a {
+    color: var(--logo-color);
 }
 .qtranxs_text
 {
@@ -111,7 +115,8 @@
         line-height: 56px;
     }
     .menu-item > a{
-        color: var(--primary-color);
+        color: var(--logo-color);
+        padding-top: 8px;
     }
     .menu-item > a:hover{
         color:  var(--hover-color);
@@ -126,7 +131,7 @@
         height: 2px;
         background-color: var(--hover-color);
         left: 0;
-        bottom: 0;
+        bottom: 4px;
         position: absolute;
     }
 
@@ -135,6 +140,10 @@
         line-height: 56px;
         /* justify-content: center; */
     }
+    .language-chooser a {
+        padding-top: 8px;
+        color: var(--logo-color);
+    }
     .active > a::after{
         content: '';
         display: block;
@@ -142,7 +151,7 @@
         height: 2px;
         background-color: var(--font-light);
         left: 0;
-        bottom: 0;
+        bottom: 4px;
         position: absolute;
     }
 }

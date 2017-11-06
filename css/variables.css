@@ -8,6 +8,7 @@
     --border-radius: 4px;
     --transition: all .1s cubic-bezier(0.4, 0.0, 0.6, 1);
     --box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+    --padding-top: 104px;
 
     /* main colors */
     --primary-color: rgb(76,172,219);
@@ -20,6 +21,7 @@
     --font-light: rgb(189,189,189);
     --font-white: rgb(255,255,255);
     --font-title: rgb(212,66,30);
+    --logo-color: rgb(32, 152, 179);
 
     /* font-weight */
     --font-thin: 100;
@@ -40,7 +42,8 @@
 
 @media (min-width:840px){
 	:root{
-		--grid-count: 12;
+        --grid-count: 12;
+        --padding-top: 80px;
 	}
 }
 @media (min-width:1600px){

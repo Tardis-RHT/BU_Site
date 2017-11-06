@@ -5,8 +5,8 @@
                 <?php
                     $dateformatstring = "j F";
                     $unixtimestamp = strtotime(get_field('start'));
-                    $gmt = true;
-                    echo date_i18n($dateformatstring, $unixtimestamp, $gmt);
+                    // $gmt = true;
+                    echo date_i18n($dateformatstring, $unixtimestamp);
                     // the_field('start');
                 ?>
                 <span class="info__sub">

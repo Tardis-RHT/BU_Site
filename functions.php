@@ -177,6 +177,14 @@ if(function_exists("register_field_group"))
 				'maxlength' => '',
 			),
 			array (
+				'key' => 'field_5a0079ebe250a',
+				'label' => 'Идет набор',
+				'name' => 'current',
+				'type' => 'true_false',
+				'message' => '',
+				'default_value' => 0,
+			),
+			array (
 				'key' => 'field_59f0cb2a30e21',
 				'label' => 'Месяцев',
 				'name' => 'month',
@@ -233,6 +241,22 @@ if(function_exists("register_field_group"))
 					'вс' => 'вс',
 				),
 				'default_value' => '',
+				'layout' => 'horizontal',
+			),
+			array (
+				'key' => 'field_5a00c4cc6d6d1',
+				'label' => 'Сложность курса',
+				'name' => 'level',
+				'type' => 'radio',
+				'choices' => array (
+					1 => 'start',
+					2 => 'medium',
+					3 => 'pro',
+					4 => 'advanced',
+				),
+				'other_choice' => 0,
+				'save_other_choice' => 0,
+				'default_value' => '1',
 				'layout' => 'horizontal',
 			),
 		),
@@ -386,6 +410,18 @@ if(function_exists("register_field_group"))
 				'formatting' => 'html',
 				'maxlength' => '',
 			),
+			array (
+				'key' => 'field_59fe612bbac11',
+				'label' => 'Ссылка на регистрацию',
+				'name' => 'btn_url',
+				'type' => 'text',
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
 		),
 		'location' => array (
 			array (
@@ -413,7 +449,7 @@ if(function_exists("register_field_group"))
 	Actions
 \*------------------------------------*/
 add_action('init', 'register_buTheme_menu'); // Add buTheme Blank Menu
-add_action('after_setup_theme', 'buTheme_setup'); //Adding custom logo in Theme Customizer
+// add_action('after_setup_theme', 'buTheme_setup'); //Adding custom logo in Theme Customizer
 add_action('acf/input/admin_head', 'my_head_input'); // "Advanced Custom Fields" stylesheet override
 
 /*------------------------------------*\

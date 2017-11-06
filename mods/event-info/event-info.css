@@ -1,0 +1,9 @@
+.event-info__item{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+}
+.event-info__btn{
+    margin-left: auto;
+    line-height: 32px;
+}
