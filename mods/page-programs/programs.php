@@ -25,7 +25,6 @@ $html .= '<div class="wrapper tags-container">';
             $post_title = get_the_title();
             $post_thumb = get_the_post_thumbnail_url();
             $post_link = get_permalink();
-            $level = get_field('level');
 
             $more = LangDicts::$dict['More'];
 
@@ -37,7 +36,7 @@ $html .= '<div class="wrapper tags-container">';
             $start_year = date_i18n('Y', $unixtimestamp);
 
             $html .= "<a class='tile post-single' style='background-image: url({$post_thumb})' href='{$post_link}'>";
-            $html .= "<h2 class='post__title'>{$post_title}{$level}</h2>";
+            $html .= "<h2 class='post__title'>{$post_title}</h2>";
             $html .= "<span class='post__btn btn'>";
             if ($start_year === $year){
                 $html .= "{$date}";

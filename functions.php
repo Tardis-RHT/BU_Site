@@ -410,6 +410,23 @@ if(function_exists("register_field_group"))
 				'formatting' => 'html',
 				'maxlength' => '',
 			),
+			 array (
+				'key' => 'field_59f5de861bfb1',
+				'label' => 'Дни недели',
+				'name' => 'week',
+				'type' => 'checkbox',
+				'choices' => array (
+					'пн' => 'пн',
+					'вт' => 'вт',
+					'ср' => 'ср',
+					'чт' => 'чт',
+					'пт' => 'пт',
+					'сб' => 'сб',
+					'вс' => 'вс',
+				),
+				'default_value' => '',
+				'layout' => 'horizontal',
+			),
 			array (
 				'key' => 'field_59fe612bbac11',
 				'label' => 'Ссылка на регистрацию',
