@@ -18,14 +18,21 @@
             <p class="info__main">
             <?php echo get_post_meta( $post->ID, 'time', true ); ?>
                 <span class="info__sub">
-                    <?php 
-                        $field = get_field_object('week');
-                        $week = $field['value'];
-                       
-                    the_field('week');
-                    // foreach( $week as $days ):
-                    //     echo $week['чт'];
-                    // endforeach;
+                    <?php                    
+                    $week  = get_field('week');
+                    $week_names = array("пн", "вт", "ср", "чт", "пт", "сб", "вс");
+                    $replace = array(
+                        LangDicts::$dict['mon'], 
+                        LangDicts::$dict['tue'], 
+                        LangDicts::$dict['wed'], 
+                        LangDicts::$dict['thu'], 
+                        LangDicts::$dict['fri'], 
+                        LangDicts::$dict['sat'], 
+                        LangDicts::$dict['sun']
+                    );
+                    $new_week = implode(", ", str_replace($week_names, $replace, $week));
+
+                    echo $new_week; 
                     ?>
                 </span>
             </p>
@@ -66,15 +73,17 @@
         </div>
         <div class="info-wrap--lg">
             <p class="info__main">
-                <?php 
-                    // $price = get_post_meta( $post->ID, 'price', true ); 
-                    // $price_fin = number_format($price, 0, ',', ' ');
-                    // echo $price_fin;
-                    // echo LangDicts::$dict['Curency'];
-
+                <?php
                     $field = get_field_object('price');
                     $value = $field['value'];
-
+                    // $currency = get_field('currency');
+                    // $to_replace = array (
+                    //     'UAH', 'USD'
+                    // )
+                    // $replacements = array (
+                    //     LangDicts::$dict['UAH'], '$'
+                    // )
+                        
                     if( $value === 'month_price' ){
                         $price = get_post_meta( $post->ID, 'month_price', true ); 
                         $price_fin = number_format($price, 0, ',', ' ');

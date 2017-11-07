@@ -97,6 +97,9 @@
     }
 }
 @media (min-width:1024px){
+    .post-single{
+        width: calc(25% - 16px);
+    }
     .post-single--big:first-of-type > .post__btn{
         min-width: calc(50% - 40px);
     }
