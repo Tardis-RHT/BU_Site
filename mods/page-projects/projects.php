@@ -6,7 +6,7 @@
             $args = array (
                 'posts_per_page' => 0, 
                 'category_name' => 'projects', 
-                'order' => 'DESC'
+                'order' => 'ASC'
             );
             $projects = get_posts( $args );
             foreach( $projects as $post ){ setup_postdata($post);

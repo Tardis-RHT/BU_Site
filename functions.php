@@ -464,11 +464,11 @@ if(function_exists("register_field_group"))
 {
 	register_field_group(array (
 		'id' => 'acf_projects',
-		'title' => '[:en]projects[:]',
+		'title' => 'Информация о проекте',
 		'fields' => array (
 			array (
 				'key' => 'field_5a0363234fbdd',
-				'label' => 'link',
+				'label' => 'Ссылка',
 				'name' => 'link',
 				'type' => 'text',
 				'default_value' => '',
