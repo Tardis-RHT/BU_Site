@@ -4,12 +4,12 @@
 	align-items: flex-start;
 	flex-direction: column;
 	flex-flow: row wrap;
-	padding: 2rem var(--grid-margin);
+	padding: 2rem .5rem;
 	font-size: 20px;
 }
 .footer__block{
 	/* width: calc(var(--grid-column) * 4 - var(--grid-margin) * 2 ); */
-	margin: var(--grid-margin);
+	margin: 8px;
 	display: flex;
 }
 .footer__block-sm{
@@ -39,7 +39,7 @@
 }
 .footer__soc{
 	display: flex;
-	margin: var(--grid-margin) 0;
+	margin: 8px 0;
 }
 .soc-link{
 	margin: 0 8px;
@@ -58,7 +58,7 @@
 	flex-basis: 100%;
 	width: 100%;
 	font-size: 12px;
-	margin: 0 var(--grid-margin);
+	margin: 0 8px;
 }
 .soc_icon{
 	padding: 4px;

@@ -28,7 +28,7 @@
 .main-menu{
     flex-basis: 100%;
     overflow: hidden;
-    margin: 0 var(--grid-margin);
+    margin: 0 8px;
     font-size: 1.5rem;
     color: var(--font-dark);
     height: 32px;
@@ -62,7 +62,7 @@
 .language-chooser{
     display: flex;
     justify-content: flex-end;
-    margin: 0 var(--grid-margin);
+    margin: 0 8px;
     width: calc(var(--grid-column) * 2 - var(--grid-margin) * 2);
     list-style: none;
     padding: 0;
@@ -74,7 +74,7 @@
 {
     display: inline-block;
     position: relative;
-    padding: 0 var(--grid-margin);
+    padding: 0 8px;
 }
 .qtranxs_widget_end{
     display: none;
