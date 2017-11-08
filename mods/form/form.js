@@ -7,11 +7,22 @@ $(document).ready(function($){
   });
 }
   $('#mainForm').submit(function(){
-      var str = $(this).serialize();
-      console.log(str);
+    event.preventDefault();
+    var form = $('#mainForm');
+    var str = $(this).serialize();
+    console.log(str);
+    var data = {
+      name: $('input')[0].value,
+      surname: $('input')[1].value,
+      phone: $('input')[2].value,
+      email: $('input')[3].value
+    }
+    var dataJson = JSON.stringify(data, null, "  ");
+    console.log(dataJson);
       $.ajax({
-          type:"POST",
-          data:"str",
+          type: 'GET',
+          data: 'dataJson',
+          response: 'text',
           error: function( xhr,err ) {
               console.log( 'Sample of error data:', err );
               console.log("readyState: "+xhr.readyState+"\nstatus: "+xhr.status+"\nresponseText: "+xhr.responseText);
@@ -23,12 +34,12 @@ $(document).ready(function($){
             window.location.href='/thankyou';
           }
               
-              // if (console && console.log) {
-              //     console.log( 'Sample of data:', data.slice(0,100) );
-              //     console.log('textStatus: ', textStatus);
-              //     console.log('jqXHR: ', jqXHR);
-              //     console.log('statusText: ', jqXHR.statusText);
-              // }
+              if (console && console.log) {
+                  console.log( 'Sample of data:', data.slice(0,100) );
+                  console.log('textStatus: ', textStatus);
+                  console.log('jqXHR: ', jqXHR);
+                  console.log('statusText: ', jqXHR.statusText);
+              }
           }            
       });
       return false;

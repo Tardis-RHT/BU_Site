@@ -31,7 +31,7 @@
                                     'sat' => 'сб',
                                     'sun' => 'вс',
                                     'error_text' => 'Пожалуйста, заполните это поле',
-                                    'address_text' => 'Киев, ул. Семьи Хохловых, 8',
+                                    'address_text' => 'Киев, ул. Дорогожицкая, 1',
                                     'curse_nabor_text' => 'Идет набор на курсы', 
                                     '404_text' => 'Такой страницы нет',
                                     '404_more_text' => 'Возможно вас заинтересует:');
@@ -66,8 +66,8 @@
                                     'sat' => 'сб',
                                     'sun' => 'нд',
                                     'error_text' => 'Будь ласка, заповніть це поле',
-                                    'address_text' => "Київ, вул. Сім'ї Хохлових, 8",
-                                    'curse_nabor_text' => 'Йде набiр на курси',
+                                    'address_text' => "Київ, вул. Дорогожицька, 1",
+                                    'curse_nabor_text' => 'Набiр на курси',
                                     '404_text' => 'Такої сторінки немає',
                                     '404_more_text' => 'Можливо вас зацікавить:');
         public static $eng = array('Event' => 'Event', 
@@ -101,7 +101,7 @@
                                     'sat' => 'sat',
                                     'sun' => 'sun',
                                     'error_text' => 'Please fill out this field',
-                                    'address_text' => " 8 Sim'i Khokhlovykh St, Kyiv",
+                                    'address_text' => " 1 Dorohozhytska St, Kyiv",
                                     'curse_nabor_text' => 'Courses in process',
                                     '404_text' => 'No such page',
                                     '404_more_text' => 'Maybe you will be interested:');
