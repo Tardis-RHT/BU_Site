@@ -355,7 +355,7 @@ if(function_exists("register_field_group"))
 				'type' => 'select',
 				'choices' => array (
 					'UAH' => 'UAH',
-					'USD' => 'USD',
+					'$' => 'USD',
 				),
 				'default_value' => '',
 				'allow_null' => 0,
