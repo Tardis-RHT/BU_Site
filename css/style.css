@@ -1,8 +1,12 @@
 /* @import 'fonts.css'; */
 @import 'variables.css';
 @import 'rules.css';
-@import '/mods/site-footer/site-footer.css';
+@import '../mods/site-footer/site-footer.css';
 @import '../mods/site-header/site-header.css';
 @import '__single-curse.css';
 @import '../mods/curse-info/curse-info.css';
 @import '../mods/form/form.css';
+@import '../mods/post/post.css';
+@import '../mods/news/news.css';
+@import '../mods/event-info/event-info.css';
+@import '../mods/page-projects/projects.css';

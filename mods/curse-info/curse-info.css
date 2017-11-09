@@ -7,13 +7,14 @@
     padding: 16px 8px;
     transform: translateY(-50%);
     background-color: var(--font-white);
+    border-radius: 2px;
 }
 .info-row{
     display: flex;
     justify-content: center;
 }
 .info-row--first{
-    margin-bottom: var(--grid-margin);
+    margin-bottom: 8px;
 }
 .info-wrap--lg{
     width: calc(var(--grid-column) * 2 - var(--grid-margin) * 2);
@@ -38,6 +39,7 @@
     text-align: left;
     display: inline-block;
     margin: 0;
+    white-space: nowrap;
 }
 .info__main--center{
     text-align: center;

@@ -5,6 +5,7 @@
  *  Custom functions, support, custom post types and more.
  */
 
+
 /*------------------------------------*\
 	External Modules/Files
 \*------------------------------------*/
@@ -31,7 +32,7 @@ if (function_exists('add_theme_support'))
     // Add Thumbnail Theme Support
     add_theme_support('post-thumbnails');
     add_image_size('large', 700, '', true); // Large Thumbnail
-    add_image_size('medium', 250, '', true); // Medium Thumbnail
+    add_image_size('medium', 350, '', true); // Medium Thumbnail
     add_image_size('small', 120, '', true); // Small Thumbnail
     add_image_size('custom-size', 700, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
 
@@ -115,24 +116,397 @@ function buTheme_custom_logo() {
     echo $output;
 }
 
+// Changing the length of the post excerpt
+function custom_excerpt_length( $length ) {
+	return 12;
+}
+
 // SrcSet Images
 function buTheme_src_set() {
-	$thumb_id = get_post_thumbnail_id();
-	$output = '';
-	
-	$output = 'alt="' . get_bloginfo('name') . '" src="' . wp_get_attachment_image_url( $thumb_id ) . '" srcset="' . wp_get_attachment_image_srcset( $thumb_id, 'full' ) . '" sizes="' . wp_get_attachment_image_sizes( $thumb_id, 'full' ) . '"';
-	
-	echo $output;
+	if( has_post_thumbnail() ) {
+		$thumb_id = get_post_thumbnail_id();
+		$thumb_alt = get_the_title( $thumb_id );
+		$output = '';
+		
+		$output = 'alt="' . $thumb_alt . '" src="' . wp_get_attachment_image_url( $thumb_id ) . '" srcset="' . wp_get_attachment_image_srcset( $thumb_id, 'full' ) . '" sizes="' . wp_get_attachment_image_sizes( $thumb_id, 'full' ) . '"';
+		
+		echo $output;
+	}
+}
+
+// Get the slug ID
+function buTheme_slugid($slugid){
+	$category = get_category_by_slug( $slugid );
+	$catid = $category->term_id;
+	return $catid;
+}
+// "Advanced Custom Fields" stylesheet override
+function my_head_input()
+{
+	wp_register_style('buTheme_css', get_template_directory_uri() . '/css/acf_custom.css', array(), '1.0', 'all');
+	wp_enqueue_style('buTheme_css'); // Enqueue it!
+}
+// Adding "Advanced Custom Field" fields (ACF Plugin MUST be installed)
+
+if(function_exists("register_field_group"))
+{
+	register_field_group(array (
+		'id' => 'acf_programs-info',
+		'title' => 'Информация о курсе',
+		'fields' => array (
+			array (
+				'key' => 'field_59f0c90f30e1f',
+				'label' => 'Старт курса',
+				'name' => 'start',
+				'type' => 'date_picker',
+				'display_format' => 'dd MM yy',
+				'first_day' => 1,
+				'required' => 1,
+			),
+			array (
+				'key' => 'field_59f0cab030e20',
+				'label' => 'Время',
+				'name' => 'time',
+				'type' => 'text',
+				'required' => 1,
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+			array (
+				'key' => 'field_5a0079ebe250a',
+				'label' => 'Идет набор',
+				'name' => 'current',
+				'type' => 'true_false',
+				'message' => '',
+				'default_value' => 0,
+			),
+			array (
+				'key' => 'field_59f0cb2a30e21',
+				'label' => 'Месяцев',
+				'name' => 'month',
+				'type' => 'number',
+				'required' => 1,
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'min' => '',
+				'max' => '',
+				'step' => '',
+			),
+			array (
+				'key' => 'field_59f0cb5130e22',
+				'label' => 'Часов',
+				'name' => 'hours',
+				'type' => 'number',
+				'required' => 1,
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'min' => '',
+				'max' => '',
+				'step' => '',
+			),
+			// array (
+			// 	'key' => 'field_59f0cb9b30e23',
+			// 	'label' => 'Стоимость',
+			// 	'name' => 'price',
+			// 	'type' => 'number',
+			// 	'required' => 1,
+			// 	'default_value' => '',
+			// 	'placeholder' => '',
+			// 	'prepend' => '',
+			// 	'append' => 'грн',
+			// 	'min' => '',
+			// 	'max' => '',
+			// 	'step' => '',
+			// ),
+			array (
+				'key' => 'field_59f5de861bfb1',
+				'label' => 'Дни недели',
+				'name' => 'week',
+				'type' => 'checkbox',
+				'choices' => array (
+					'пн' => 'пн',
+					'вт' => 'вт',
+					'ср' => 'ср',
+					'чт' => 'чт',
+					'пт' => 'пт',
+					'сб' => 'сб',
+					'вс' => 'вс',
+				),
+				'default_value' => '',
+				'layout' => 'horizontal',
+			),
+			array (
+				'key' => 'field_5a00c4cc6d6d1',
+				'label' => 'Сложность курса',
+				'name' => 'level',
+				'type' => 'radio',
+				'choices' => array (
+					1 => 'start',
+					2 => 'medium',
+					3 => 'pro',
+					4 => 'advanced',
+				),
+				'other_choice' => 0,
+				'save_other_choice' => 0,
+				'default_value' => '1',
+				'layout' => 'horizontal',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_category',
+					'operator' => '==',
+					'value' => buTheme_slugid('programs'),
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 1,
+	));	
+}
+// if(function_exists("register_field_group"))
+{
+	register_field_group(array (
+		'id' => 'acf_programs-price',
+		'title' => 'Стоимость курса',
+		'fields' => array (
+			array (
+				'key' => 'field_59fb563822517',
+				'label' => 'Стоимость',
+				'name' => 'price',
+				'type' => 'select',
+				'required' => 1,
+				'choices' => array (
+					'price_all' => 'весь курс',
+					'month_price' => 'за месяц',
+				),
+				'default_value' => '',
+				'allow_null' => 0,
+				'multiple' => 0,
+			),
+			array (
+				'key' => 'field_59fb56ac9edff',
+				'label' => 'Стоимость в месяц',
+				'name' => 'month_price',
+				'type' => 'number',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_59fb563822517',
+							'operator' => '==',
+							'value' => 'month_price',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'min' => '',
+				'max' => '',
+				'step' => '',
+			),
+			array (
+				'key' => 'field_59fb56c79ee00',
+				'label' => 'Стоимость всего курса',
+				'name' => 'price_all',
+				'type' => 'number',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_59fb563822517',
+							'operator' => '==',
+							'value' => 'price_all',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'min' => '',
+				'max' => '',
+				'step' => '',
+			),
+			array (
+				'key' => 'field_59fb57156f0df',
+				'label' => 'Валюта',
+				'name' => 'currency',
+				'type' => 'select',
+				'choices' => array (
+					'UAH' => 'UAH',
+					'USD' => 'USD',
+				),
+				'default_value' => '',
+				'allow_null' => 0,
+				'multiple' => 0,
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_category',
+					'operator' => '==',
+					'value' => buTheme_slugid('programs'),
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
 }
 
 
+if(function_exists("register_field_group"))
+{
+	register_field_group(array (
+		'id' => 'acf_events-info',
+		'title' => 'Информация о мероприятии',
+		'fields' => array (
+			array (
+				'key' => 'field_59f4ccaaa2948',
+				'label' => 'Дата мероприятия',
+				'name' => 'start',
+				'type' => 'date_picker',
+				'display_format' => 'dd MM yy',
+				'first_day' => 1,
+			),
+			array (
+				'key' => 'field_59f4cd3ba7bd7',
+				'label' => 'Время мероприятия',
+				'name' => 'time',
+				'type' => 'text',
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+			 array (
+				'key' => 'field_59f5de861bfb1',
+				'label' => 'Дни недели',
+				'name' => 'week',
+				'type' => 'checkbox',
+				'choices' => array (
+					'пн' => 'пн',
+					'вт' => 'вт',
+					'ср' => 'ср',
+					'чт' => 'чт',
+					'пт' => 'пт',
+					'сб' => 'сб',
+					'вс' => 'вс',
+				),
+				'default_value' => '',
+				'layout' => 'horizontal',
+			),
+			array (
+				'key' => 'field_59fe612bbac11',
+				'label' => 'Ссылка на регистрацию',
+				'name' => 'btn_url',
+				'type' => 'text',
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_category',
+					'operator' => '==',
+					'value' => buTheme_slugid('events'),
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
+}
+if(function_exists("register_field_group"))
+{
+	register_field_group(array (
+		'id' => 'acf_projects',
+		'title' => 'Информация о проекте',
+		'fields' => array (
+			array (
+				'key' => 'field_5a0363234fbdd',
+				'label' => 'Ссылка',
+				'name' => 'link',
+				'type' => 'text',
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_category',
+					'operator' => '==',
+					'value' => buTheme_slugid('projects'),
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
+}
 
 
 /*------------------------------------*\
 	Actions
 \*------------------------------------*/
 add_action('init', 'register_buTheme_menu'); // Add buTheme Blank Menu
-add_action('after_setup_theme', 'buTheme_setup'); //Adding custom logo in Theme Customizer
+// add_action('after_setup_theme', 'buTheme_setup'); //Adding custom logo in Theme Customizer
+add_action('acf/input/admin_head', 'my_head_input'); // "Advanced Custom Fields" stylesheet override
 
 /*------------------------------------*\
 	Filters
@@ -144,4 +518,7 @@ add_filter( 'get_custom_logo', 'change_logo_class' ); // Changing "custom-logo-l
 		$html = str_replace( 'custom-logo-link', 'logo', $html );
 		return $html;
 	}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 ); // Changing the length of the post excerpt (number of words set in the function)
+
+
 ?>

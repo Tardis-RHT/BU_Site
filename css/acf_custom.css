@@ -1,0 +1,13 @@
+.acf_postbox .inside, #poststuff .acf_postbox .inside{
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	padding: 4px;
+	background-color: #ffffff;
+}
+.acf_postbox.no_box > .inside > .field{
+	margin: 8px;
+}
+.acf_postbox > .inside > .field{
+	border-top: none;
+}

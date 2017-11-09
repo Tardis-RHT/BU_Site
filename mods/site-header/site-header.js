@@ -69,7 +69,12 @@ $(document).ready(function() {
             scrollPrev = scrolled;
         }
     });
-    if (window.location.href.indexOf("programs") > -1) { 
-        $('.menu-item-23').addClass('current-menu-item');
-    }       
 });
+if (window.location.href.indexOf("programs/") > -1) { 
+    $('.menu-item-14').addClass('current-menu-item');
+    $('.menu-item-23').addClass('current-menu-item');
+}    
+else if (window.location.href.indexOf("news/") > -1) { 
+    $('.menu-item-16').addClass('current-menu-item');
+    $('.menu-item-21').addClass('current-menu-item');
+}       
