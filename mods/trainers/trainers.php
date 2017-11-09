@@ -1,4 +1,6 @@
-<p>Teacher:</p>
+<?php if (get_field('teacher')){ ?>
+
+<p><?php echo LangDicts::$dict['teachers'] ?></p>
 <ul>
     <?php
         $teachers = get_field('teacher');
@@ -11,3 +13,4 @@
         }
     ?>
 </ul>
+<?php } ?>

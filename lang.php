@@ -34,7 +34,8 @@
                                     'address_text' => 'Киев, ул. Дорогожицкая, 1',
                                     'curse_nabor_text' => 'Идет набор на курсы', 
                                     '404_text' => 'Такой страницы нет',
-                                    '404_more_text' => 'Возможно вас заинтересует:');
+                                    '404_more_text' => 'Возможно вас заинтересует:',
+                                    'teachers' => 'Тренеры');
         public static $ukr = array('Event' => 'Подія', 
                                     'Start' => 'Старт', 
                                     'More' => 'Детальніше', 
@@ -69,7 +70,8 @@
                                     'address_text' => "Київ, вул. Дорогожицька, 1",
                                     'curse_nabor_text' => 'Набiр на курси',
                                     '404_text' => 'Такої сторінки немає',
-                                    '404_more_text' => 'Можливо вас зацікавить:');
+                                    '404_more_text' => 'Можливо вас зацікавить:',
+                                    'teachers' => 'Тренери');
         public static $eng = array('Event' => 'Event', 
                                     'Start' => 'Start', 
                                     'More' => 'More', 
@@ -104,7 +106,8 @@
                                     'address_text' => " 1 Dorohozhytska St, Kyiv",
                                     'curse_nabor_text' => 'Courses in process',
                                     '404_text' => 'No such page',
-                                    '404_more_text' => 'Maybe you will be interested:');
+                                    '404_more_text' => 'Maybe you will be interested:',
+                                    'teachers' => 'Trainers');
         public static $dict; // текущий словарь
     }
 ?>
