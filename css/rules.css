@@ -135,7 +135,7 @@ tt, kbd, samp{
 	line-height: 1.33333;
 }
 .tile{
-    width: calc(var(--grid-column) * 4 - var(--grid-margin) * 2);
+    width: calc(100% - 16px);
     margin: 12px 8px;
     color: var(--font-white);
     box-shadow: 0 1px 7px rgba(0,0,0,.05);
@@ -177,8 +177,6 @@ iframe{
 .four-container{
     padding: 144px 24px 40px 24px;
 }
-
-
 @media (min-width: 600px){
     .alignleft, .fl{
         margin: 32px 32px 32px calc(var(--grid-column) * -1);
@@ -187,7 +185,7 @@ iframe{
         margin: 32px calc(var(--grid-column) * -1) 32px 32px;
     }
     .tile{
-        width: calc(var(--grid-column) * 4 - var(--grid-margin) * 2);
+        width: calc(50% - 16px);
     }
 }
 @media (min-width:840px){
@@ -197,6 +195,6 @@ iframe{
 }
 @media (min-width:1024px){
     .tile{
-        width: calc(var(--grid-column) * 3 - var(--grid-margin) * 2);
+        width: calc(33.33% - 16px);
     }
 }
