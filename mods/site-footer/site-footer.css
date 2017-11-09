@@ -8,7 +8,6 @@
 	font-size: 20px;
 }
 .footer__block{
-	/* width: calc(var(--grid-column) * 4 - var(--grid-margin) * 2 ); */
 	margin: 8px;
 	display: flex;
 }
