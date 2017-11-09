@@ -39,6 +39,7 @@ a:hover{
 }
 .btn--action{
     background-color: var(--secondary-color);
+    padding: 8px 24px;
 }
 h1,h2,h3,h4,h5,h6,p, ul, ol, time{
 	margin-top: 1rem;

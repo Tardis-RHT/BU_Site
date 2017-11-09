@@ -13,6 +13,9 @@
             <div class="wrapper curse-content">
                 <?php the_content(); ?>
             </div>
+
+            <?php get_template_part('mods/form/form'); ?>
+
         <?php endwhile; endif; ?>
     </article>
 <?php get_template_part('mods/site-footer/site', 'footer'); ?>
