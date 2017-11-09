@@ -259,6 +259,17 @@ if(function_exists("register_field_group"))
 				'default_value' => '1',
 				'layout' => 'horizontal',
 			),
+			array (
+				'key' => 'field_5a036b5a7beb9',
+				'label' => 'Учитель',
+				'name' => 'teacher',
+				'type' => 'user',
+				'role' => array (
+					0 => 'teacher',
+				),
+				'field_type' => 'multi_select',
+				'allow_null' => 0,
+			),
 		),
 		'location' => array (
 			array (
@@ -355,7 +366,7 @@ if(function_exists("register_field_group"))
 				'type' => 'select',
 				'choices' => array (
 					'UAH' => 'UAH',
-					'USD' => 'USD',
+					'$' => 'USD',
 				),
 				'default_value' => '',
 				'allow_null' => 0,
@@ -520,5 +531,30 @@ add_filter( 'get_custom_logo', 'change_logo_class' ); // Changing "custom-logo-l
 	}
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 ); // Changing the length of the post excerpt (number of words set in the function)
 
-
+/*------------------------------------*\
+	 Custom user role
+\*------------------------------------*/
+// Add a custom user role
+  
+$result = add_role( 'teacher', __(
+	
+  'Учитель' ),
+	
+  array(
+	
+  'read' => true, // true allows this capability
+  'edit_posts' => false, // Allows user to edit their own posts
+  'edit_pages' => false, // Allows user to edit pages
+  'edit_others_posts' => false, // Allows user to edit others posts not just their own
+  'create_posts' => false, // Allows user to create new posts
+  'manage_categories' => false, // Allows user to manage post categories
+  'publish_posts' => false, // Allows the user to publish, otherwise posts stays in draft mode
+  'edit_themes' => false, // false denies this capability. User can’t edit your theme
+  'install_plugins' => false, // User cant add new plugins
+  'update_plugin' => false, // User can’t update any plugins
+  'update_core' => false // user cant perform core updates
+	
+  )
+	
+  );
 ?>

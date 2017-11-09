@@ -74,31 +74,20 @@
         <div class="info-wrap--lg">
             <p class="info__main">
                 <?php
-                    $field = get_field_object('price');
-                    $value = $field['value'];
-                    // $currency = get_field('currency');
-                    // $to_replace = array (
-                    //     'UAH', 'USD'
-                    // )
-                    // $replacements = array (
-                    //     LangDicts::$dict['UAH'], '$'
-                    // )
+                    if (get_field('currency') == 'UAH') $currency = LangDicts::$dict['UAH'];
+                    else $currency = get_field('currency');
                         
                     if( $value === 'month_price' ){
                         $price = get_post_meta( $post->ID, 'month_price', true ); 
                         $price_fin = number_format($price, 0, ',', ' ');
 
-                        echo $price_fin;
-                        echo ' ';                    
-                        the_field('currency');
+                        echo $price_fin . ' ' . $currency;
                     }     
                     else{
                         $price = get_post_meta( $post->ID, 'price_all', true ); 
                         $price_fin = number_format($price, 0, ',', ' ');
 
-                        echo $price_fin;
-                        echo ' ';                    
-                        the_field('currency');
+                        echo $price_fin . ' ' . $currency;
                     }
                     
                 ?>
