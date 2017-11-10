@@ -49,25 +49,6 @@
     width: calc(var(--grid-column) * 4 - var(--grid-margin) * 2);
     margin: 0 auto;
 }
-.map{
-    position: relative;
-    min-height: 320px;
-    margin:0 auto 40px;
-}
-.map:before {
-    display: block;
-    content: "";
-    padding-top: 56.25%; /* size 16x9*/
-    /* padding-bottom: 177.77%; size 9x16 */
-  }
-.map__container{
-    position: absolute;
-    z-index: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
 @media (min-width: 480px){
     .curse__post-title{
         font-size: 3em;
@@ -84,16 +65,6 @@
       .curse__post-img{
         height: auto;
         width: 100%;
-    }
-    /* .map:before {
-        display: block;
-        content: "";
-        padding-top: 56.25%; /*size 16x9*/
-        /*padding-bottom: 177.77%;  size 9x16 
-    }*/
-    .map{
-        max-height: 700px;
-        min-height: auto;
     }
 }
 @media (min-width:720px){

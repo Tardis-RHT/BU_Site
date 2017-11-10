@@ -1,0 +1,11 @@
+.news-page-container{
+    padding-top: 80px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;  
+}
+@media (min-width:840px){
+    .news-page-container{
+        padding-top: 40px;
+    }
+}

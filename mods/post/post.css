@@ -70,7 +70,7 @@
 
 .tag{
     flex-basis: 100%;
-    margin: var(--grid-margin);
+    margin: 8px;
 }
 .tags-container{
     padding-top: var(--padding-top);
