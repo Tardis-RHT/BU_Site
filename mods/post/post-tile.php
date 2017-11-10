@@ -17,7 +17,7 @@
             $year = date('Y');
             $start_year = date_i18n('Y', $unixtimestamp);
         if ( in_category('programs') ) {
-           echo get_field('current');
+        //    echo get_field('current');
             if ($start_year === $year){
                 echo ' ' . date_i18n($dateformatstring, $unixtimestamp) . '';
             }
