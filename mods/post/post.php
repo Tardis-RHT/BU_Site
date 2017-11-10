@@ -9,7 +9,7 @@
         global $post;
         $today = date('Ymd');
         $tag_ids = wp_get_post_tags( $post->ID, array( 'fields' => 'ids' ) );
-        if(in_category('news') ){
+        if(in_category('news') && has_tag()){
             $args = array(
                 'posts_per_page' => 4, 
                 'category_name' => 'programs',
