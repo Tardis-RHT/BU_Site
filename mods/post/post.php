@@ -44,41 +44,48 @@
             //         'orderby' => 'meta_value', 
             //         'order' => 'ASC' );
             // }
-            else $args = array(
-                    // 'posts_per_page' => 7, 
-                    // 'category_name' => 'programs, events',
-                    // 'order' => 'ASC',
-                    // 'orderby' => 'meta_value', 
-                    // 'meta_key'	=> 'current', 
-                    // 'meta_compare' => '==',
-                    // 'meta_value' => '1',
-                    'posts_per_page' => 7, 
-                    'category_name' => 'programs, events',
-                    'meta_key'	=> 'start', 
-                    'meta_type' => 'DATETIME',
-                    'meta_compare' => '>=',
-                    'meta_value' => $today,
-                    'order' => 'ASC',                
-             );
-          
+            else 
+            // $args = array(
+            //         'posts_per_page' => 7, 
+            //         'category_name' => 'programs, events',
+            //         'order' => 'ASC',
+            //         'orderby' => 'meta_value', 
+            //         'meta_key'	=> 'current', 
+            //         'meta_compare' => '==',
+            //         'meta_value' => '1',
+
+            //         // 'posts_per_page' => 7, 
+            //         // 'category_name' => 'programs, events',
+            //         // 'meta_key'	=> 'start', 
+            //         // 'meta_type' => 'DATETIME',
+            //         // 'meta_compare' => '>=',
+            //         // 'meta_value' => $today,
+            //         // 'order' => 'ASC',                
+            //  );
+             $args = array(
+                'posts_per_page' => 7, 
+                'category_name' => 'programs, events',
+                'meta_query' => array(
+                    'relation' => 'OR',
+                    array(
+                        'key' => 'start',
+                        'type' => 'DATETIME',
+                        'compare' => '>=',
+                        'value' => $today,
+                    ),
+                    array(
+                        'key' => 'current',
+                        'value' => '1',
+                        'compare' => '==',
+                    ),
+                ),
+                'orderby' => 'meta_value',
+                'order' => 'ASC',
+            );
+
             $posts = get_posts( $args);
            
-            if (count($posts) < 3) {
-                // while(count($posts) < 4) { 
-                $args1 = array(
-                    'posts_per_page' => 1, 
-                    'category_name' => 'programs, events',
-                    'meta_key'	=> 'start', 
-                    'meta_type' => 'DATETIME',
-                    'meta_compare' => '>=',
-                    'meta_value' => $today,
-                    'order' => 'ASC',
-                );
-                
-                    $posts1 = get_posts($args1); 
-                
-            }             
-            // foreach($posts1 as $post1){ setup_postdata($post1);
+            
              foreach($posts as $post){ setup_postdata($post);
        
             get_template_part('mods/post/post-tile');
@@ -86,6 +93,24 @@
 
         }
         wp_reset_postdata();
+
+    //     if (count($posts) < 3) {
+    //         // while(count($posts) < 4) { 
+    //         $args1 = array(
+    //             'posts_per_page' => 7, 
+    //             'category_name' => 'programs, events',
+    //             'meta_key'	=> 'start', 
+    //             'meta_type' => 'DATETIME',
+    //             'meta_compare' => '>=',
+    //             'meta_value' => $today,
+    //             'order' => 'ASC',
+    //         );
+            
+    //             $posts1 = get_posts($args1); 
+            
+    //     }             
+    //     foreach($posts1 as $post1){ setup_postdata($post1);
+    //         get_template_part('mods/post/post-tile');
     // }
     // wp_reset_postdata();
     ?>
