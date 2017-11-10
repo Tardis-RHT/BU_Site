@@ -16,6 +16,7 @@
 }
 .tile__news{
     background-color: var(--font-white);
+    width: calc(100% - 16px);
 }
 .tile__news:hover {
     color: var(--font-dark);
@@ -74,13 +75,18 @@
 .news__caption{
     line-height: 1.4em;
 }
+@media (min-width: 600px){
+    .tile__news{
+        width: calc(50% - 16px);
+    }
+}
 @media (min-width:840px){
-    .news-container .tile__news{
+    .tile__news{
         width: calc(33.33% - 16px);
     }
 }
 @media (min-width:1400px) {
-    .news-container .tile__news{
+    .tile__news{
         width: calc(25% - 16px);
     }
     .news-container{
