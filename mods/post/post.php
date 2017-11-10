@@ -60,7 +60,7 @@
         }
         wp_reset_postdata();
 
-        if (count($posts) < 7) {
+        if (is_front_page() && count($posts) < 7) {
             $post_more = 7 - count($posts);
             $args = array(
                 'posts_per_page' => $post_more, 
