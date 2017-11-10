@@ -93,3 +93,8 @@
         justify-content: center;
     }
 }
+@media (min-width:1600px) {
+    .tile__news{
+        width: 384px;
+    }
+}
