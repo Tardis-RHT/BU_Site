@@ -60,10 +60,8 @@
         }
         wp_reset_postdata();
 
-        $post_count = count($posts);
-        $post_more = 7 - $post_count;
-        
         if (count($posts) < 7) {
+            $post_more = 7 - count($posts);
             $args = array(
                 'posts_per_page' => $post_more, 
                 'meta_query' => array (
