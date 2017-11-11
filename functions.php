@@ -557,4 +557,6 @@ $result = add_role( 'teacher', __(
   )
 	
   );
+
+
 ?>
