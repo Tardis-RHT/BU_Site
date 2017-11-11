@@ -1,6 +1,13 @@
 <section class="news-block flex-content">
     <div class="wrapper container">
-        <div class="news-container">
+        <div class="<?php
+            if ( is_page( 'news' ) ) {
+                echo 'news-page-container';
+            }
+            else {
+                echo 'news-container';
+            }
+        ?>">
             <?php
                 if ( is_page( 'news' ) ) {
                     $args = array('posts_per_page' => 0, 'category_name' => 'news', 'order' => 'DESC' );
@@ -14,7 +21,7 @@
             ?>                    
             <a class="tile tile__news" href="<?php echo get_permalink() ?>">
                 <div class="news__cover-container">
-                    <img class="news__img" src="<?php echo buTheme_src_set() ?>">
+                    <img class="news__img" <?php echo buTheme_src_set() ?>>
                 </div>
                 <div class="news__content">
                     <span class="news__date"><?php echo get_the_date('d.m.Y') ?></span>

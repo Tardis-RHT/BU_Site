@@ -27,11 +27,6 @@ var plugins = [
           ]
     })
 ];
-        // -->> Most comments are here in case we will need some html work:
-// gulp.task ('html', function() {
-//     return gulp.src('*.html')
-//         .pipe(browserSync.stream());
-//   });
 
 gulp.task('connect-sync', function() {
     connect.server({}, function() {
@@ -47,12 +42,19 @@ gulp.task('connect-sync', function() {
 
 gulp.task('css', function () {
     return gulp.src('css/style.css')
-        .pipe(postcss(plugins))
+        // .pipe(postcss(plugins))
         .pipe(cleanCSS())
         .pipe(concat('stylemin.css'))
         .pipe(gcmq())
         .pipe(autoprefixer({
-            browsers: ['last 2 versions'],
+            browserslist: [
+                "Chrome >= 58",
+                "Firefox >= 45",
+                "Safari >= 9",
+                "Opera >= 45",
+                "IE 11",
+                "Edge >= 15",
+            ],
             cascade: false
         })) 
         .pipe(cleanCSS()) 
@@ -68,26 +70,10 @@ gulp.task('js', function() {
         .pipe(browserSync.stream());
 });
 
-// gulp.task('watch', ['css', 'html'], function() {
 gulp.task('watch', ['css', 'js', 'connect-sync'], function() {
-    // browserSync({
-    //     server: {
-    //         baseDir: paths.dir
-    //     },
-    //     port: 8888
-    // }); 
-
-    // connect.server({}, function() {
-    //     browserSync({
-    //         proxy: '127.0.0.1:8888'
-    //     });
-    // });
-
     gulp.watch([paths.php]).on('change', browserSync.reload);
     gulp.watch([paths.css], ['css']);
     gulp.watch([paths.js], ['js']);
-    // gulp.watch("*.html", ['html']).on('change', browserSync.reload);
-
 });
 
 gulp.task('default', ['watch']);
