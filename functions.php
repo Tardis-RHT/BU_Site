@@ -46,7 +46,10 @@ if (function_exists('add_theme_support'))
 /*------------------------------------*\
 	Functions
 \*------------------------------------*/
-
+if(!function_exists('buTheme_setup'))
+{
+	function buTheme_setup(){}
+}
 // buTheme navigation
 function buTheme_nav()
 {
@@ -516,7 +519,7 @@ if(function_exists("register_field_group"))
 	Actions
 \*------------------------------------*/
 add_action('init', 'register_buTheme_menu'); // Add buTheme Blank Menu
-// add_action('after_setup_theme', 'buTheme_setup'); //Adding custom logo in Theme Customizer
+add_action('after_setup_theme', 'buTheme_setup'); //Adding custom logo in Theme Customizer
 add_action('acf/input/admin_head', 'my_head_input'); // "Advanced Custom Fields" stylesheet override
 
 /*------------------------------------*\
