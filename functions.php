@@ -158,6 +158,14 @@ if(function_exists("register_field_group"))
 		'title' => 'Информация о курсе',
 		'fields' => array (
 			array (
+				'key' => 'field_5a0079ebe250a',
+				'label' => ' ',
+				'name' => 'current',
+				'type' => 'true_false',
+				'message' => 'Идет набор',
+				'default_value' => 0,
+			),
+			array (
 				'key' => 'field_59f0c90f30e1f',
 				'label' => 'Старт курса',
 				'name' => 'start',
@@ -178,14 +186,6 @@ if(function_exists("register_field_group"))
 				'append' => '',
 				'formatting' => 'html',
 				'maxlength' => '',
-			),
-			array (
-				'key' => 'field_5a0079ebe250a',
-				'label' => 'Идет набор',
-				'name' => 'current',
-				'type' => 'true_false',
-				'message' => '',
-				'default_value' => 0,
 			),
 			array (
 				'key' => 'field_59f0cb2a30e21',
