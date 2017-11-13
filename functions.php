@@ -114,7 +114,7 @@ function buTheme_custom_logo() {
 	// In both cases we display svg icon logo
 	if (empty($output))
 	$output = '<a class="logo" href="' . esc_url(home_url('/')) . '">
-	<svg class="logo__img"><use xlink:href="#bu_logo"></use></svg><span class="nostyle">LinkedIn</span>
+	<svg class="logo__img"><use xlink:href="#bu_logo"></use></svg>
 	</a>';
     echo $output;
 }
