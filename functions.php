@@ -110,12 +110,12 @@ function buTheme_custom_logo() {
     $output = '';
     if (function_exists('get_custom_logo'))
         $output = get_custom_logo();
-
     // Nothing in the output: Custom Logo is not supported, or there is no selected logo
-	// In both cases we display svg icon logo and if there is no svg logo - the site's name
+	// In both cases we display svg icon logo
 	if (empty($output))
-	$output = '<a class="logo" href="' . esc_url(home_url('/')) . '"><img class="logo__img" src="' . get_template_directory_uri() . '/img/icons/svg_logo.svg" alt="' . get_bloginfo('name') . '"></a>';
-
+	$output = '<a class="logo" href="' . esc_url(home_url('/')) . '">
+	<svg class="logo__img"><use xlink:href="#bu_logo"></use></svg><span class="nostyle">LinkedIn</span>
+	</a>';
     echo $output;
 }
 
