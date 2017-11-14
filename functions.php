@@ -528,8 +528,9 @@ add_action('acf/input/admin_head', 'my_head_input'); // "Advanced Custom Fields"
 add_filter('wp_nav_menu_args', 'my_wp_nav_menu_args'); // Remove surrounding <div> from WP Navigation
 add_filter( 'get_custom_logo', 'change_logo_class' ); // Changing "custom-logo-link" class to "logo" class in Site Logo
 	function change_logo_class( $html ) {
-		$html = str_replace( 'custom-logo', 'your-custom-class', $html );
+		$html = str_replace( 'custom-logo', 'logo__img', $html );
 		$html = str_replace( 'custom-logo-link', 'logo', $html );
+		// $html = str_replace( 'logo__img-link', 'logo-link', $html );
 		return $html;
 	}
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 ); // Changing the length of the post excerpt (number of words set in the function)

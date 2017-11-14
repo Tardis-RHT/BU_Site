@@ -28,6 +28,9 @@
     max-width: 144px;
     height: auto;
 }
+.logo__img-link{
+    padding: 8px 8px 0 16px;
+}
 .main-menu{
     flex-basis: 100%;
     overflow: hidden;
