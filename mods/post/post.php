@@ -63,7 +63,7 @@
         // End of main loop
 
         // Starting new loop for sorting and showing Checked Programs on the main page
-        if (is_front_page() && count($posts) < 7) {
+        if (is_front_page() && count($posts) < 7 || is_404() && count($posts) < 7) {
             $post_more = 7 - count($posts);
             $args = array(
                 'posts_per_page' => $post_more, 
