@@ -29,6 +29,7 @@
             </label>
             <input type="email" class="form__input" id="email" placeholder="your@email.com" required>
         </div>
+        <input type="text" hidden value="<?php echo get_the_title() ?>">
             <button type="submit" class="form__btn btn btn--action">
                 <?php echo LangDicts::$dict['Apply'];?> </button>
         </form>
