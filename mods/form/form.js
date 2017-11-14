@@ -12,6 +12,7 @@ $(document).ready(function($){
     var str = $(this).serialize();
     console.log(str);
     var data = {
+      curse: $('input')[4].value,
       name: $('input')[0].value,
       surname: $('input')[1].value,
       phone: $('input')[2].value,

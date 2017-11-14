@@ -46,7 +46,10 @@ if (function_exists('add_theme_support'))
 /*------------------------------------*\
 	Functions
 \*------------------------------------*/
-
+if(!function_exists('buTheme_setup'))
+{
+	function buTheme_setup(){}
+}
 // buTheme navigation
 function buTheme_nav()
 {
@@ -107,12 +110,12 @@ function buTheme_custom_logo() {
     $output = '';
     if (function_exists('get_custom_logo'))
         $output = get_custom_logo();
-
     // Nothing in the output: Custom Logo is not supported, or there is no selected logo
-	// In both cases we display svg icon logo and if there is no svg logo - the site's name
+	// In both cases we display svg icon logo
 	if (empty($output))
-	$output = '<a class="logo" href="' . esc_url(home_url('/')) . '"><img class="logo__img" src="' . get_template_directory_uri() . '/img/icons/svg_logo.svg" alt="' . get_bloginfo('name') . '"></a>';
-
+	$output = '<a class="logo" href="' . esc_url(home_url('/')) . '">
+	<svg class="logo__img"><use xlink:href="#bu_logo"></use></svg>
+	</a>';
     echo $output;
 }
 
@@ -155,6 +158,14 @@ if(function_exists("register_field_group"))
 		'title' => 'Информация о курсе',
 		'fields' => array (
 			array (
+				'key' => 'field_5a0079ebe250a',
+				'label' => ' ',
+				'name' => 'current',
+				'type' => 'true_false',
+				'message' => 'Идет набор',
+				'default_value' => 0,
+			),
+			array (
 				'key' => 'field_59f0c90f30e1f',
 				'label' => 'Старт курса',
 				'name' => 'start',
@@ -175,14 +186,6 @@ if(function_exists("register_field_group"))
 				'append' => '',
 				'formatting' => 'html',
 				'maxlength' => '',
-			),
-			array (
-				'key' => 'field_5a0079ebe250a',
-				'label' => 'Идет набор',
-				'name' => 'current',
-				'type' => 'true_false',
-				'message' => '',
-				'default_value' => 0,
 			),
 			array (
 				'key' => 'field_59f0cb2a30e21',
@@ -516,7 +519,7 @@ if(function_exists("register_field_group"))
 	Actions
 \*------------------------------------*/
 add_action('init', 'register_buTheme_menu'); // Add buTheme Blank Menu
-// add_action('after_setup_theme', 'buTheme_setup'); //Adding custom logo in Theme Customizer
+add_action('after_setup_theme', 'buTheme_setup'); //Adding custom logo in Theme Customizer
 add_action('acf/input/admin_head', 'my_head_input'); // "Advanced Custom Fields" stylesheet override
 
 /*------------------------------------*\
@@ -525,8 +528,9 @@ add_action('acf/input/admin_head', 'my_head_input'); // "Advanced Custom Fields"
 add_filter('wp_nav_menu_args', 'my_wp_nav_menu_args'); // Remove surrounding <div> from WP Navigation
 add_filter( 'get_custom_logo', 'change_logo_class' ); // Changing "custom-logo-link" class to "logo" class in Site Logo
 	function change_logo_class( $html ) {
-		$html = str_replace( 'custom-logo', 'your-custom-class', $html );
+		$html = str_replace( 'custom-logo', 'logo__img', $html );
 		$html = str_replace( 'custom-logo-link', 'logo', $html );
+		// $html = str_replace( 'logo__img-link', 'logo-link', $html );
 		return $html;
 	}
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 ); // Changing the length of the post excerpt (number of words set in the function)
@@ -557,4 +561,6 @@ $result = add_role( 'teacher', __(
   )
 	
   );
+
+
 ?>

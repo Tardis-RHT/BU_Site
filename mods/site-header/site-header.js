@@ -77,4 +77,5 @@ if (window.location.href.indexOf("programs/") > -1) {
 else if (window.location.href.indexOf("news/") > -1) { 
     $('.menu-item-16').addClass('current-menu-item');
     $('.menu-item-21').addClass('current-menu-item');
+    $('.menu-item-78').addClass('current-menu-item');
 }       

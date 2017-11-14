@@ -1,4 +1,4 @@
-<a class="tile post-single <?php if (is_front_page()) echo 'post-single--big'; ?>" style="background-image: url(<?php echo get_the_post_thumbnail_url() ?>);" href="<?php echo get_permalink(); ?>">
+<a class="tile post-single <?php if (is_front_page()) echo 'post-single--big'; ?>" style="background-image: url(<?php echo get_the_post_thumbnail_url($post->ID, 'medium') ?>);" href="<?php echo get_permalink(); ?>">
        
     <?php
     if ( in_category('events') ) {

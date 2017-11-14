@@ -11,3 +11,9 @@
 .acf_postbox > .inside > .field{
 	border-top: none;
 }
+#acf-link{
+	width: 100%;
+}
+#acf-current{
+	align-self: flex-end;
+}

@@ -17,13 +17,19 @@
     padding: 0 .5rem 0 0;
 }
 .logo{
-    width: calc(var(--grid-column) * 2 + 8px);
+    /* width: calc(var(--grid-column) * 2 + 8px); */
+    width: calc(50% + 8px);
     font-family: sans-serif;
+    padding: 0 8px 0 16px;
+    display: flex;
+    height: 56px;
 }
 .logo__img{
     max-width: 144px;
-    padding: 0 8px 0 16px;
     height: auto;
+}
+.logo__img-link{
+    padding: 8px 8px 0 16px;
 }
 .main-menu{
     flex-basis: 100%;
@@ -54,6 +60,7 @@
     color: var(--font-dark);
     display: block;
     padding: 0 .5rem;
+    height: calc(100% - 4px);
 }
 .menu-item.current-menu-item > a{
     color:  var(--hover-color);
@@ -62,13 +69,16 @@
 .language-chooser{
     display: flex;
     justify-content: flex-end;
+    /*  margin: 0 8px; */
     margin: 0 8px;
-    width: calc(var(--grid-column) * 2 - var(--grid-margin) * 2);
+    /* width: calc(var(--grid-column) * 2 - var(--grid-margin) * 2); */
+    width: calc(16% - 16px);
     list-style: none;
     padding: 0;
 }
 .language-chooser a {
     color: var(--logo-color);
+    height: calc(100% - 4px);
 }
 .qtranxs_text
 {
@@ -94,15 +104,16 @@
         flex-wrap: nowrap;
     }
     .logo{
-        display: flex;
-        height: 100%;
+         width: calc(16% + 8px);
+        /* height: 100%; */
     }
     .main-menu{
-        width: calc(var(--grid-column) * 8 - var(--grid-margin) * 2);
+        /* width: calc(var(--grid-column) * 8 - var(--grid-margin) * 2); */
+        width: calc(66.6% - 16px);
         display: flex;
         justify-content: flex-start;
         flex-basis: auto;
-        color: var(--primary-color);
+        /* color: var(--primary-color); */
         font-size: 1rem;
         height: auto;
     }
@@ -124,7 +135,7 @@
     .current-menu-item{
         position: relative;
     }
-    .current-menu-item::after{
+    /* .current-menu-item::after{
         content: '';
         display: block;
         width: 100%;
@@ -133,8 +144,10 @@
         left: 0;
         bottom: 4px;
         position: absolute;
+    } */
+    .current-menu-item > a{
+        border-bottom: 2px solid var(--hover-color);
     }
-
     .language-chooser{
         order: 3;
         line-height: 56px;
@@ -144,7 +157,7 @@
         padding-top: 8px;
         color: var(--logo-color);
     }
-    .active > a::after{
+    /* .active > a::after{
         content: '';
         display: block;
         width: 100%;
@@ -153,5 +166,8 @@
         left: 0;
         bottom: 4px;
         position: absolute;
+    } */
+    .active > a{
+        border-bottom: 2px solid var(--font-light);
     }
 }
