@@ -65,7 +65,7 @@
 .language-chooser{
     display: flex;
     justify-content: flex-end;
-    // margin: 0 8px;
+    /*  margin: 0 8px; */
     margin: 8px 8px 0;
     /* width: calc(var(--grid-column) * 2 - var(--grid-margin) * 2); */
     width: calc(16% - 16px);

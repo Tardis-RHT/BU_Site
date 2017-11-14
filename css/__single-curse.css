@@ -59,7 +59,7 @@
         width: calc(var(--grid-column) * 6 - var(--grid-margin) * 2);
     }
     .curse-header:before {
-        padding-top: 51%;
+        padding-top: 56.25%;
         padding-bottom: 0;
       }
       .curse__post-img{
