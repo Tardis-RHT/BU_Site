@@ -1,3 +1,5 @@
 <?php get_template_part('mods/site-header/site', 'header'); ?>
-<?php get_template_part('mods/news/news'); ?>
+<div class="flex-content">
+    <?php get_template_part('mods/news/news'); ?>
+</div>
 <?php get_template_part('mods/site-footer/site', 'footer'); ?>

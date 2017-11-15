@@ -1,4 +1,4 @@
-<section class="news-block flex-content">
+<section class="news-block">
     <div class="wrapper container">
         <div class="<?php
             if ( is_page( 'news' ) ) {
