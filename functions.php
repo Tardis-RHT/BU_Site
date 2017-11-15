@@ -124,6 +124,27 @@ function custom_excerpt_length( $length ) {
 	return 12;
 }
 
+// Changing the logo on the Login Page
+function my_login_logo() { ?>
+    <style type="text/css">
+        #login h1 a, .login h1 a {
+        background-image: url("<?php echo get_stylesheet_directory_uri(); ?>/img/icons/svg_logo.svg");
+		height:65px;
+		width:320px;
+		background-size: 320px 65px;
+		background-repeat: no-repeat;
+        	padding-bottom: 30px;
+        }
+    </style>
+<?php }
+// Changing the link on the Login Page
+function my_login_logo_url() {
+    return home_url();
+}
+function my_login_logo_url_title() {
+    return 'Bionic University';
+}
+
 // SrcSet Images
 function buTheme_src_set() {
 	if( has_post_thumbnail() ) {
@@ -515,12 +536,16 @@ if(function_exists("register_field_group"))
 }
 
 
+
 /*------------------------------------*\
 	Actions
 \*------------------------------------*/
 add_action('init', 'register_buTheme_menu'); // Add buTheme Blank Menu
 add_action('after_setup_theme', 'buTheme_setup'); //Adding custom logo in Theme Customizer
 add_action('acf/input/admin_head', 'my_head_input'); // "Advanced Custom Fields" stylesheet override
+// Changing the logo on the Login Page
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
+
 
 /*------------------------------------*\
 	Filters
@@ -534,7 +559,9 @@ add_filter( 'get_custom_logo', 'change_logo_class' ); // Changing "custom-logo-l
 		return $html;
 	}
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 ); // Changing the length of the post excerpt (number of words set in the function)
-
+// Changing the link on the Login Page
+add_filter( 'login_headerurl', 'my_login_logo_url' );
+add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 /*------------------------------------*\
 	 Custom user role
 \*------------------------------------*/
@@ -561,6 +588,9 @@ $result = add_role( 'teacher', __(
   )
 	
   );
+
+
+
 
 
 ?>
