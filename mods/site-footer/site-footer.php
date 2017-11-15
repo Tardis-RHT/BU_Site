@@ -16,14 +16,14 @@
                 <a class="soc-link" href="https://www.instagram.com/bionic_university/"><svg class="soc_icon"><use xlink:href="#instagram"></use></svg><span class="nostyle">Instagram</span></a>
                 <a class="soc-link" href="https://www.facebook.com/BionicUniversity"><svg class="soc_icon"><use xlink:href="#facebook"></use></svg><span class="nostyle">Facebook</span></a>
             </div>
-            <div class="footer__block footer__sponsor">
+            <!-- <div class="footer__block footer__sponsor">
                 <div class="footer__sponsor-wrap" >
                     <p>
                         <?php echo LangDicts::$dict['Initiator']; ?>
                     </p>
                     <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/bionichill.png" alt="Bionic Hill"></a>
                 </div>
-            </div>
+            </div> -->
             <p class="footer__copyright">&#169; 2012 - <?php echo date('Y'); ?></p>
         </div>
     </footer>
