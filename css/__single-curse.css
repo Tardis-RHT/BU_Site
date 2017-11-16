@@ -53,6 +53,10 @@
     width: calc(var(--grid-column) * 4 - var(--grid-margin) * 2);
     margin: 0 auto;
 }
+.curse-content p:first-of-type{
+    font-size: 22px;
+    line-height: 32px;
+}
 @media (min-width: 480px){
     .curse__post-title{
         font-size: 3em;
