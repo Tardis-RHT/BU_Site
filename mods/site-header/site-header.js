@@ -73,9 +73,15 @@ $(document).ready(function() {
 if (window.location.href.indexOf("programs/") > -1) { 
     $('.menu-item-14').addClass('current-menu-item');
     $('.menu-item-23').addClass('current-menu-item');
+    $('.menu-item-188').addClass('current-menu-item');
 }    
+else if (window.location.href.indexOf("projects/") > -1) { 
+    $('.menu-item-15').addClass('current-menu-item');
+    $('.menu-item-22').addClass('current-menu-item');
+    $('.menu-item-187').addClass('current-menu-item');
+}  
 else if (window.location.href.indexOf("news/") > -1) { 
     $('.menu-item-16').addClass('current-menu-item');
     $('.menu-item-21').addClass('current-menu-item');
-    $('.menu-item-78').addClass('current-menu-item');
-}       
+    $('.menu-item-186').addClass('current-menu-item');
+}            

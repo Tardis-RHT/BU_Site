@@ -1,0 +1,39 @@
+.trainers-container{
+    width:100%;
+    float:right;
+}
+.trainers-container::after{
+    content: "";
+    clear: both;
+}
+.trainer{
+    display: flex;
+    flex-direction: column;
+}
+.photo{
+    height: auto;
+    width: calc(50% - 8px);
+    border-radius: 2px;
+}
+.trainer__name{
+    margin-top: 0;
+}
+.trainer__work{
+    margin: 8px 0;
+}
+.trainer__about{
+    word-wrap: break-word;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    line-height: 1.4;
+}
+@media(min-width:600px){
+    .trainers-container{
+        width: calc((100vw - 16px) / 8 * 2 - 16px);
+        margin-left: 16px;
+    }
+    .photo{
+        width: calc(100%);
+    }
+}
