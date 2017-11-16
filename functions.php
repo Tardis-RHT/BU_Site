@@ -563,6 +563,31 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 ); // Changing the le
 add_filter( 'login_headerurl', 'my_login_logo_url' );
 add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 
+// Add block after 1st paragraph of the content
+add_shortcode('section_trainers', 'sectionTrainers');   
+function sectionTrainers($attr, $content)
+{        
+	ob_start();  
+	get_template_part('mods/trainers/trainers');  
+	$ret = ob_get_contents();  
+	ob_end_clean();  
+	return $ret;    
+}
+add_filter( 'the_content', 'wpse_ad_content' );
+function wpse_ad_content( $content ) {
+		if( !is_single() )
+			return $content;
+			$paragraphAfter = 1; //номер абзаца, после которого вставляем.
+			$content = explode ( "</p>", $content );
+			$new_content = '';
+				for ( $i = 0; $i < count ( $content ); $i ++ ) {
+					if ( $i == $paragraphAfter ) {
+					$new_content .= '[section_trainers]';
+					}
+			$new_content .= $content[$i] . "</p>";
+			}
+			return $new_content;
+	}
 /*------------------------------------*\
 	 Custom user role
 \*------------------------------------*/
@@ -585,13 +610,9 @@ $result = add_role( 'teacher', __(
   'install_plugins' => false, // User cant add new plugins
   'update_plugin' => false, // User can’t update any plugins
   'update_core' => false // user cant perform core updates
-	
+
   )
 	
   );
-
-
-
-
-
+	
 ?>
