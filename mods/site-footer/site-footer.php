@@ -5,7 +5,7 @@
                 <p class="footer__address">
                     <?php echo LangDicts::$dict['address_text']; ?>
                 </p>
-                <a href="about_bionic_school#map"><?php echo LangDicts::$dict['find_on_map_text']; ?></a>  
+                <a href="<?php echo get_home_url() ?>/about_bionic_school#map"><?php echo LangDicts::$dict['find_on_map_text']; ?></a>  
             </div>
             <div class="footer__block-contacts">
                 <div>
