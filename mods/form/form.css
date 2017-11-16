@@ -1,5 +1,6 @@
 .form-img{
     min-height: 536px;
+    overflow: hidden;
 }
 .form{
     /* position: absolute; */
