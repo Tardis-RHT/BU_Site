@@ -43,3 +43,8 @@
         width: calc((100vw - 16px) / 12 * 2 - 16px);
     }
 }
+@media (min-width:1600px){
+    .trainers-container{
+        width: calc((1600px - 16px) / 12 * 2 - 16px);
+    }
+}
