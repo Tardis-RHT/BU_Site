@@ -1,5 +1,5 @@
-<div class="curse-header form-img">
-    <div class="curse-header_container">
+<div class="curse__img form-img">
+    <div class="curse__img_container">
         <img class="curse__post-img" <?php buTheme_src_set() ?> >
         <form action="<?php echo get_template_directory_uri(); ?>/mods/form/action.php" class="form" id="mainForm">
         <div>

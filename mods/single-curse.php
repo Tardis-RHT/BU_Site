@@ -1,8 +1,8 @@
 <?php get_template_part('mods/site-header/site', 'header'); ?>
 <div class="post">
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-        <header class="curse-header">
-            <div class="curse-header_container">
+        <header class="curse__img">
+            <div class="curse__img_container">
                 <img class="curse__post-img" <?php buTheme_src_set() ?> >
                 <h1 class="curse__post-title"><?php echo get_the_title() ?></h1>
             </div>				
