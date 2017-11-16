@@ -35,7 +35,8 @@
                                     'curse_nabor_text' => 'Идет набор на курсы', 
                                     '404_text' => 'Такой страницы нет',
                                     '404_more_text' => 'Возможно вас заинтересует:',
-                                    'teachers' => 'Тренеры');
+                                    'teachers' => 'Тренеры',
+                                    'find_on_map_text' => 'Посмотреть на карте');
         public static $ukr = array('Event' => 'Подія', 
                                     'Start' => 'Старт', 
                                     'More' => 'Детальніше', 
@@ -71,7 +72,8 @@
                                     'curse_nabor_text' => 'Набiр на курси',
                                     '404_text' => 'Такої сторінки немає',
                                     '404_more_text' => 'Можливо вас зацікавить:',
-                                    'teachers' => 'Тренери');
+                                    'teachers' => 'Тренери',
+                                    'find_on_map_text' => 'Знайти на мапi');                                    
         public static $eng = array('Event' => 'Event', 
                                     'Start' => 'Start', 
                                     'More' => 'More', 
@@ -107,7 +109,8 @@
                                     'curse_nabor_text' => 'Courses in process',
                                     '404_text' => 'No such page',
                                     '404_more_text' => 'Maybe you will be interested:',
-                                    'teachers' => 'Trainers');
+                                    'teachers' => 'Trainers',
+                                    'find_on_map_text' => 'Find on map');
         public static $dict; // текущий словарь
     }
 ?>
