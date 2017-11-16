@@ -12,11 +12,11 @@
         elseif ( in_category('events') ) get_template_part('mods/event-info/event', 'info');
         ?>
         <div class="wrapper curse-content">
+            <?php if ( in_category('programs') ) get_template_part('mods/trainers/trainers'); ?>
             <?php the_content(); ?>
         </div>
     <?php endwhile; endif; ?>
 </div>
-<?php if ( in_category('programs') ) get_template_part('mods/trainers/trainers'); ?>
 <?php 
 if ( in_category( 'programs' ) ) {get_template_part('mods/map/map'); get_template_part('mods/form/form');}
 if ( in_category( 'news' ) ) {get_template_part('mods/post/post'); get_template_part('mods/news/news');}

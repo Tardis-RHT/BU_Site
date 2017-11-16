@@ -52,7 +52,6 @@
 	display: block;
 	width: 48px;
 	height: 48px;
-	transition: var(--transition);
 }
 .soc-link:first-of-type{
 	margin-left: 0;

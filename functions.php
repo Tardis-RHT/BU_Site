@@ -562,6 +562,7 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 ); // Changing the le
 // Changing the link on the Login Page
 add_filter( 'login_headerurl', 'my_login_logo_url' );
 add_filter( 'login_headertitle', 'my_login_logo_url_title' );
+
 /*------------------------------------*\
 	 Custom user role
 \*------------------------------------*/
