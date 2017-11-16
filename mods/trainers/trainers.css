@@ -31,7 +31,6 @@
 @media(min-width:600px){
     .trainers-container{
         width: calc((100vw - 16px) / 8 * 2 - 16px);
-        margin-left: 16px;
         margin: 16px 0 16px;
     }
     .photo{
