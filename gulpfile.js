@@ -70,6 +70,31 @@ gulp.task('js', function() {
         .pipe(browserSync.stream());
 });
 
+gulp.task('server', function () {
+  	return gulp.src(paths.js)
+        .pipe(concat('script.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('js/'))
+    return gulp.src('css/style.css')
+        // .pipe(postcss(plugins))
+        .pipe(cleanCSS())
+        .pipe(concat('stylemin.css'))
+        .pipe(gcmq())
+        .pipe(autoprefixer({
+            browserslist: [
+                "Chrome >= 58",
+                "Firefox >= 45",
+                "Safari >= 9",
+                "Opera >= 45",
+                "IE 11",
+                "Edge >= 15",
+            ],
+            cascade: false
+        })) 
+        .pipe(cleanCSS()) 
+        .pipe(gulp.dest('css/'));
+});
+
 gulp.task('watch', ['css', 'js', 'connect-sync'], function() {
     gulp.watch([paths.php]).on('change', browserSync.reload);
     gulp.watch([paths.css], ['css']);
