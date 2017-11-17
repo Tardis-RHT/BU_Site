@@ -36,6 +36,7 @@
                                     '404_text' => 'Такой страницы нет',
                                     '404_more_text' => 'Возможно вас заинтересует:',
                                     'teachers' => 'Тренеры',
+                                    'teacher' => 'Тренер',                                                                                                            
                                     'find_on_map_text' => 'Посмотреть на карте');
         public static $ukr = array('Event' => 'Подія', 
                                     'Start' => 'Старт', 
@@ -73,6 +74,7 @@
                                     '404_text' => 'Такої сторінки немає',
                                     '404_more_text' => 'Можливо вас зацікавить:',
                                     'teachers' => 'Тренери',
+                                    'teacher' => 'Тренер',                                                                        
                                     'find_on_map_text' => 'Знайти на мапi');                                    
         public static $eng = array('Event' => 'Event', 
                                     'Start' => 'Start', 
@@ -110,6 +112,7 @@
                                     '404_text' => 'No such page',
                                     '404_more_text' => 'Maybe you will be interested:',
                                     'teachers' => 'Trainers',
+                                    'teacher' => 'Trainer',                                    
                                     'find_on_map_text' => 'Find on map');
         public static $dict; // текущий словарь
     }
