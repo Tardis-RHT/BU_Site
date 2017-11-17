@@ -605,11 +605,8 @@ function wpse_ad_content( $content ) {
 // Add a custom user role
   
 $result = add_role( 'teacher', __(
-	
   'Учитель' ),
-	
   array(
-	
   'read' => true, // true allows this capability
   'edit_posts' => false, // Allows user to edit their own posts
   'edit_pages' => false, // Allows user to edit pages
@@ -621,9 +618,20 @@ $result = add_role( 'teacher', __(
   'install_plugins' => false, // User cant add new plugins
   'update_plugin' => false, // User can’t update any plugins
   'update_core' => false // user cant perform core updates
-
   )
-	
   );
-	
+// Add fields in user cabinet
+add_filter('user_contactmethods', 'my_user_contactmethods');
+function my_user_contactmethods($user_contactmethods){
+	$user_contactmethods['placeOfWork'] = 'Место работы'; 
+   	return $user_contactmethods;
+ }
+//  Save info in added fields
+ function save_profile_fields( $user_id ) {
+	update_usermeta( $user_id, 'placeOfWork', $_POST['placeOfWork'] );
+}
+add_action( 'personal_options_update', 'save_profile_fields' );
+add_action( 'edit_user_profile_update', 'save_profile_fields' );
+
+
 ?>
