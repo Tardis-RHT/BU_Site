@@ -588,6 +588,17 @@ function wpse_ad_content( $content ) {
 			}
 			return $new_content;
 	}
+
+// Add shortcode for inserting Google Map
+	add_shortcode('map', 'addMap');   
+	function addMap($attr, $content)
+	{        
+		ob_start();  
+		get_template_part('mods/map/map');  
+		$ret = ob_get_contents();  
+		ob_end_clean();  
+		return $ret;    
+	}
 /*------------------------------------*\
 	 Custom user role
 \*------------------------------------*/
