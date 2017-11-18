@@ -15,7 +15,7 @@
     flex-wrap: wrap;
 }
 .tile__news{
-    background-color: var(--font-white);
+    background-color: var(--light-color);
     width: calc(100% - 16px);
 }
 .tile__news:hover {

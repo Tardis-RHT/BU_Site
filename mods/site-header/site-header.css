@@ -144,6 +144,6 @@
         color: var(--logo-color);
     }
     .active > a{
-        border-bottom: 2px solid var(--font-light);
+        border-bottom: 2px solid var(--darker-color);
     }
 }
