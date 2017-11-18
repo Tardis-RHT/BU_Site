@@ -29,7 +29,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    background-color: var(--font-light);
+    background-color: var(--darker-color);
     overflow: hidden;   
 }
 .curse__post-img{

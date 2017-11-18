@@ -13,6 +13,8 @@
     /* main colors */
     --primary-color: rgb(76,172,219);
     --secondary-color: rgb(255,87,34);
+    --light-color: rgb(255,255,255);
+    --darker-color: rgb(189,189,189);
     --hover-color: rgb(243,64,0);
     --bg-color: rgb(246, 246, 246);
 
@@ -24,10 +26,10 @@
     --logo-color: rgb(32, 152, 179);
 
     /* font-weight */
-    --font-thin: 100;
-    --font-regular: 300;
+    /* --font-thin: 100; */
+    /* --font-regular: 300; */
     /* --font-normal: 400; not sure we need it */
-    --font-semibold: 600;
+    /* --font-semibold: 600; */
     /* --font-bold: 700; not sure we need it */
 }
 

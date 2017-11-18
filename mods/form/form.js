@@ -114,7 +114,7 @@ var error_msg = document.getElementsByClassName('error-message');
       parent.removeChild(parent.lastChild);  
       this.style.borderColor = "var(--primary-color)";
       this.onblur = function(){
-        this.style.borderColor = "var(--font-light)";
+        this.style.borderColor = "var(--darker-color)";
       }
       this.onfocus = function(){
         this.style.borderColor = "var(--primary-color)";
@@ -131,7 +131,7 @@ function telValidity(){
     parent.removeChild(parent.lastChild);  
     tel.style.borderColor = "var(--primary-color)";
     tel.onblur = function(){
-      tel.style.borderColor = "var(--font-light)";
+      tel.style.borderColor = "var(--darker-color)";
     }
     tel.onfocus = function(){
       tel.style.borderColor = "var(--primary-color)";

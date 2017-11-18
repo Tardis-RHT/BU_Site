@@ -7,7 +7,7 @@
     /* padding: 16px 8px; */
     padding: 16px 0;
     transform: translateY(-50%);
-    background-color: var(--font-white);
+    background-color: var(--light-color);
     border-radius: 2px;
 }
 .info-row{
@@ -38,7 +38,7 @@
 }
 .info__main{
     font-size: 1.375em;
-    font-weight: var(--font-regular);
+    font-weight: 300;
     font-family: sans-serif;
     line-height: 1.375em;
     text-align: left;
