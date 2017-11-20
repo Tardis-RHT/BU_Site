@@ -1,6 +1,6 @@
 <?php get_template_part('mods/site-header/site', 'header'); ?>
     <div class="flex-content">
-        <div class="projects-container wrapper">
+        <div class="projects-container wrapper post__content">
         <?php 
             global $post;
             $args = array (
@@ -12,9 +12,9 @@
             foreach( $projects as $post ){ setup_postdata($post);
         ?>
             <div class="single-project">
-                <div class="project__img-container">
+                <a href="<?php if (get_field("link")) echo get_field("link");else echo get_permalink(); ?>" class="project__img-container">
                     <img class="project__img" <?php buTheme_src_set() ?>>
-                </div>
+                </a>
                 <div class="project-info">
                     <a href="<?php if (get_field("link")) echo get_field("link");else echo get_permalink(); ?>" class="project__title">
                         <!-- <h2 class="project__title"> -->

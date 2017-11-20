@@ -1,6 +1,6 @@
-<div class="curse__img form-img">
-    <div class="curse__img_container">
-        <img class="curse__post-img" <?php buTheme_src_set() ?> >
+<div class="post-img form-img">
+    <div class="post-img__container">
+        <img class="post-img__inner" <?php buTheme_src_set() ?> >
         <form action="<?php echo get_template_directory_uri(); ?>/mods/form/action.php" class="form" id="mainForm">
         <div>
             <label for="name" class="form__label">

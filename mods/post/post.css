@@ -19,6 +19,7 @@
     min-height: calc(var(--grid-column) * 4 - var(--grid-margin) * 2);
     width: calc(100% - 16px);
     position: relative;
+    background-color: var(--darker-color);
 }
 .post-single:hover{
     color: var(--font-white);
