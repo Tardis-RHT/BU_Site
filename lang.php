@@ -38,11 +38,11 @@
                                     'teachers' => 'Тренеры',
                                     'teacher' => 'Тренер',                                                                                                            
                                     'find_on_map_text' => 'Посмотреть на карте',
-                                    'sale_text' => 'The certificate of completion of any',
-                                    'and' => 'and',
-                                    'garantee' => 'program guarantees',
-                                    'discount' => 'discount',
-                                    'sale_text_last' => 'for this program.');
+                                    'sale_text' => 'Наличие сертификата о завершении любой из программ',
+                                    'and' => 'и',
+                                    'garantee' => 'гарантирует',
+                                    'discount' => 'скидки',
+                                    'sale_text_last' => 'на обучение.');   
         public static $ukr = array('Event' => 'Подія', 
                                     'Start' => 'Старт', 
                                     'More' => 'Детальніше', 
@@ -81,11 +81,11 @@
                                     'teachers' => 'Тренери',
                                     'teacher' => 'Тренер',                                                                        
                                     'find_on_map_text' => 'Знайти на мапi',
-                                    'sale_text' => 'Наличие сертификата о завершении любой из программ',
-                                    'and' => 'и',
-                                    'garantee' => 'гарантирует',
-                                    'discount' => 'скидки',
-                                    'sale_text_last' => 'на обучение.');                                    
+                                    'sale_text' => 'Наявність сертифікату про завершення будь-якої з програм',
+                                    'and' => 'та',
+                                    'garantee' => 'гарантує',
+                                    'discount' => 'знижки',
+                                    'sale_text_last' => 'на навчання.');                              
         public static $eng = array('Event' => 'Event', 
                                     'Start' => 'Start', 
                                     'More' => 'More', 
@@ -124,11 +124,11 @@
                                     'teachers' => 'Trainers',
                                     'teacher' => 'Trainer',                                    
                                     'find_on_map_text' => 'Find on map',
-                                    'sale_text' => 'Наявність сертифікату про завершення будь-якої з програм',
-                                    'and' => 'та',
-                                    'garantee' => 'гарантує',
-                                    'discount' => 'знижки',
-                                    'sale_text_last' => 'на навчання.');
+                                    'sale_text' => 'The certificate of completion of any',
+                                    'and' => 'and',
+                                    'garantee' => 'program guarantees',
+                                    'discount' => 'discount',
+                                    'sale_text_last' => 'for this program.');
         public static $dict; // текущий словарь
     }
 ?>

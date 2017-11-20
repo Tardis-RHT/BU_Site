@@ -1,9 +1,9 @@
 .post{
     margin-bottom: 24px;
 }
-.curse{
+/* .curse{
     margin-bottom: 24px;
-}
+} */
 .post-img{
     position: relative;
     /* max-height: 60vh; */
@@ -82,7 +82,7 @@
         padding-top: 56.25%;
         padding-bottom: 0;
       }
-      .curse__post-img{
+    .post-img__inner{
         height: auto;
         width: 100%;
     }
