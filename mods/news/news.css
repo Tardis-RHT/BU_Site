@@ -87,15 +87,10 @@
     }
 }
 @media (min-width:1400px) {
-    .tile__news{
+    /* .tile__news{
         width: calc(25% - 16px);
-    }
+    } */
     .news-container{
         justify-content: center;
-    }
-}
-@media (min-width:1600px) {
-    .tile__news{
-        width: 456px;
     }
 }
