@@ -10,7 +10,7 @@
         ?>">
             <?php
                 if ( is_page( 'news' ) ) {
-                    $args = array('posts_per_page' => 0, 'category_name' => 'news', 'order' => 'DESC' );
+                    $args = array('numberposts' => 0, 'category_name' => 'news', 'order' => 'DESC' );
                 }
                 else {
                     $args = array('posts_per_page' => 3, 'post__not_in' => array( $post->ID ), 'category_name' => 'news', 'order' => 'DESC' );                
