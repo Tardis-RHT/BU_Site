@@ -51,7 +51,7 @@
 }
 .post__content{
     width: calc(var(--grid-column) * 4 - var(--grid-margin) * 2);
-    margin: 0 auto;
+    /* margin: 0 auto; */
 }
 .post__content > p:first-of-type{
     font-size: 22px;

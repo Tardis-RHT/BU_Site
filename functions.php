@@ -573,6 +573,16 @@ function sectionTrainers($attr, $content)
 	ob_end_clean();  
 	return $ret;    
 }
+//Add sale block after 1st paragraph of the content
+add_shortcode('section_sale', 'sectionSale');   
+function sectionSale($attr, $content)
+{        
+	ob_start();  
+	get_template_part('mods/sale/sale');  
+	$ret = ob_get_contents();  
+	ob_end_clean();  
+	return $ret;    
+}
 add_filter( 'the_content', 'wpse_ad_content' );
 function wpse_ad_content( $content ) {
 		if( !is_single() )
@@ -582,7 +592,7 @@ function wpse_ad_content( $content ) {
 			$new_content = '';
 				for ( $i = 0; $i < count ( $content ); $i ++ ) {
 					if ( $i == $paragraphAfter ) {
-					$new_content .= '[section_trainers]';
+					$new_content .= '[section_trainers][section_sale]';
 					}
 			$new_content .= $content[$i] . "</p>";
 			}
@@ -605,7 +615,7 @@ function wpse_ad_content( $content ) {
 // Add a custom user role
   
 $result = add_role( 'teacher', __(
-  'Учитель' ),
+  'Тренер' ),
   array(
   'read' => true, // true allows this capability
   'edit_posts' => false, // Allows user to edit their own posts
