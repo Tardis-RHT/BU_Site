@@ -15,7 +15,7 @@ html, body{
 .wrapper{
     margin: 0 auto;
     width: 100%;
-    min-width: 304px;
+    min-width: 288px;
     max-width: 1600px;
 }
 .main {
@@ -142,6 +142,7 @@ tt, kbd, samp{
     border-radius: var(--border-radius); 
     transition: 0.35s ease-out;
     overflow: hidden;
+    z-index: 2;
 }
 .tile:hover{
     cursor: pointer;
