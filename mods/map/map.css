@@ -1,7 +1,7 @@
 .map{
     position: relative;
     min-height: 320px;
-    margin:0 auto 40px;
+    margin:8px auto 40px;
 }
 .map:before {
     display: block;

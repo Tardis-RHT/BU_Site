@@ -20,6 +20,7 @@
     /* min-height: calc(100vw - 16px); */
     width: calc(100vw - 16px);
     position: relative;
+    background-color: var(--darker-color);
 }
 .post-single:hover{
     color: var(--font-white);
