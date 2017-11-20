@@ -285,7 +285,7 @@ if(function_exists("register_field_group"))
 			),
 			array (
 				'key' => 'field_5a036b5a7beb9',
-				'label' => 'Учитель',
+				'label' => 'Тренер',
 				'name' => 'teacher',
 				'type' => 'user',
 				'role' => array (
