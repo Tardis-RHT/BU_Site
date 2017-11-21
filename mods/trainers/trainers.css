@@ -16,7 +16,7 @@
     width: calc(50% - 8px);
     border-radius: 2px;
 }
-.trainer__name{
+.trainer .trainer__name{
     margin-top: 0;
     margin-bottom: 0;
 }
