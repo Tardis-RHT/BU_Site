@@ -585,19 +585,7 @@ function sectionSale($attr, $content)
 }
 add_filter( 'the_content', 'wpse_ad_content' );
 function wpse_ad_content( $content ) {
-		if( !is_single() )
-			return $content;
-			$paragraphAfter = 1; //номер абзаца, после которого вставляем.
-			$content = explode ( "</p>", $content );
-			$new_content = '';
-				for ( $i = 0; $i < count ( $content ); $i ++ ) {
-					if ( $i == $paragraphAfter ) {
-					$new_content .= '[section_trainers]';
-					}
-			$new_content .= $content[$i] . "</p>";
-			}
-			return $new_content;
-		if( !is_single() && !in_category('curse'))
+		if( !in_category('programs') )
 			return $content;
 			$paragraphAfter = 1; //номер абзаца, после которого вставляем.
 			$content = explode ( "</p>", $content );
