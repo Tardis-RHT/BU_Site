@@ -1,20 +1,8 @@
 <section class="news-block">
     <div class="wrapper container">
-        <div class="<?php
-            if ( is_page( 'news' ) ) {
-                echo 'news-page-container';
-            }
-            else {
-                echo 'news-container';
-            }
-        ?>">
+        <div class="news-container">
             <?php
-                if ( is_page( 'news' ) ) {
-                    $args = array('numberposts' => 0, 'category_name' => 'news', 'order' => 'DESC' );
-                }
-                else {
-                    $args = array('posts_per_page' => 3, 'post__not_in' => array( $post->ID ), 'category_name' => 'news', 'order' => 'DESC' );                
-                }
+                $args = array('posts_per_page' => 3, 'post__not_in' => array( $post->ID ), 'category_name' => 'news', 'order' => 'DESC' );
                 global $post;
                 $myposts = get_posts( $args );
                 foreach( $myposts as $post ){ setup_postdata($post);

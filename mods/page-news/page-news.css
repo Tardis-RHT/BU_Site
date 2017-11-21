@@ -1,11 +1,24 @@
 .news-page-container{
-    padding-top: 80px;
+    padding-top: 104px;
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;  
 }
+.alm-reveal{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap; 
+}
+.alm-btn-wrap{
+    width: 100%;
+    margin: 0 auto;
+}
+.ajax-load-more-wrap{
+    margin: 0 auto;
+}
 @media (min-width:840px){
     .news-page-container{
-        padding-top: 40px;
+        padding-top: 80px;
     }
 }
