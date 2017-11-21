@@ -286,10 +286,10 @@ if(function_exists("register_field_group"))
 			array (
 				'key' => 'field_5a036b5a7beb9',
 				'label' => 'Тренер',
-				'name' => 'teacher',
+				'name' => 'trainer',
 				'type' => 'user',
 				'role' => array (
-					0 => 'teacher',
+					0 => 'trainer',
 				),
 				'field_type' => 'multi_select',
 				'allow_null' => 0,

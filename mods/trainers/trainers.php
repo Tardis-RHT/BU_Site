@@ -1,7 +1,7 @@
 <?php if (get_field('teacher')){ ?>
 
 <div class="trainers-container">
-    <?php $teachers = get_field('teacher');
+    <?php $teachers = get_field('trainer');
         foreach($teachers as $teacher){
             // print_r($teacher);
             echo '<div class="trainer">' 
