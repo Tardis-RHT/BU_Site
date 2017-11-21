@@ -614,7 +614,7 @@ function wpse_ad_content( $content ) {
 \*------------------------------------*/
 // Add a custom user role
   
-$result = add_role( 'teacher', __(
+$result = add_role( 'trainer', __(
   'Тренер' ),
   array(
   'read' => true, // true allows this capability
