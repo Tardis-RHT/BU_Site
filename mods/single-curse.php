@@ -4,7 +4,8 @@
         <header class="post-img">
             <div class="post-img__container">
                 <img class="post-img__inner" <?php buTheme_src_set() ?> >
-                <?php if (in_category('news')) echo '<div class="post-img__date">' . get_the_date('d F Y') . '</div>'; ?>
+                <?php
+                 if (in_category('news')) echo '<div class="post-img__date">' . date_i18n('d F Y', strtotime(get_the_date('M'))) . '</div>'; ?>
                 <h1 class="post-img__title"><?php echo get_the_title() ?></h1>
             </div>				
         </header>
