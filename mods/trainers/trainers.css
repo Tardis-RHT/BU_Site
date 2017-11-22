@@ -7,14 +7,17 @@
     clear: both;
 }
 .trainer{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 16px;
+    /* display: flex;
+    flex-direction: column; */
+    margin-bottom: 16px 0;
 }
 .photo{
     height: auto;
     width: calc(50% - 8px);
+    max-width: 160px;
+    float: left;
     border-radius: 2px;
+    margin-right: 8px;
 }
 .trainer .trainer__name{
     margin-top: 0;
@@ -31,12 +34,17 @@
     line-height: 1.4;
 }
 @media(min-width:600px){
+    .trainer{
+        display: flex;
+        flex-direction: column;
+    }
     .trainers-container{
         width: calc((100vw - 16px) / 8 * 2 - 16px);
         padding: 16px 0 16px 16px;
     }
     .photo{
-        width: calc(100%);
+        width: 100%;
+        max-width: 100%
     }
 }
 @media (min-width:840px){
