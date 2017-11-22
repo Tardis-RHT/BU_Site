@@ -292,7 +292,7 @@ if(function_exists("register_field_group"))
 					0 => 'trainer',
 				),
 				'field_type' => 'multi_select',
-				'allow_null' => 0,
+				'allow_null' => 1,
 			),
 		),
 		'location' => array (
