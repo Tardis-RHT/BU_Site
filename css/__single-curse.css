@@ -68,6 +68,7 @@
    
 .post__content{
     width: calc(100% - 32px);
+    padding: 24px 0;
     /* margin: 0 auto; */
     /* width: calc(var(--grid-column) * 4 - var(--grid-margin) * 2); */
 }
