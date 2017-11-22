@@ -106,11 +106,15 @@ tt, kbd, samp{
 
 .alignleft, .fl{
 	float: left;
-	margin: .5rem .5rem 5rem 0;
+    margin: .5rem .5rem 5rem 0;
+    width: 100%;
+    height: auto;
 }
 .alignright, .fr{
 	float: right;
-	margin: .5rem 0 .5rem .5rem;
+    margin: .5rem 0 .5rem .5rem;
+    width: 100%;
+    height: auto;
 }
 
 .aligncenter{
@@ -185,10 +189,14 @@ iframe{
     .alignleft, .fl{
         /* margin: 32px 32px 32px calc(var(--grid-column) * -1); */
         margin: 32px 32px 32px calc((100vw - 16px) / -8);
+        width: auto;
+        height: auto;
     }
     .alignright, .fr{
         /* margin: 32px calc(var(--grid-column) * -1) 32px 32px; */
         margin: 32px calc((100vw - 16px) / -8) 32px 32px;
+        width: auto;
+        height: auto;
 }
 @media (min-width:840px){
     .four-container{
