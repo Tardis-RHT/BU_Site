@@ -70,11 +70,7 @@ gulp.task('js', function() {
         .pipe(browserSync.stream());
 });
 
-gulp.task('server', function () {
-    return gulp.src(paths.js)
-        .pipe(concat('script.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest('js/'))
+gulp.task('server-css', function () {
     return gulp.src('css/style.css')
         // .pipe(postcss(plugins))
         .pipe(cleanCSS())
@@ -92,7 +88,14 @@ gulp.task('server', function () {
             cascade: false
         })) 
         .pipe(cleanCSS()) 
-        .pipe(gulp.dest('css/'));
+        .pipe(gulp.dest('css/'))
+});
+
+gulp.task('server-js', function() {  
+    return gulp.src(paths.js)
+        .pipe(concat('script.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('js/'))
 });
 
 gulp.task('watch', ['css', 'js', 'connect-sync'], function() {
