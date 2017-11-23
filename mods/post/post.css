@@ -97,6 +97,9 @@
     .post-single--big:first-of-type{
         width: calc(50% - 16px);
     }
+    .post__title{
+        font-size: 28px;
+    }
 }
 @media (min-width:1024px){
     .post-single{
@@ -108,5 +111,8 @@
     .post-single--big:first-of-type > .post__title{
         font-size: 40px;
         line-height: 48px;
+    }
+    .post__title{
+        font-size: 36px;
     }
 }
