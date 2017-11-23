@@ -197,6 +197,7 @@ iframe{
         margin: 32px calc((100vw - 16px) / -8) 32px 32px;
         width: auto;
         height: auto;
+    }
 }
 @media (min-width:840px){
     .four-container{
