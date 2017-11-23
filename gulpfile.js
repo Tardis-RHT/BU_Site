@@ -71,7 +71,7 @@ gulp.task('js', function() {
 });
 
 gulp.task('server', function () {
-  	return gulp.src(paths.js)
+    return gulp.src(paths.js)
         .pipe(concat('script.js'))
         .pipe(uglify())
         .pipe(gulp.dest('js/'))
@@ -81,7 +81,7 @@ gulp.task('server', function () {
         .pipe(concat('stylemin.css'))
         .pipe(gcmq())
         .pipe(autoprefixer({
-            browserslist: [
+            browsers: [
                 "Chrome >= 58",
                 "Firefox >= 45",
                 "Safari >= 9",
