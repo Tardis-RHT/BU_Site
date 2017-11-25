@@ -11,8 +11,23 @@
         if ( in_category('programs') ) get_template_part('mods/curse-info/curse', 'info');
         elseif ( in_category('events') ) get_template_part('mods/event-info/event', 'info');
         ?>
+        <?php
+            $text = get_the_content();
+            $patern="#<[\s]*h1[\s]*>([^<]*)<[\s]*/h1[\s]*>#i";
+            if(preg_match($patern, $text, $matches)) echo "<h1 class='title'>".$matches[1]."</h1>";
+        ?>
         <div class="wrapper curse-content">
-            <?php the_content(); ?>
+            <?php 
+            // function deleteFirstImages($content) {
+                $all_content = get_the_content();
+                
+                $content = preg_match('~</h1>(.*?)~is', $all_content, $m );
+                // return $content;
+                $email = '<h1>title</h1>';
+                echo stristr($all_content, '</h1>'); // выводит ER@EXAMPLE.com
+            //  }
+            //  add_filter ('the_content', 'deleteFirstImages');
+            // the_content(); ?>
         </div>
     <?php endwhile; endif; ?>
 </div>

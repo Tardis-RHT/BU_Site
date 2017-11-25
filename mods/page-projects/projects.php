@@ -35,4 +35,5 @@
             ?>
         </div>
     </div>
+    
 <?php get_template_part('mods/site-footer/site', 'footer'); ?>
