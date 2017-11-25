@@ -6,46 +6,46 @@ $(document).ready(function($){
       }
   });
 }
-  $('#mainForm').submit(function(){
-    event.preventDefault();
-    var form = $('#mainForm');
-    var str = $(this).serialize();
-    console.log(str);
-    var data = {
-      curse: $('input')[4].value,
-      name: $('input')[0].value,
-      surname: $('input')[1].value,
-      phone: $('input')[2].value,
-      email: $('input')[3].value
-    }
-    var dataJson = JSON.stringify(data, null, "  ");
-    console.log(dataJson);
-      $.ajax({
-          type: 'GET',
-          data: 'dataJson',
-          response: 'text',
-          error: function( xhr,err ) {
-              console.log( 'Sample of error data:', err );
-              console.log("readyState: "+xhr.readyState+"\nstatus: "+xhr.status+"\nresponseText: "+xhr.responseText);
-          },
-          success: function(data, textStatus, jqXHR){
-          if (jqXHR.status == 200){
-            $("#mainForm").trigger('reset');
-            // window.location.href='/thankyou' + current_url;
-            window.location.href='/thankyou';
-          }
+//   $('#mainForm').submit(function(){
+//     event.preventDefault();
+//     var form = $('#mainForm');
+//     var str = $(this).serialize();
+//     console.log(str);
+//     var data = {
+//       curse: $('input')[4].value,
+//       name: $('input')[0].value,
+//       surname: $('input')[1].value,
+//       phone: $('input')[2].value,
+//       email: $('input')[3].value
+//     }
+//     var dataJson = JSON.stringify(data, null, "  ");
+//     console.log(dataJson);
+//       $.ajax({
+//           type: 'GET',
+//           data: 'dataJson',
+//           response: 'text',
+//           error: function( xhr,err ) {
+//               console.log( 'Sample of error data:', err );
+//               console.log("readyState: "+xhr.readyState+"\nstatus: "+xhr.status+"\nresponseText: "+xhr.responseText);
+//           },
+//           success: function(data, textStatus, jqXHR){
+//           if (jqXHR.status == 200){
+//             $("#mainForm").trigger('reset');
+//             // window.location.href='/thankyou' + current_url;
+//             window.location.href='/thankyou';
+//           }
               
-              if (console && console.log) {
-                  console.log( 'Sample of data:', data.slice(0,100) );
-                  console.log('textStatus: ', textStatus);
-                  console.log('jqXHR: ', jqXHR);
-                  console.log('statusText: ', jqXHR.statusText);
-              }
-          }            
-      });
-      return false;
-  });
-});
+//               if (console && console.log) {
+//                   console.log( 'Sample of data:', data.slice(0,100) );
+//                   console.log('textStatus: ', textStatus);
+//                   console.log('jqXHR: ', jqXHR);
+//                   console.log('statusText: ', jqXHR.statusText);
+//               }
+//           }            
+//       });
+//       return false;
+//   });
+// });
 
 function replaceValidationUI(form) {
   // Suppress the default bubbles
@@ -114,7 +114,7 @@ var error_msg = document.getElementsByClassName('error-message');
       parent.removeChild(parent.lastChild);  
       this.style.borderColor = "var(--primary-color)";
       this.onblur = function(){
-        this.style.borderColor = "var(--font-light)";
+        this.style.borderColor = "var(--darker-color)";
       }
       this.onfocus = function(){
         this.style.borderColor = "var(--primary-color)";
@@ -131,10 +131,12 @@ function telValidity(){
     parent.removeChild(parent.lastChild);  
     tel.style.borderColor = "var(--primary-color)";
     tel.onblur = function(){
-      tel.style.borderColor = "var(--font-light)";
+      tel.style.borderColor = "var(--darker-color)";
     }
     tel.onfocus = function(){
       tel.style.borderColor = "var(--primary-color)";
     }                
   }
 }
+
+});

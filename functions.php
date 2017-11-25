@@ -285,14 +285,14 @@ if(function_exists("register_field_group"))
 			),
 			array (
 				'key' => 'field_5a036b5a7beb9',
-				'label' => 'Учитель',
-				'name' => 'teacher',
+				'label' => 'Тренер',
+				'name' => 'trainer',
 				'type' => 'user',
 				'role' => array (
-					0 => 'teacher',
+					0 => 'trainer',
 				),
 				'field_type' => 'multi_select',
-				'allow_null' => 0,
+				'allow_null' => 1,
 			),
 		),
 		'location' => array (
@@ -562,17 +562,61 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 ); // Changing the le
 // Changing the link on the Login Page
 add_filter( 'login_headerurl', 'my_login_logo_url' );
 add_filter( 'login_headertitle', 'my_login_logo_url_title' );
+
+// Add block after 1st paragraph of the content
+add_shortcode('section_trainers', 'sectionTrainers');   
+function sectionTrainers($attr, $content)
+{        
+	ob_start();  
+	get_template_part('mods/trainers/trainers');  
+	$ret = ob_get_contents();  
+	ob_end_clean();  
+	return $ret;    
+}
+//Add sale block after 1st paragraph of the content
+add_shortcode('section_sale', 'sectionSale');   
+function sectionSale($attr, $content)
+{        
+	ob_start();  
+	get_template_part('mods/sale/sale');  
+	$ret = ob_get_contents();  
+	ob_end_clean();  
+	return $ret;    
+}
+add_filter( 'the_content', 'wpse_ad_content' );
+function wpse_ad_content( $content ) {
+		if( !in_category('programs') )
+			return $content;
+			$paragraphAfter = 1; //номер абзаца, после которого вставляем.
+			$content = explode ( "</p>", $content );
+			$new_content = '';
+				for ( $i = 0; $i < count ( $content ); $i ++ ) {
+					if ( $i == $paragraphAfter ) {
+					$new_content .= '[section_trainers][section_sale]';
+					}
+			$new_content .= $content[$i] . "</p>";
+			}
+			return $new_content;
+	}
+
+// Add shortcode for inserting Google Map
+	add_shortcode('map', 'addMap');   
+	function addMap($attr, $content)
+	{        
+		ob_start();  
+		get_template_part('mods/map/map');  
+		$ret = ob_get_contents();  
+		ob_end_clean();  
+		return $ret;    
+	}
 /*------------------------------------*\
 	 Custom user role
 \*------------------------------------*/
 // Add a custom user role
   
-$result = add_role( 'teacher', __(
-	
-  'Учитель' ),
-	
+$result = add_role( 'trainer', __(
+  'Тренер' ),
   array(
-	
   'read' => true, // true allows this capability
   'edit_posts' => false, // Allows user to edit their own posts
   'edit_pages' => false, // Allows user to edit pages
@@ -584,13 +628,46 @@ $result = add_role( 'teacher', __(
   'install_plugins' => false, // User cant add new plugins
   'update_plugin' => false, // User can’t update any plugins
   'update_core' => false // user cant perform core updates
-	
   )
-	
   );
+// Add fields in user cabinet
+add_filter('user_contactmethods', 'my_user_contactmethods');
+function my_user_contactmethods($user_contactmethods){
+	$user_contactmethods['placeOfWork'] = 'Место работы'; 
+   	return $user_contactmethods;
+ }
+//  Save info in added fields
+ function save_profile_fields( $user_id ) {
+	update_usermeta( $user_id, 'placeOfWork', $_POST['placeOfWork'] );
+}
+add_action( 'personal_options_update', 'save_profile_fields' );
+add_action( 'edit_user_profile_update', 'save_profile_fields' );
 
 
-
-
-
+// Addin button "MAP" to TinyMCE editor
+add_action('admin_head', 'ex_add_my_tc_button');
+function ex_add_my_tc_button() {
+    global $typenow;
+    // проверяем права доступа
+    if ( !current_user_can('edit_posts') && !current_user_can('edit_pages') ) {
+    	return;
+    }
+    // проверяем тип поста
+    if( ! in_array( $typenow, array( 'post', 'page' ) ) )
+        return;
+    // проверяем что WYSIWYG включен
+    if ( get_user_option('rich_editing') == 'true') {
+        add_filter("mce_external_plugins", "ex_add_tinymce_plugin");
+        add_filter('mce_buttons', 'ex_register_my_first_button');
+    }
+}
+function ex_add_tinymce_plugin($plugin_array) {
+    $plugin_array['ex_first_button'] = get_template_directory_uri()."/js/btn.js";
+    return $plugin_array;
+}
+// добавляем кнопку
+function ex_register_my_first_button($buttons) {
+	array_push($buttons, "ex_first_button");
+	return $buttons;
+ }
 ?>

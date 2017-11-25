@@ -95,7 +95,7 @@
         // End of new loop for sorting and showing Checked Programs on the main page
 
         // Starting new loop for sorting and showing ADDITIONAL Programs posts in the page News
-        if(in_category('news') && count(($posts) < 4) ){
+        if(in_category('news') && (count($posts) < 4)){
             $post_count = 4 - count($posts);
             $args = array(
                 'posts_per_page' => $post_count,
