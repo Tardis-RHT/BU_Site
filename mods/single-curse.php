@@ -16,7 +16,9 @@
         <div class="wrapper post__content">
             <?php the_content(); ?>
         </div>
-    <?php endwhile; endif; ?>
+    <?php 
+    if (get_field('teacher') && (count(get_field('teacher')) > 1)) get_template_part('mods/trainers/trainersArr');
+    endwhile; endif; ?>
 </div>
 <?php 
 if ( in_category( 'programs' ) ) {get_template_part('mods/map/map'); get_template_part('mods/form/form');}

@@ -1,4 +1,4 @@
-<?php if (get_field('teacher')){ ?>
+<?php if (get_field('teacher') && (count(get_field('teacher')) == 1)){ ?>
 
 <div class="trainers-container">
     <?php $teachers = get_field('trainer');

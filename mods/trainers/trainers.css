@@ -28,10 +28,21 @@
 }
 .trainer__about{
     word-wrap: break-word;
+    hyphens: auto;
     -moz-hyphens: auto;
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
     line-height: 1.4;
+}
+.trainersArr-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.trainersArr-container > .trainer{
+    margin: 8px 16px;
+    width: 100%;
+    flex-direction: row;
 }
 /* @media(min-width:600px){
     .trainer{
@@ -59,6 +70,10 @@
     .photo{
         width: 100%;
         max-width: 100%
+    }
+    .trainersArr-container > .trainer{
+        margin: 8px;
+        width: auto;
     }
 }
 @media (min-width:1280px){
