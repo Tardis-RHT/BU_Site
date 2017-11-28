@@ -2,5 +2,6 @@ node_modules
 .git
 .gitignore
 .serverignore
+gulpfile.js
 package-lock.json
 package.json
